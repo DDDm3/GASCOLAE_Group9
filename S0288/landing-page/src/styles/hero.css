@@ -1,0 +1,679 @@
+/* ============================================================
+   Header + Hero + Hoạt cảnh UAV quét công trình
+   ============================================================ */
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-h);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.site-header--top {
+  background: rgba(4, 30, 61, 0.24);
+  backdrop-filter: blur(6px);
+}
+
+.site-header--scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Logo dùng chung cho header và footer – giữ nguyên màu gốc của file SVG */
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 38px;
+}
+
+.brand__logo {
+  height: 34px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.site-nav a {
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.86);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.site-header--scrolled .site-nav a {
+  color: var(--ink-soft);
+}
+
+.site-header--scrolled .site-nav a:hover {
+  color: var(--blue-700);
+  background: var(--blue-100);
+}
+
+.site-header__cta {
+  flex-shrink: 0;
+}
+
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--white);
+  position: relative;
+}
+
+.nav-toggle span::before {
+  position: absolute;
+  top: -6px;
+}
+
+.nav-toggle span::after {
+  position: absolute;
+  top: 6px;
+}
+
+.site-header--scrolled .nav-toggle {
+  border-color: var(--line);
+  background: var(--blue-50);
+}
+
+.site-header--scrolled .nav-toggle span,
+.site-header--scrolled .nav-toggle span::before,
+.site-header--scrolled .nav-toggle span::after {
+  background: var(--blue-800);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  padding: calc(var(--header-h) + 64px) 0 84px;
+  background: linear-gradient(155deg, #041e3d 0%, #062f5e 48%, #06456f 100%);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 480px;
+  height: 480px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.5), transparent 70%);
+}
+
+.hero::after {
+  width: 520px;
+  height: 520px;
+  bottom: -240px;
+  left: -160px;
+  background: radial-gradient(circle, rgba(46, 134, 240, 0.55), transparent 70%);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr);
+  gap: 46px;
+  align-items: center;
+}
+
+.hero__title {
+  font-size: clamp(29.7px, 3.9vw, 48.8px);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero__title em {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--green-300), var(--blue-300));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__sub {
+  margin-top: 20px;
+  font-size: 20.1px;
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 620px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.hero__stats {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 62px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hero__stat {
+  padding: 22px 24px;
+  background: rgba(4, 30, 61, 0.55);
+}
+
+.hero__stat strong {
+  display: block;
+  font-size: 29.1px;
+  color: var(--green-300);
+}
+
+.hero__stat span {
+  font-size: 15.9px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ---------- Khung hoạt cảnh ---------- */
+
+.uav-scene {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(141, 192, 247, 0.32);
+  box-shadow: var(--shadow-lg);
+  background: #041e3d;
+}
+
+.uav-scene__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.uav-scene__gcp-label {
+  font-size: 10px;
+  fill: #86e5ab;
+  letter-spacing: 0.08em;
+}
+
+.uav-scene__orbit {
+  fill: none;
+  stroke: rgba(141, 192, 247, 0.5);
+  stroke-width: 1.2;
+  stroke-dasharray: 7 9;
+  animation: orbitDash 3s linear infinite;
+}
+
+@keyframes orbitDash {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+/* Đám mây điểm */
+.uav-dot {
+  fill: #86e5ab;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.5s ease;
+}
+
+.uav-dot.is-on {
+  opacity: 0.85;
+  animation: dotPop 0.45s ease-out;
+}
+
+.uav-dot--hot {
+  fill: #ff7a1a;
+}
+
+.uav-dot.uav-dot--hot.is-on {
+  opacity: 0.95;
+}
+
+@keyframes dotPop {
+  from {
+    opacity: 0;
+    transform: scale(2.6);
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+}
+
+/* Tia quét */
+.uav-beam__cone {
+  animation: beamBreathe 2.4s ease-in-out infinite;
+}
+
+.uav-beam__ray {
+  stroke: #22c55e;
+  stroke-width: 2;
+  opacity: 0.5;
+  stroke-dasharray: 16 22;
+  animation: rayFlow 0.7s linear infinite;
+}
+
+@keyframes rayFlow {
+  to {
+    stroke-dashoffset: -38;
+  }
+}
+
+@keyframes beamBreathe {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* UAV */
+.uav-drone {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+}
+
+.uav-rotor ellipse {
+  animation: rotorSpin 0.22s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rotorSpin {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleX(0.25);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.9;
+  }
+}
+
+.uav-drone__nav {
+  animation: navBlink 1.1s steps(1, end) infinite;
+}
+
+.uav-drone__nav--alt {
+  animation-delay: 0.55s;
+}
+
+@keyframes navBlink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+/* Điểm phát hiện */
+.uav-poi {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.uav-poi.is-on {
+  opacity: 1;
+}
+
+.uav-poi__core {
+  fill: #22c55e;
+  stroke: #ffffff;
+  stroke-width: 1.6;
+}
+
+.uav-poi__pulse {
+  fill: none;
+  stroke: #22c55e;
+  stroke-width: 1.6;
+  opacity: 0.75;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.uav-poi.is-on .uav-poi__pulse {
+  animation: poiPulse 2s ease-out infinite;
+}
+
+@keyframes poiPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.uav-poi--heat .uav-poi__core {
+  fill: #ff7a1a;
+}
+
+.uav-poi--heat .uav-poi__pulse {
+  stroke: #ff7a1a;
+}
+
+.uav-poi--rust .uav-poi__core {
+  fill: #f5b301;
+}
+
+.uav-poi--rust .uav-poi__pulse {
+  stroke: #f5b301;
+}
+
+.uav-poi__leader {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1.1;
+  stroke-dasharray: 3 3;
+}
+
+.uav-poi__card {
+  fill: rgba(4, 30, 61, 0.88);
+  stroke: rgba(141, 192, 247, 0.5);
+  stroke-width: 1;
+}
+
+.uav-poi__title {
+  fill: #ffffff;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.uav-poi__detail {
+  fill: rgba(255, 255, 255, 0.7);
+  font-size: 11.5px;
+}
+
+.uav-poi__tag {
+  fill: #22c55e;
+}
+
+.uav-poi--heat .uav-poi__tag {
+  fill: #ff7a1a;
+}
+
+.uav-poi--rust .uav-poi__tag {
+  fill: #f5b301;
+}
+
+.uav-poi__tag-text {
+  fill: #041e3d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* HUD */
+.uav-hud {
+  position: absolute;
+  z-index: 3;
+  background: rgba(4, 30, 61, 0.78);
+  border: 1px solid rgba(141, 192, 247, 0.32);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  color: var(--white);
+  font-size: 14.2px;
+}
+
+.uav-hud--sensors {
+  top: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.uav-hud--sensors strong {
+  color: var(--green-300);
+}
+
+.uav-hud--sensors span:not(.uav-hud__dot) {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.uav-hud__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-500);
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: hudPing 1.8s ease-out infinite;
+}
+
+@keyframes hudPing {
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.uav-hud--scan {
+  left: 14px;
+  bottom: 14px;
+  width: min(300px, 58%);
+  padding: 12px 14px;
+}
+
+.uav-hud__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.uav-hud__row strong {
+  color: var(--green-300);
+  font-size: 16.5px;
+}
+
+.uav-hud__row--sub {
+  margin-top: 6px;
+  font-size: 12.4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.uav-hud__bar {
+  margin-top: 8px;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
+
+.uav-hud__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue-500), var(--green-500));
+}
+
+.uav-hud--found {
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  line-height: 1.35;
+}
+
+.uav-hud--found strong {
+  font-size: 21.2px;
+  color: var(--heat);
+}
+
+.uav-hud--found em {
+  display: block;
+  font-style: normal;
+  font-size: 12.4px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.uav-hud__alert {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--heat);
+  animation: hudBlink 1.2s ease-in-out infinite;
+}
+
+@keyframes hudBlink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1080px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__sub {
+    max-width: none;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-nav,
+  .site-header__cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav--open {
+    display: flex;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    padding: 12px 18px 18px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+
+  .site-nav--open a {
+    color: var(--ink) !important;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding-top: calc(var(--header-h) + 40px);
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .uav-hud--sensors span:not(.uav-hud__dot) {
+    display: none;
+  }
+
+  .uav-hud--found em {
+    display: none;
+  }
+
+  .uav-hud--scan {
+    width: min(220px, 62%);
+  }
+}
+
+/* Nửa quỹ đạo phía sau công trình – mờ hơn để tạo chiều sâu */
+.uav-scene__orbit--back {
+  stroke: rgba(141, 192, 247, 0.28);
+}

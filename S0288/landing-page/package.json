@@ -1,0 +1,20 @@
+{
+  "name": "gascolae-s0288-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page dich vu S0288 - Kiem tra cong trinh cu bang UAV LiDAR (GASCOLAE Platform)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}
