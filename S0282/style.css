@@ -2632,3 +2632,59 @@ textarea {
     box-shadow: 0 0 20px rgba(34, 197, 94, 0.2);
     backdrop-filter: blur(6px);
 }
+
+/* Comparison Row Responsive */
+.comparison-row {
+    display: flex;
+    gap: 24px;
+}
+@media (max-width: 768px) {
+    .comparison-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+@media (max-width: 768px) {
+    .comparison-row > div {
+        padding: 20px !important;
+    }
+}
+
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 992px) {
+    .desktop-nav {
+        display: none; /* ?n menu trên mobile d? tránh v? layout */
+    }
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    .sub-headline {
+        margin: 0 auto 32px auto;
+        font-size: 17px;
+    }
+    .hero-cta-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .hero-cta-group .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-actions .btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+    .headline {
+        font-size: 28px;
+    }
+    .hero-section {
+        padding-top: calc(var(--header-h) + 24px);
+        padding-bottom: 40px;
+    }
+}
