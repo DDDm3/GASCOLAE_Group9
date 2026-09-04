@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đánh Giá & Lập Bản Đồ Carbon Sinh Khối Rừng Bằng UAV LiDAR | GASCOLAE</title>
+  <meta name="description" content="Dịch vụ đánh giá và lập bản đồ trữ lượng carbon trong sinh khối rừng ứng dụng UAV LiDAR kết hợp ô tiêu chuẩn thực địa. Cung cấp dữ liệu phủ kín, có tọa độ chuẩn xác theo Nghị định 180/2026/NĐ-CP.">
+  <meta name="keywords" content="bản đồ carbon rừng, trữ lượng carbon sinh khối rừng, UAV LiDAR rừng, tín chỉ carbon rừng, đo sinh khối AGB, mô hình chiều cao tán CHM, Nghị định 180/2026/NĐ-CP, dMRV carbon rừng">
+  <link rel="canonical" href="/dich-vu/danh-gia-lap-ban-do-carbon-sinh-khoi-rung-uav-lidar">
+
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- Importmap for Three.js ES Modules -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./3d/vendor/three.module.js",
+      "three/addons/controls/OrbitControls.js": "./3d/vendor/OrbitControls.js"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── Header / Navbar ── -->
+  <header class="navbar" role="banner">
+    <div class="container navbar__inner">
+      <!-- Zone 1: Brand & Service ID -->
+      <div class="navbar__brand">
+        <a href="#hero" class="navbar__logo" aria-label="GASCOLAE - Về đầu trang">
+          <img src="../assets/GASCOLAE.svg" alt="GASCOLAE Logo" width="124" height="26">
+        </a>
+        <span class="navbar__service-badge">S0285-S0287</span>
+      </div>
+
+      <!-- Zone 2: Desktop Nav (7 items, visible >= 1280px) -->
+      <nav class="navbar__desktop-nav" aria-label="Điều hướng chính">
+        <ul class="navbar__menu" role="list">
+          <li><a href="#problem" class="navbar__link">Vấn đề</a></li>
+          <li><a href="#measurement" class="navbar__link">Phương pháp</a></li>
+          <li><a href="#interactive-3d" class="navbar__link">Bản đồ 3D</a></li>
+          <li><a href="#workflow" class="navbar__link">Quy trình</a></li>
+          <li><a href="#service-levels" class="navbar__link">Gói dịch vụ</a></li>
+          <li><a href="#faq" class="navbar__link">FAQ</a></li>
+          <li><a href="#ai-agent" class="navbar__link">Trợ lý AI</a></li>
+        </ul>
+      </nav>
+
+      <!-- Zone 3: Actions (CTA & Hamburger) -->
+      <div class="navbar__actions">
+        <a href="#lead" class="btn btn--primary btn--sm navbar__cta-desktop">Đăng ký tư vấn</a>
+        <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="navbar-drawer" aria-label="Mở menu điều hướng">
+          <span class="navbar__toggle-icon"></span>
+        </button>
+      </div>
+    </div>
+    </header>
+<!-- ── Independent Mobile Navigation Overlay Layer ── -->
+  <div class="navbar__overlay" id="navbar-overlay" hidden></div>
+
+  <!-- ── Independent Mobile Navigation Drawer ── -->
+  <aside class="navbar__drawer" id="navbar-drawer" role="dialog" aria-modal="true" aria-label="Menu điều hướng di động" hidden>
+    <div class="navbar__drawer-head">
+      <div class="navbar__brand">
+        <img src="../assets/GASCOLAE.svg" alt="GASCOLAE" width="110" height="24">
+        <span class="navbar__service-badge">S0285-S0287</span>
+      </div>
+      <button class="navbar__drawer-close" type="button" aria-label="Đóng menu">×</button>
+    </div>
+    <div class="navbar__drawer-body">
+      <ul class="navbar__drawer-menu" role="list">
+        <li><a href="#problem" class="navbar__drawer-link">Vấn đề</a></li>
+        <li><a href="#measurement" class="navbar__drawer-link">Phương pháp</a></li>
+        <li><a href="#interactive-3d" class="navbar__drawer-link">Bản đồ 3D</a></li>
+        <li><a href="#workflow" class="navbar__drawer-link">Quy trình</a></li>
+        <li><a href="#service-levels" class="navbar__drawer-link">Gói dịch vụ</a></li>
+        <li><a href="#faq" class="navbar__drawer-link">FAQ</a></li>
+        <li><a href="#ai-agent" class="navbar__drawer-link">Trợ lý AI</a></li>
+      </ul>
+    </div>
+    <div class="navbar__drawer-foot">
+      <a href="#lead" class="btn btn--primary btn--full-width">Đăng ký tư vấn kỹ thuật</a>
+    </div>
+  </aside>
+
+
+  <main>
+    <!-- ── 1. Hero Section (S01) ── -->
+    <section id="hero" class="hero" aria-label="Giới thiệu dịch vụ">
+      <div class="hero__overlay"></div>
+      <div class="container">
+        <div class="hero__grid">
+          <!-- Left Column: Structured Text & CTAs -->
+          <div class="hero__content reveal">
+            <div class="hero__eyebrow">
+              <span class="tag-badge">FOREST CARBON ASSESSMENT · UAV LiDAR</span>
+            </div>
+
+            <h1 class="hero__headline">
+              <span class="hero__h1-top">Đánh giá và lập bản đồ</span>
+              <span class="hero__h1-mid">carbon sinh khối rừng</span>
+              <span class="hero__h1-accent text-gradient">bằng công nghệ UAV LiDAR</span>
+            </h1>
+
+            <p class="hero__subheadline">
+              Giải pháp đo đạc viễn thám phủ kín diện tích kết hợp ô tiêu chuẩn thực địa, lượng hóa chính xác sinh khối trên mặt đất và trữ lượng carbon theo lô phục vụ chuẩn bị dự án và định giá rừng.
+            </p>
+
+            <div class="hero__actions">
+              <a href="#lead" class="btn btn--primary hero__cta-primary">Đăng ký tư vấn kỹ thuật</a>
+              <a href="#interactive-3d" class="btn btn--ghost hero__cta-secondary">Khám phá bản đồ 3D</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Dedicated Ambient 3D Viewport -->
+          <div class="hero__visual reveal">
+            <div id="hero-3d-canvas" class="hero__canvas-container" role="img" aria-label="Mô phỏng 3D quét tán rừng bằng UAV LiDAR"></div>
+            <div id="hero-fallback" class="hero__fallback">
+              <span class="hero__fallback-badge">MÔ HÌNH SỐ ĐỘ CAO & LiDAR</span>
+              <p class="hero__fallback-desc">Trực quan hóa cấu trúc tán rừng và chùm quét viễn thám UAV LiDAR theo thời gian thực.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. Customer Problems (S02) ── -->
+    <section id="problem" class="section section--dark" aria-label="Rào cản đo đạc hiện nay">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">VẤN ĐỀ THỰC TIỄN</div>
+          <h2 class="section-heading__title">Ba rào cản khiến trữ lượng carbon rừng vẫn là "con số ước tính"</h2>
+          <p class="section-heading__subtitle">
+            Phương pháp điều tra truyền thống tốn nhiều nhân lực nhưng chỉ rút mẫu đại diện tỷ lệ thấp, không đáp ứng yêu cầu minh bạch không gian và thẩm định pháp lý mới.
+          </p>
+        </div>
+
+        <div class="feature-card-grid reveal-stagger">
+          <article class="feature-card feature-card--problem reveal">
+            <div class="feature-card__number">01</div>
+            <h3 class="feature-card__title">Chưa lượng hóa được trữ lượng carbon</h3>
+            <p class="feature-card__body">
+              Chủ rừng sở hữu diện tích lớn nhưng thiếu số liệu đo đạc chính xác về trữ lượng carbon để làm cơ sở tham gia thị trường carbon hoặc báo cáo ESG.
+            </p>
+            <span class="feature-card__badge">NGUỒN: ASSET 01 (MỤC 1.3); ASSET 02 (MỤC 2); SRC-06, SRC-24</span>
+          </article>
+
+          <article class="feature-card feature-card--problem reveal">
+            <div class="feature-card__number">02</div>
+            <h3 class="feature-card__title">Điều tra thủ công, tỷ lệ rút mẫu rất thấp</h3>
+            <p class="feature-card__body">
+              Phương pháp đo ô tiêu chuẩn truyền thống theo Thông tư 33/2018/TT-BNNPTNT chỉ rút mẫu 0,01 – 0,1% diện tích với rừng tự nhiên, tốn nhiều nhân lực thực địa nhưng độ đại diện hạn chế.
+            </p>
+            <span class="feature-card__badge">NGUỒN: ASSET 01 (MỤC 1.3); ASSET 02 (MỤC 2); SRC-06</span>
+          </article>
+
+          <article class="feature-card feature-card--problem reveal">
+            <div class="feature-card__number">03</div>
+            <h3 class="feature-card__title">Thiếu phân bố không gian & áp lực pháp lý mới</h3>
+            <p class="feature-card__body">
+              Số liệu mẫu điểm không cho ra bản đồ chi tiết theo từng lô rừng; đồng thời Nghị định 180/2026/NĐ-CP bắt buộc phải đo đạc – báo cáo minh bạch trước khi đăng ký dự án và thẩm định độc lập.
+            </p>
+            <span class="feature-card__badge">NGUỒN: ASSET 01 (MỤC 1.2, 1.3); ASSET 02 (MỤC 2); SRC-01, SRC-04</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3. Solution / Measurement Chain (S03 & S04) ── -->
+    <section id="measurement" class="section section--darker" aria-label="Chuỗi đo lường khoa học">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">CHUỖI ĐO LƯỜNG KỸ THUẬT</div>
+          <h2 class="section-heading__title">Rừng là tập hợp dữ liệu có thể đo lường và số hóa</h2>
+          <p class="section-heading__subtitle">
+            Dịch vụ sử dụng thiết bị bay không người lái chuyên dụng mang cảm biến LiDAR kết hợp camera RGB/đa phổ bay quét phủ kín 100% diện tích rừng, đồng thời thiết lập mạng lưới ô tiêu chuẩn mặt đất để hiệu chuẩn mô hình allometric.
+          </p>
+        </div>
+
+        <!-- Metric Strip -->
+        <div class="metric-strip reveal">
+          <div class="metric">
+            <span class="metric__value">0,01 – 0,1%</span>
+            <span class="metric__label">Tỷ lệ rút mẫu truyền thống TT33</span>
+            <span class="metric__source">Thông tư 33/2018/TT-BNNPTNT (SRC-06)</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value">100%</span>
+            <span class="metric__label">Độ phủ viễn thám UAV LiDAR</span>
+            <span class="metric__source">Khảo sát phủ kín theo ranh giới lô (SRC-17)</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value">2 – 3 Năm</span>
+            <span class="metric__label">Chu kỳ bay lặp giám sát đa kỳ</span>
+            <span class="metric__source">Khuyến nghị kỹ thuật kiểm chứng (SRC-20)</span>
+          </div>
+        </div>
+
+        <!-- Chain Steps -->
+        <div class="chain-grid reveal reveal-stagger">
+          <div class="chain-node">
+            <span class="chain-node__num">BƯỚC 1</span>
+            <h4 class="chain-node__title">Xung quét LiDAR</h4>
+            <p class="chain-node__desc">Hàng triệu xung laser phát xuyên tán rừng thu nhận tọa độ 3D mặt đất và cấu trúc tán đứng.</p>
+          </div>
+          <div class="chain-node">
+            <span class="chain-node__num">BƯỚC 2</span>
+            <h4 class="chain-node__title">Đám mây điểm & CHM</h4>
+            <p class="chain-node__desc">Bóc tách mô hình bề mặt (DSM) và địa hình (DTM) để trích xuất chiều cao tán cây chuẩn hóa (CHM).</p>
+          </div>
+          <div class="chain-node">
+            <span class="chain-node__num">BƯỚC 3</span>
+            <h4 class="chain-node__title">Hiệu chuẩn ô tiêu chuẩn</h4>
+            <p class="chain-node__desc">Ghép nối số liệu đường kính D1.3 và chiều cao Hvn đo thực địa để hiệu chuẩn phương trình allometric.</p>
+          </div>
+          <div class="chain-node">
+            <span class="chain-node__num">BƯỚC 4</span>
+            <h4 class="chain-node__title">Mô hình hóa AGB (ML)</h4>
+            <p class="chain-node__desc">Áp dụng thuật toán học máy ước tính sinh khối trên mặt đất (AGB) theo loài và trạng thái rừng.</p>
+          </div>
+          <div class="chain-node">
+            <span class="chain-node__num">BƯỚC 5</span>
+            <h4 class="chain-node__title">Bản đồ Carbon theo lô</h4>
+            <p class="chain-node__desc">Quy đổi tCO2e theo hệ số IPCC, xuất lớp GeoTIFF/Shapefile kèm bảng sai số kỹ thuật (R², RMSE).</p>
+          </div>
+        </div>
+
+        <!-- 3 Core Capabilities -->
+        <div class="feature-card-grid reveal-stagger" style="margin-top: var(--space-12);">
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <h3 class="feature-card__title">Khảo sát phủ kín bằng UAV LiDAR</h3>
+            <p class="feature-card__body">
+              Thu thập cấu trúc 3D tán rừng phủ kín diện tích; thiết bị tham chiếu dòng Zenmuse L2 đo chuẩn với nhiều xung hồi để xuyên thấu tán rừng nhiệt đới.
+            </p>
+            <span class="feature-card__badge">VERIFIED (SRC-17, SRC-22)</span>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="feature-card__title">Tách cây đơn lẻ & Cảm biến đa phổ</h3>
+            <p class="feature-card__body">
+              Bóc tách vị trí, chiều cao, diện tích tán từng cây và phân loại theo trạng thái/loài rừng để giảm thiểu sai số mô hình (áp dụng từ gói Level 2).
+            </p>
+            <span class="feature-card__badge">VERIFIED (SRC-18, SRC-19)</span>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M7 17V13M12 17V9M17 17V7" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="feature-card__title">Mô hình hóa AGB bằng Machine Learning</h3>
+            <p class="feature-card__body">
+              Kết hợp biến trích xuất từ LiDAR với dữ liệu ô tiêu chuẩn mặt đất qua mô hình học máy và phương trình allometric; quy đổi tCO2e theo hệ số IPCC.
+            </p>
+            <span class="feature-card__badge">VERIFIED (SRC-13, SRC-17, SRC-18)</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. Interactive 3D Section (S05) ── -->
+    <section id="interactive-3d" class="section section--dark" aria-label="Mô hình 3D tương tác">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div class="tag-badge">TRỰC QUAN HÓA KHOA HỌC DỮ LIỆU</div>
+          <h2 class="section-heading__title">Bản đồ trữ lượng carbon số hóa theo từng lô rừng</h2>
+          <p class="section-heading__subtitle">
+            Trải nghiệm trực quan 5 trạng thái chuyển đổi dữ liệu: từ địa hình DTM đồi núi, chùm quét LiDAR, cấu trúc tán CHM đến bản đồ phân vùng trữ lượng carbon theo lô.
+          </p>
+        </div>
+
+        <div class="viewer-3d reveal">
+          <div id="viewer-3d-canvas" class="viewer-3d__canvas"></div>
+
+          <!-- 5-State Switcher Toolbar -->
+          <div class="viewer-3d__toolbar" role="toolbar" aria-label="Chuyển đổi trạng thái 3D">
+            <button type="button" class="viewer-3d__btn active" data-state="A">01 Địa hình (DTM)</button>
+            <button type="button" class="viewer-3d__btn" data-state="B">02 Quét LiDAR</button>
+            <button type="button" class="viewer-3d__btn" data-state="C">03 Tán CHM</button>
+            <button type="button" class="viewer-3d__btn" data-state="D">04 Sinh khối AGB</button>
+            <button type="button" class="viewer-3d__btn" data-state="E">05 Bản đồ Carbon GIS</button>
+          </div>
+
+          <div class="viewer-3d__hint">Kéo chuột để xoay ở bước 05 • Rê chuột vào lô để xem chỉ số</div>
+
+          <!-- Color Ramp Legend Component -->
+          <div class="map-legend" role="img" aria-label="Thang đo nồng độ carbon">
+            <div class="map-legend__bar"></div>
+            <div class="map-legend__labels">
+              <span>Thấp (Phục hồi)</span>
+              <span>Cao (Bảo tồn)</span>
+            </div>
+            <span class="map-legend__unit">Trữ lượng (tCO2e/ha)</span>
+          </div>
+
+          <!-- Tooltip HUD for Parcel Hover -->
+          <div id="scene-tooltip" class="tooltip" role="tooltip">
+            <div class="tooltip__title" id="hud-title">Lô rừng</div>
+            <div class="tooltip__sub" id="hud-type">Trạng thái rừng</div>
+            <div class="tooltip__value" id="hud-val">0.0 tCO2e/ha</div>
+            <div class="tooltip__metrics" id="hud-metrics">R²: 0.0 | RMSE: 0.0%</div>
+          </div>
+
+          <!-- WebGL Fallback -->
+          <div id="viewer-fallback" style="display: none; padding: 3rem; text-align: center;">
+            <p>Trình duyệt không hỗ trợ WebGL. Hiển thị ảnh trích xuất từ dữ liệu GeoTIFF chuẩn hóa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. Workflow (S07) ── -->
+    <section id="workflow" class="section section--darker" aria-label="Quy trình triển khai">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">QUY TRÌNH 5 BƯỚC</div>
+          <h2 class="section-heading__title">Từ Chuẩn bị pháp lý đến Bàn giao dữ liệu số</h2>
+          <p class="section-heading__subtitle">
+            Quy trình kỹ thuật được chuẩn hóa bảo đảm sự đồng bộ tuyệt đối giữa đội bay viễn thám và đội ngoại nghiệp đo đếm mặt đất.
+          </p>
+        </div>
+
+        <ol class="process-steps reveal" role="list">
+          <li class="process-step active">
+            <div class="process-step__marker"><span class="process-step__number">01</span></div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Chuẩn bị & Pháp lý</h3>
+              <p class="process-step__body">Tiếp nhận ranh giới lô dạng số, khảo sát hiện trường và hoàn tất thủ tục cấp phép bay theo quy định của Nghị định 288/2025/NĐ-CP.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="process-step__marker"><span class="process-step__number">02</span></div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Thiết kế Kỹ thuật</h3>
+              <p class="process-step__body">Thiết kế tuyến bay UAV bảo đảm độ phủ dọc/ngang và mật độ điểm; thiết lập mạng lưới ô tiêu chuẩn đo đếm mặt đất (D1.3, Hvn).</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="process-step__marker"><span class="process-step__number">03</span></div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Thu thập Đồng thời</h3>
+              <p class="process-step__body">Bay quét UAV LiDAR/RGB phủ kín khu vực song song với đội ngoại nghiệp đo đạc ô tiêu chuẩn thực địa tại các tọa độ đại diện.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="process-step__marker"><span class="process-step__number">04</span></div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">Xử lý & Mô hình hóa</h3>
+              <p class="process-step__body">Phân loại đám mây điểm, tạo DTM/DSM/CHM, tách cây đơn lẻ và chạy mô hình học máy kết hợp phương trình sinh khối allometric.</p>
+            </div>
+          </li>
+          <li class="process-step">
+            <div class="process-step__marker"><span class="process-step__number">05</span></div>
+            <div class="process-step__content">
+              <h3 class="process-step__title">QA/QC & Bàn giao</h3>
+              <p class="process-step__body">Đánh giá sai số độc lập (R², RMSE), xuất bản đồ số GIS (raster GeoTIFF, shapefile) và báo cáo kỹ thuật hoàn chỉnh.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── 6. Use Cases (S06) ── -->
+    <section class="section section--dark" aria-label="Trường hợp sử dụng">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">TÌNH HUỐNG ỨNG DỤNG</div>
+          <h2 class="section-heading__title">Giải pháp thích ứng cho các mục tiêu quản lý rừng</h2>
+          <p class="section-heading__subtitle">
+            Cung cấp dữ liệu định lượng phục vụ chủ rừng, nhà đầu tư phát triển dự án và cơ quan quản lý nhà nước.
+          </p>
+        </div>
+
+        <div class="feature-card-grid reveal-stagger">
+          <article class="feature-card feature-card--usecase reveal">
+            <h3 class="feature-card__title">Lập bản đồ trữ lượng carbon nền (Baseline)</h3>
+            <p class="feature-card__body">
+              Chủ rừng chuẩn bị đăng ký dự án carbon theo Nghị định 180/2026/NĐ-CP nhưng chưa có số liệu baseline đáng tin cậy trên toàn bộ diện tích.
+            </p>
+            <div class="feature-card__output">
+              <strong>Output chính:</strong> Bản đồ trữ lượng carbon theo lô (tấn C/ha, tCO2e/ha) kèm bảng sai số làm mốc tham chiếu ban đầu.
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--usecase reveal">
+            <h3 class="feature-card__title">Sàng lọc tiềm năng carbon vùng rừng</h3>
+            <p class="feature-card__body">
+              Nhà đầu tư hoặc chủ rừng cần đánh giá nhanh tiềm năng hấp thụ và phân bố không gian trước khi quyết định đầu tư kinh phí dự án lớn.
+            </p>
+            <div class="feature-card__output">
+              <strong>Output chính:</strong> Báo cáo ước tính trữ lượng và phân bố không gian trên phạm vi đại diện phục vụ quyết định đầu tư.
+            </div>
+          </article>
+
+          <article class="feature-card feature-card--usecase reveal">
+            <h3 class="feature-card__title">Giám sát biến động sinh khối định kỳ</h3>
+            <p class="feature-card__body">
+              Dự án carbon đã đi vào vận hành, cần theo dõi biến động sinh khối và tốc độ tích lũy carbon thực tế sau mỗi chu kỳ tăng trưởng.
+            </p>
+            <div class="feature-card__output">
+              <strong>Output chính:</strong> Bản đồ biến động trữ lượng, chỉ số hấp thụ (tCO2e/ha/năm) và GIS dashboard theo dõi đa kỳ (Level 3).
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. Service Levels (S08) ── -->
+    <section id="service-levels" class="section section--darker" aria-label="Các gói dịch vụ">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">CẤP ĐỘ DỊCH VỤ</div>
+          <h2 class="section-heading__title">Ba gói dịch vụ phù hợp từng giai đoạn dự án</h2>
+          <p class="section-heading__subtitle">
+            Cấu trúc linh hoạt từ khảo sát nền ban đầu đến hệ thống giám sát hấp thụ đa kỳ định kỳ 2–3 năm.
+          </p>
+        </div>
+
+        <div class="sl-card-grid reveal-stagger">
+          <article class="sl-card reveal">
+            <span class="sl-card__badge sl-card__badge--1">Level 1</span>
+            <h3 class="sl-card__title">Bản đồ Carbon Nền</h3>
+            <p class="sl-card__subtitle">01 kỳ bay • UAV LiDAR + RGB</p>
+            <ul class="sl-card__features">
+              <li>Xuất mô hình độ cao số (DTM, DSM, CHM)</li>
+              <li>Lập bản đồ trữ lượng carbon theo lô (tấn C/ha, tCO2e/ha)</li>
+              <li>Bảng sai số kỹ thuật minh bạch (R², RMSE)</li>
+              <li>Báo cáo phương pháp luận chuyển giao</li>
+            </ul>
+            <p class="sl-card__pricing">Liên hệ tư vấn / Theo chính sách</p>
+            <a href="#lead" class="btn btn--ghost btn--sm">Tư vấn Gói Level 1</a>
+          </article>
+
+          <article class="sl-card reveal" style="border-color: var(--color-accent-lidar);">
+            <span class="sl-card__badge sl-card__badge--2">Level 2</span>
+            <h3 class="sl-card__title">Bản đồ Chi tiết Cây đơn lẻ</h3>
+            <p class="sl-card__subtitle">01 kỳ bay • LiDAR + RGB + Đa phổ</p>
+            <ul class="sl-card__features">
+              <li>Toàn bộ sản phẩm bàn giao thuộc Level 1</li>
+              <li>Bổ sung cảm biến viễn thám đa phổ (Multispectral)</li>
+              <li>Trích xuất lớp không gian cây đơn lẻ (vị trí, tán, Hvn)</li>
+              <li>Phân tầng trạng thái/loài rừng giảm thiểu sai số</li>
+            </ul>
+            <p class="sl-card__pricing">Liên hệ tư vấn / Theo chính sách</p>
+            <a href="#lead" class="btn btn--primary btn--sm">Tư vấn Gói Level 2</a>
+          </article>
+
+          <article class="sl-card reveal">
+            <span class="sl-card__badge sl-card__badge--3">Level 3</span>
+            <h3 class="sl-card__title">Giám sát Hấp thụ Đa kỳ</h3>
+            <p class="sl-card__subtitle">Đa kỳ bay • Chu kỳ khuyến nghị 2–3 năm</p>
+            <ul class="sl-card__features">
+              <li>Toàn bộ sản phẩm bàn giao thuộc Level 2</li>
+              <li>Bay lặp giữ nguyên tham số bay và mùa vật hậu</li>
+              <li>Bản đồ số biến động sinh khối và trữ lượng</li>
+              <li>Tính toán tốc độ hấp thụ (tCO2e/ha/năm) & GIS dashboard</li>
+            </ul>
+            <p class="sl-card__pricing">Liên hệ tư vấn / Theo chính sách</p>
+            <a href="#lead" class="btn btn--ghost btn--sm">Tư vấn Gói Level 3</a>
+          </article>
+        </div>
+
+        <p style="margin-top: var(--space-8); font-size: var(--text-sm); color: var(--color-base-500); text-align: center;">
+          * Hạng mục cộng thêm (Add-on): Chuẩn hóa hồ sơ dữ liệu cho tư vấn MRV, mở rộng vùng phủ bằng ảnh vệ tinh Sentinel-1/Sentinel-2, mở rộng số ô ground-truth, lưu trữ và hosting WebGIS.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── 8. Deliverables (S09) ── -->
+    <section id="deliverables" class="section section--dark" aria-label="Sản phẩm bàn giao">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">DỮ LIỆU ĐẦU RA</div>
+          <h2 class="section-heading__title">Danh mục sản phẩm bàn giao số hóa chuẩn GIS</h2>
+          <p class="section-heading__subtitle">
+            Dữ liệu có tọa độ chuẩn xác, dễ dàng tích hợp vào hệ thống GIS của đơn vị quản lý hoặc chuyển tiếp cho đơn vị tư vấn MRV.
+          </p>
+        </div>
+
+        <div class="deliverables-grid reveal-stagger">
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">GeoTIFF RASTER</span>
+            </div>
+            <h4 class="deliv-card__title">Mô hình số địa hình & Chiều cao tán (DTM/DSM/CHM)</h4>
+            <p class="deliv-card__desc">Mô hình số bề mặt tán, địa hình mặt đất và độ cao tán cây ở độ phân giải cao, bóc tách cấu trúc 3D lâm phần.</p>
+          </div>
+
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">GeoTIFF + SHAPEFILE</span>
+            </div>
+            <h4 class="deliv-card__title">Bản đồ Sinh khối AGB & Trữ lượng Carbon theo lô</h4>
+            <p class="deliv-card__desc">Lớp bản đồ phân bố sinh khối trên mặt đất và trữ lượng carbon (tấn C/ha và tCO2e/ha) theo từng lô rừng có mã định danh.</p>
+          </div>
+
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">BÁO CÁO KỸ THUẬT</span>
+            </div>
+            <h4 class="deliv-card__title">Báo cáo Phương pháp luận & Bảng sai số</h4>
+            <p class="deliv-card__desc">Tài liệu kỹ thuật trình bày phương pháp, phương trình allometric áp dụng, phân tích độ tin cậy và bảng chỉ số sai số (R², RMSE).</p>
+          </div>
+
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">LAS / LAZ CHUẨN</span>
+            </div>
+            <h4 class="deliv-card__title">Đám mây điểm LiDAR đã phân loại</h4>
+            <p class="deliv-card__desc">Dữ liệu mây điểm 3D sau khi lọc nhiễu và phân loại điểm mặt đất (ground) và điểm tán cây (canopy returns).</p>
+          </div>
+
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">VECTOR LAYER (L2+)</span>
+            </div>
+            <h4 class="deliv-card__title">Lớp Cây đơn lẻ & Phân tầng sinh thái</h4>
+            <p class="deliv-card__desc">Tọa độ tâm cây, chiều cao vút ngọn và diện tích tán từng cây trích xuất từ dữ liệu đa phổ và LiDAR.</p>
+          </div>
+
+          <div class="deliv-card reveal">
+            <div class="deliv-card__header">
+              <span class="deliv-card__badge">WEBGIS DASHBOARD (L3)</span>
+            </div>
+            <h4 class="deliv-card__title">Bản đồ Biến động & Giám sát Hấp thụ</h4>
+            <p class="deliv-card__desc">Lớp bản đồ so sánh hai kỳ đo, thể hiện biến động tăng/giảm trữ lượng và tốc độ hấp thụ (tCO2e/ha/năm).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 9. Positioning & Explicit MRV Boundary (S10) ── -->
+    <section id="positioning" class="section section--darker" aria-label="Định vị và Ranh giới MRV">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div class="tag-badge">ĐỊNH VỊ DỊCH VỤ</div>
+          <h2 class="section-heading__title">Nền tảng đo đạc độc lập trong chuỗi dự án carbon</h2>
+          <p class="section-heading__subtitle">
+            Dịch vụ nằm ở khâu đo đạc - lượng hóa đầu chuỗi theo Nghị định 180/2026/NĐ-CP, cung cấp dữ liệu số hóa tin cậy cho các bên tư vấn và thẩm định độc lập.
+          </p>
+        </div>
+
+        <div class="feature-card-grid reveal-stagger">
+          <article class="feature-card reveal">
+            <h3 class="feature-card__title">Vị thế kỹ thuật đầu chuỗi dự án</h3>
+            <p class="feature-card__body">
+              Tập trung chuyên sâu vào công tác khảo sát viễn thám và thiết lập cơ sở dữ liệu số hóa, tạo tiền đề chuẩn xác cho bước lập văn kiện dự án PDD.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <h3 class="feature-card__title">Kết hợp chặt chẽ Viễn thám & Thực địa</h3>
+            <p class="feature-card__body">
+              Không dựa vào ảnh vệ tinh hoặc viễn thám thuần túy mà luôn tích hợp mạng lưới ô tiêu chuẩn mặt đất để hiệu chuẩn mô hình allometric khoa học.
+            </p>
+          </article>
+
+          <article class="feature-card reveal">
+            <h3 class="feature-card__title">Minh bạch sai số & Khả năng so sánh</h3>
+            <p class="feature-card__body">
+              Công bố minh bạch chỉ số sai số kỹ thuật kỳ đo (R², RMSE); chuẩn hóa tham số bay cho phép so sánh nhất quán giữa các chu kỳ giám sát đa năm.
+            </p>
+          </article>
+        </div>
+
+        <!-- MANDATORY MRV BOUNDARY CALLOUT -->
+        <div class="mrv-callout reveal">
+          <h3 class="mrv-callout__title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Tuyên bố Ranh giới Đo lường Kỹ thuật & Báo cáo Thẩm định MRV
+          </h3>
+          <p class="mrv-callout__body">
+            Nghị định 180/2026/NĐ-CP quy định quy trình gồm đăng ký dự án, đo đạc – báo cáo và thẩm định độc lập. Dịch vụ S0285-S0287 cung cấp <strong>gói dữ liệu đo đạc kỹ thuật đầu vào có tọa độ chuẩn xác và bảng sai số minh bạch</strong> cho chuỗi thủ tục đó. Kết quả đầu ra của dịch vụ là công cụ kỹ thuật hỗ trợ ra quyết định và lập hồ sơ, <strong>không thay thế báo cáo thẩm định độc lập (Validation/Verification Report)</strong> của tổ chức được chỉ định thẩm định theo quy định.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 10. FAQ (S11) ── -->
+    <section id="faq" class="section section--dark" aria-label="Câu hỏi thường gặp">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div class="tag-badge">GIẢI ĐÁP KỸ THUẬT</div>
+          <h2 class="section-heading__title">Câu hỏi thường gặp</h2>
+          <p class="section-heading__subtitle">
+            Các vấn đề kỹ thuật trọng tâm liên quan đến phương pháp đo viễn thám, ô tiêu chuẩn và pháp lý carbon rừng.
+          </p>
+        </div>
+
+        <div class="accordion reveal" role="list">
+          <div class="accordion__item" role="listitem">
+            <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+              <span class="accordion__question">Dịch vụ đo được những bể carbon nào trong rừng?</span>
+              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+            </button>
+            <div class="accordion__panel" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" hidden>
+              <p class="accordion__answer">
+                Dịch vụ đo lường sinh khối trên mặt đất (Above-Ground Biomass - AGB). Các bể carbon dưới mặt đất (rễ cây), gỗ chết, thảm mục và carbon hữu cơ trong đất không đo được trực tiếp bằng phương pháp UAV LiDAR này mà cần phối hợp các phương pháp điều tra chuyên sâu khác nếu dự án yêu cầu tính toán toàn diện 5 bể.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+              <span class="accordion__question">Kết quả đo đạc của dịch vụ có thay thế được báo cáo thẩm định MRV không?</span>
+              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+            </button>
+            <div class="accordion__panel" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" hidden>
+              <p class="accordion__answer">
+                Không. Nghị định 180/2026/NĐ-CP yêu cầu chuỗi đăng ký dự án, đo đạc – báo cáo và qua thẩm định độc lập; dịch vụ cung cấp gói dữ liệu đo đạc kỹ thuật đầu vào có tọa độ và bảng sai số chuẩn hóa cho chuỗi thủ tục đó. Đơn vị phát triển dự án sẽ dùng bộ dữ liệu này nộp cho cơ quan thẩm định độc lập.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+              <span class="accordion__question">Tại sao đã ứng dụng công nghệ UAV LiDAR hiện đại mà vẫn cần đo ô tiêu chuẩn mặt đất?</span>
+              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+            </button>
+            <div class="accordion__panel" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" hidden>
+              <p class="accordion__answer">
+                Cảm biến LiDAR thu nhận cấu trúc tán đứng và chiều cao cây rất chuẩn xác, nhưng không thể đo trực tiếp được đường kính thân cây tại vị trí 1.3m (D1.3) bị che khuất dưới tán rậm nhiệt đới. Do đó, việc đo đếm ô tiêu chuẩn thực địa là bắt buộc để hiệu chuẩn phương trình sinh khối allometric khoa học.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion__item" role="listitem">
+            <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+              <span class="accordion__question">Chu kỳ bay lặp để giám sát biến động trữ lượng carbon khuyến nghị là bao lâu?</span>
+              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+            </button>
+            <div class="accordion__panel" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" hidden>
+              <p class="accordion__answer">
+                Chu kỳ khuyến nghị từ 2 – 3 năm trở lên, nhằm đảm bảo lượng tăng trưởng sinh khối thực tế của rừng đủ lớn để vượt qua khoảng sai số kỹ thuật của phép đo mô hình, đồng thời giúp tiết kiệm chi phí giám sát định kỳ cho chủ rừng.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 11. AI Assistant Widget (S12) ── -->
+    <section id="ai-agent" class="section section--darker" aria-label="Trợ lý AI chuyên môn">
+      <div class="container">
+        <div class="section-heading section-heading--center reveal">
+          <div class="tag-badge">TỰ PHỤC VỤ KỸ THUẬT</div>
+          <h2 class="section-heading__title">Hỏi Trợ lý AI Tư vấn Carbon Rừng GASCOLAE</h2>
+          <p class="section-heading__subtitle">
+            Hỗ trợ giải đáp nhanh về nguyên lý kỹ thuật, các cấp độ gói dịch vụ và quy trình triển khai dựa trên cơ sở tri thức đã kiểm chứng.
+          </p>
+        </div>
+
+        <div class="ai-widget reveal">
+          <div class="ai-widget__header">
+            <div class="ai-widget__title-group">
+              <svg class="ai-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>
+              <span class="ai-widget__name">Trợ lý AI Tư vấn Carbon Rừng GASCOLAE</span>
+            </div>
+            <span class="ai-widget__status">● Đang trực tuyến</span>
+          </div>
+
+          <div class="ai-widget__messages" role="log" aria-live="polite">
+            <div class="ai-msg ai-msg--bot">
+              Xin chào! Tôi là Trợ lý AI chuyên môn của GASCOLAE về dịch vụ Đánh giá và lập bản đồ hấp thụ carbon trong sinh khối rừng (S0285-S0287). Tôi có thể hỗ trợ giải đáp về nguyên lý kỹ thuật, các cấp độ dịch vụ và quy trình triển khai.
+            </div>
+          </div>
+
+          <div class="ai-widget__chips" aria-label="Câu hỏi gợi ý">
+            <button type="button" class="ai-chip">Công nghệ ứng dụng & vấn đề giải quyết?</button>
+            <button type="button" class="ai-chip">Khác biệt giữa Level 1, Level 2 và Level 3?</button>
+            <button type="button" class="ai-chip">Vì sao đã bay LiDAR vẫn cần ô tiêu chuẩn?</button>
+            <button type="button" class="ai-chip">Bản đồ carbon có thay thế báo cáo MRV không?</button>
+          </div>
+
+          <form class="ai-widget__input-area" aria-label="Gửi câu hỏi">
+            <input type="text" class="ai-widget__input" placeholder="Nhập câu hỏi kỹ thuật cần giải đáp..." aria-label="Câu hỏi kỹ thuật">
+            <button type="submit" class="btn btn--primary btn--sm">Gửi</button>
+          </form>
+
+          <div class="ai-widget__foot">
+            <p class="ai-widget__disclaimer">
+              AI tuân thủ nghiêm ngặt Prompt Library: Không tự ý báo giá chi tiết, không cam kết độ chính xác tuyệt đối ngoài nguồn tham chiếu, không đưa ra kết luận pháp lý thay cơ quan nhà nước.
+            </p>
+            <a href="#lead" class="btn btn--ghost btn--sm">Gặp Chuyên Gia Tư Vấn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 12. Lead CTA Section (S13) ── -->
+    <section id="lead" class="section section--contrast" aria-label="Đăng ký tư vấn">
+      <div class="container">
+        <div class="lead__grid">
+          <div class="lead__copy reveal">
+            <div class="tag-badge">KHỞI ĐỘNG DỰ ÁN</div>
+            <h2>Khởi động Lượng hóa và Số hóa Bể Hấp thụ Carbon Rừng Ngay Hôm Nay</h2>
+            <p>
+              Để lại thông tin về khu rừng cần khảo sát để nhận phương án kỹ thuật sơ bộ và tư vấn chuyên sâu từ đội ngũ kỹ sư viễn thám và chuyên gia lâm nghiệp GASCOLAE.
+            </p>
+            <p style="font-size: var(--text-sm); color: var(--color-base-500);">
+              Phản hồi kỹ thuật trong vòng 1 ngày làm việc • Tiếp nhận ranh giới số và tư vấn phân tầng gói dịch vụ phù hợp.
+            </p>
+          </div>
+
+          <div>
+            <form class="lead__form reveal" novalidate>
+              <div class="lead__field">
+                <label for="lead-name" class="lead__label">Họ và tên <span style="color: var(--color-accent-high);">*</span></label>
+                <input type="text" id="lead-name" name="name" required class="lead__input" placeholder="Nguyễn Văn A" autocomplete="name">
+              </div>
+
+              <div class="lead__field">
+                <label for="lead-org" class="lead__label">Cơ quan / Đơn vị chủ rừng <span style="color: var(--color-accent-high);">*</span></label>
+                <input type="text" id="lead-org" name="organization" required class="lead__input" placeholder="Ban quản lý rừng phòng hộ / Công ty lâm nghiệp..." autocomplete="organization">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                <div class="lead__field">
+                  <label for="lead-phone" class="lead__label">Số điện thoại <span style="color: var(--color-accent-high);">*</span></label>
+                  <input type="tel" id="lead-phone" name="phone" required class="lead__input" placeholder="0901234567" autocomplete="tel">
+                </div>
+                <div class="lead__field">
+                  <label for="lead-email" class="lead__label">Email</label>
+                  <input type="email" id="lead-email" name="email" class="lead__input" placeholder="contact@domain.vn" autocomplete="email">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+                <div class="lead__field">
+                  <label for="lead-location" class="lead__label">Địa điểm khu rừng</label>
+                  <input type="text" id="lead-location" name="location" class="lead__input" placeholder="Tỉnh / Huyện...">
+                </div>
+                <div class="lead__field">
+                  <label for="lead-area" class="lead__label">Ước tính diện tích (ha)</label>
+                  <input type="number" id="lead-area" name="area_ha" class="lead__input" placeholder="Ví dụ: 500" min="1">
+                </div>
+              </div>
+
+              <fieldset class="lead__fieldset">
+                <legend class="lead__label">Mục tiêu dự án chính</legend>
+                <div class="lead__radio-group">
+                  <label class="lead__radio">
+                    <input type="radio" name="goal" value="carbon" checked> Lập dự án carbon rừng
+                  </label>
+                  <label class="lead__radio">
+                    <input type="radio" name="goal" value="valuation"> Định giá rừng & lâm sinh
+                  </label>
+                  <label class="lead__radio">
+                    <input type="radio" name="goal" value="esg"> Báo cáo ESG / Net-zero
+                  </label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn--primary btn--responsive-full" style="margin-top: var(--space-2);">
+                Gửi Yêu Cầu Khảo Sát & Tư Vấn
+              </button>
+
+              <p class="lead__privacy">
+                Mọi thông tin ranh giới lô rừng và hồ sơ khách hàng cung cấp được bảo mật theo chính sách bảo mật thông tin dự án.
+              </p>
+            </form>
+
+            <div class="lead__success" hidden>
+              <h3>Yêu cầu khảo sát đã được gửi thành công!</h3>
+              <p style="color: var(--color-base-300);">
+                Bộ phận Tư vấn Kỹ thuật Lâm nghiệp & Kinh doanh GASCOLAE sẽ liên hệ trực tiếp trong vòng 1 ngày làm việc để tiếp nhận dữ liệu ranh giới và xây dựng phương án bay quét.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div style="display: flex; align-items: center; gap: var(--space-3);">
+        <img src="../assets/GASCOLAE.svg" alt="GASCOLAE" width="100" height="24">
+        <span>| Nền tảng Dịch vụ Số & AI • Service S0285-S0287</span>
+      </div>
+      <div>
+        <span>Đo đạc & Lập bản đồ carbon sinh khối rừng bằng UAV LiDAR</span>
+      </div>
+      <div>
+        <span>Bảo mật theo chính sách dự án • Tuân thủ Nghị định 180/2026/NĐ-CP</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Main JavaScript ── -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

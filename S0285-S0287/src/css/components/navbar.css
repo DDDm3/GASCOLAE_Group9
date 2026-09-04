@@ -1,0 +1,297 @@
+/* ── Navbar 3-Zone Architecture ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: rgba(8, 13, 16, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-base-800);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: transform var(--duration-normal) var(--ease-out);
+  will-change: transform;
+}
+
+.navbar--hidden {
+  transform: translateY(-100%);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* Zone 1: Brand & Service ID */
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__logo img {
+  height: 26px;
+  width: auto;
+}
+
+.navbar__service-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-lidar);
+  background: rgba(0, 196, 232, 0.08);
+  border: 1px solid rgba(0, 196, 232, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+/* Zone 2: Navigation Links (>= 1280px) */
+.navbar__desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 20px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-base-300);
+  padding: var(--space-1) var(--space-2);
+  white-space: nowrap;
+  transition: color var(--duration-fast) ease;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--color-base-100);
+}
+
+/* Zone 3: Actions (CTA & Hamburger) */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.navbar__cta-desktop {
+  white-space: nowrap;
+  font-size: 0.82rem;
+  padding: 8px 16px;
+  min-height: 38px;
+}
+
+/* Hamburger Toggle Button */
+.navbar__toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--color-base-700);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.navbar__toggle:hover {
+  border-color: var(--color-accent-lidar);
+}
+
+.navbar__toggle-icon,
+.navbar__toggle-icon::before,
+.navbar__toggle-icon::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--color-base-100);
+  transition: transform var(--duration-normal) var(--ease-out);
+  position: absolute;
+}
+
+.navbar__toggle-icon { position: relative; }
+.navbar__toggle-icon::before { content: ''; top: -6px; left: 0; }
+.navbar__toggle-icon::after  { content: ''; top: 6px; left: 0; }
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon {
+  background: transparent;
+}
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon::before {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-icon::after {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* ── Breakpoint Rules for Header ── */
+@media (min-width: 1280px) {
+  .navbar__desktop-nav { display: flex; }
+  .navbar__toggle { display: none !important; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .navbar__desktop-nav { display: none !important; }
+  .navbar__cta-desktop { display: inline-flex !important; }
+  .navbar__toggle { display: flex !important; }
+}
+
+@media (max-width: 1023px) {
+  .navbar__desktop-nav { display: none !important; }
+  .navbar__cta-desktop { display: none !important; }
+  .navbar__toggle { display: flex !important; }
+}
+
+/* ── Independent Mobile Navigation Overlay Layer ── */
+.navbar__overlay[hidden] {
+  display: none !important;
+}
+
+.navbar__overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 13, 16, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  cursor: pointer;
+}
+
+/* ── Independent Mobile Navigation Drawer ── */
+.navbar__drawer[hidden] {
+  display: none !important;
+}
+
+.navbar__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(380px, 100vw);
+  height: 100vh;
+  height: 100dvh;
+  background: var(--color-base-900);
+  border-left: 1px solid var(--color-base-700);
+  z-index: calc(var(--z-modal) + 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 767px) {
+  .navbar__drawer {
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    border-left: none;
+  }
+}
+
+.navbar__drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-base-800);
+  flex-shrink: 0;
+  height: 64px;
+}
+
+.navbar__drawer-close {
+  background: transparent;
+  border: none;
+  color: var(--color-base-300);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
+.navbar__drawer-close:hover {
+  color: var(--color-accent-lidar);
+}
+
+.navbar__drawer-body {
+  padding: var(--space-6);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.navbar__drawer-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.navbar__drawer-link {
+  display: block;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-base-100);
+  padding: var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--color-base-800);
+  text-decoration: none;
+  white-space: normal;
+  transition: color var(--duration-fast) ease, padding-left var(--duration-fast) ease;
+}
+
+.navbar__drawer-link:hover {
+  color: var(--color-accent-lidar);
+  padding-left: var(--space-3);
+}
+
+.navbar__drawer-foot {
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-base-800);
+  background: var(--color-base-850);
+  flex-shrink: 0;
+}
+
+.btn--full-width {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  min-height: 48px;
+}
