@@ -8,10 +8,14 @@
   <meta name="keywords" content="bản đồ carbon rừng, trữ lượng carbon sinh khối rừng, UAV LiDAR rừng, tín chỉ carbon rừng, đo sinh khối AGB, mô hình chiều cao tán CHM, Nghị định 180/2026/NĐ-CP, dMRV carbon rừng">
   <link rel="canonical" href="/dich-vu/danh-gia-lap-ban-do-carbon-sinh-khoi-rung-uav-lidar">
 
-  <!-- Preconnect Fonts -->
+  <!-- Preconnect Fonts (P0-01: preconnect before any font request) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- P0-01: Font loaded from HTML <head> with display=swap — NOT via blocking @import in CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap">
 
+  <!-- P1-02: Preload hint for main stylesheet -->
+  <link rel="preload" href="./css/main.css" as="style">
   <!-- Stylesheet -->
   <link rel="stylesheet" href="./css/main.css">
 
@@ -27,13 +31,16 @@
 </head>
 <body>
 
+  <!-- P0-WG-01: Skip Navigation Link — first focusable element for keyboard users -->
+  <a href="#hero" class="skip-nav">Bỏ qua điều hướng, đến nội dung chính</a>
+
   <!-- ── Header / Navbar ── -->
   <header class="navbar" role="banner">
     <div class="container navbar__inner">
       <!-- Zone 1: Brand & Service ID -->
       <div class="navbar__brand">
         <a href="#hero" class="navbar__logo" aria-label="GASCOLAE - Về đầu trang">
-          <img src="../assets/GASCOLAE.svg" alt="GASCOLAE Logo" width="124" height="26">
+          <img src="../assets/GASCOLAE.svg" alt="GASCOLAE Logo" width="124" height="26" fetchpriority="high">
         </a>
         <span class="navbar__service-badge">S0285-S0287</span>
       </div>
@@ -233,8 +240,7 @@
         <!-- 3 Core Capabilities -->
         <div class="feature-card-grid reveal-stagger" style="margin-top: var(--space-12);">
           <article class="feature-card reveal">
-            <div class="feature-card__icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            <div class="feature-card__icon">`n              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
             </div>
             <h3 class="feature-card__title">Khảo sát phủ kín bằng UAV LiDAR</h3>
             <p class="feature-card__body">
@@ -244,8 +250,7 @@
           </article>
 
           <article class="feature-card reveal">
-            <div class="feature-card__icon">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div class="feature-card__icon">`n              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
             <h3 class="feature-card__title">Tách cây đơn lẻ & Cảm biến đa phổ</h3>
             <p class="feature-card__body">
@@ -255,8 +260,7 @@
           </article>
 
           <article class="feature-card reveal">
-            <div class="feature-card__icon">
-              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M7 17V13M12 17V9M17 17V7" stroke="currentColor" stroke-width="1.5"/></svg>
+            <div class="feature-card__icon">`n              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M7 17V13M12 17V9M17 17V7" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
             <h3 class="feature-card__title">Mô hình hóa AGB bằng Machine Learning</h3>
             <p class="feature-card__body">
@@ -280,7 +284,7 @@
         </div>
 
         <div class="viewer-3d reveal">
-          <div id="viewer-3d-canvas" class="viewer-3d__canvas"></div>
+          <div id="viewer-3d-canvas" class="viewer-3d__canvas" role="img" aria-label="Mô hình 3D tương tác: địa hình rừng, quét LiDAR, sinh khối AGB và bản đồ carbon GIS"></div>
 
           <!-- 5-State Switcher Toolbar -->
           <div class="viewer-3d__toolbar" role="toolbar" aria-label="Chuyển đổi trạng thái 3D">
@@ -291,7 +295,7 @@
             <button type="button" class="viewer-3d__btn" data-state="E">05 Bản đồ Carbon GIS</button>
           </div>
 
-          <div class="viewer-3d__hint">Kéo chuột để xoay ở bước 05 • Rê chuột vào lô để xem chỉ số</div>
+          <div class="viewer-3d__hint" aria-hidden="true">Kéo chuột để xoay ở bước 05 • Rê chuột vào lô để xem chỉ số</div>
 
           <!-- Color Ramp Legend Component -->
           <div class="map-legend" role="img" aria-label="Thang đo nồng độ carbon">
@@ -575,8 +579,7 @@
 
         <!-- MANDATORY MRV BOUNDARY CALLOUT -->
         <div class="mrv-callout reveal">
-          <h3 class="mrv-callout__title">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <h3 class="mrv-callout__title">`n            <svg aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             Tuyên bố Ranh giới Đo lường Kỹ thuật & Báo cáo Thẩm định MRV
           </h3>
           <p class="mrv-callout__body">
@@ -601,7 +604,7 @@
           <div class="accordion__item" role="listitem">
             <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
               <span class="accordion__question">Dịch vụ đo được những bể carbon nào trong rừng?</span>
-              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+              <svg class="accordion__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
             </button>
             <div class="accordion__panel" id="faq-ans-1" role="region" aria-labelledby="faq-q-1" hidden>
               <p class="accordion__answer">
@@ -613,7 +616,7 @@
           <div class="accordion__item" role="listitem">
             <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
               <span class="accordion__question">Kết quả đo đạc của dịch vụ có thay thế được báo cáo thẩm định MRV không?</span>
-              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+              <svg class="accordion__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
             </button>
             <div class="accordion__panel" id="faq-ans-2" role="region" aria-labelledby="faq-q-2" hidden>
               <p class="accordion__answer">
@@ -625,7 +628,7 @@
           <div class="accordion__item" role="listitem">
             <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
               <span class="accordion__question">Tại sao đã ứng dụng công nghệ UAV LiDAR hiện đại mà vẫn cần đo ô tiêu chuẩn mặt đất?</span>
-              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+              <svg class="accordion__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
             </button>
             <div class="accordion__panel" id="faq-ans-3" role="region" aria-labelledby="faq-q-3" hidden>
               <p class="accordion__answer">
@@ -637,7 +640,7 @@
           <div class="accordion__item" role="listitem">
             <button type="button" class="accordion__trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
               <span class="accordion__question">Chu kỳ bay lặp để giám sát biến động trữ lượng carbon khuyến nghị là bao lâu?</span>
-              <svg class="accordion__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
+              <svg class="accordion__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="5 8 10 13 15 8"/></svg>
             </button>
             <div class="accordion__panel" id="faq-ans-4" role="region" aria-labelledby="faq-q-4" hidden>
               <p class="accordion__answer">
@@ -663,7 +666,7 @@
         <div class="ai-widget reveal">
           <div class="ai-widget__header">
             <div class="ai-widget__title-group">
-              <svg class="ai-widget__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>
+              <svg class="ai-widget__icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>
               <span class="ai-widget__name">Trợ lý AI Tư vấn Carbon Rừng GASCOLAE</span>
             </div>
             <span class="ai-widget__status">● Đang trực tuyến</span>
@@ -683,7 +686,8 @@
           </div>
 
           <form class="ai-widget__input-area" aria-label="Gửi câu hỏi">
-            <input type="text" class="ai-widget__input" placeholder="Nhập câu hỏi kỹ thuật cần giải đáp..." aria-label="Câu hỏi kỹ thuật">
+            <label for="ai-input" class="sr-only">Câu hỏi kỹ thuật cần giải đáp</label>
+            <input type="text" id="ai-input" class="ai-widget__input" placeholder="Nhập câu hỏi kỹ thuật cần giải đáp..." aria-label="Câu hỏi kỹ thuật">
             <button type="submit" class="btn btn--primary btn--sm">Gửi</button>
           </form>
 
@@ -715,19 +719,22 @@
           <div>
             <form class="lead__form reveal" novalidate>
               <div class="lead__field">
-                <label for="lead-name" class="lead__label">Họ và tên <span style="color: var(--color-accent-high);">*</span></label>
-                <input type="text" id="lead-name" name="name" required class="lead__input" placeholder="Nguyễn Văn A" autocomplete="name">
+                <label for="lead-name" class="lead__label">Họ và tên <span style="color: var(--color-accent-high);" aria-hidden="true">*</span><span class="sr-only">(bắt buộc)</span></label>
+                <input type="text" id="lead-name" name="name" required class="lead__input" placeholder="Nguyễn Văn A" autocomplete="name" aria-describedby="lead-name-err">
+                <span id="lead-name-err" class="lead__error" role="alert" hidden>Vui lòng nhập họ và tên.</span>
               </div>
 
               <div class="lead__field">
-                <label for="lead-org" class="lead__label">Cơ quan / Đơn vị chủ rừng <span style="color: var(--color-accent-high);">*</span></label>
-                <input type="text" id="lead-org" name="organization" required class="lead__input" placeholder="Ban quản lý rừng phòng hộ / Công ty lâm nghiệp..." autocomplete="organization">
+                <label for="lead-org" class="lead__label">Cơ quan / Đơn vị chủ rừng <span style="color: var(--color-accent-high);" aria-hidden="true">*</span><span class="sr-only">(bắt buộc)</span></label>
+                <input type="text" id="lead-org" name="organization" required class="lead__input" placeholder="Ban quản lý rừng phòng hộ / Công ty lâm nghiệp..." autocomplete="organization" aria-describedby="lead-org-err">
+                <span id="lead-org-err" class="lead__error" role="alert" hidden>Vui lòng nhập tên cơ quan.</span>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
                 <div class="lead__field">
-                  <label for="lead-phone" class="lead__label">Số điện thoại <span style="color: var(--color-accent-high);">*</span></label>
-                  <input type="tel" id="lead-phone" name="phone" required class="lead__input" placeholder="0901234567" autocomplete="tel">
+                  <label for="lead-phone" class="lead__label">Số điện thoại <span style="color: var(--color-accent-high);" aria-hidden="true">*</span><span class="sr-only">(bắt buộc)</span></label>
+                  <input type="tel" id="lead-phone" name="phone" required class="lead__input" placeholder="0901234567" autocomplete="tel" aria-describedby="lead-phone-err">
+                  <span id="lead-phone-err" class="lead__error" role="alert" hidden>Vui lòng nhập số điện thoại.</span>
                 </div>
                 <div class="lead__field">
                   <label for="lead-email" class="lead__label">Email</label>
@@ -802,3 +809,4 @@
   <script type="module" src="./js/main.js"></script>
 </body>
 </html>
+

@@ -4,15 +4,17 @@
  */
 import * as THREE from 'three';
 import { CameraRig } from './camera.js';
-import { TerrainManager } from './terrain.js';
-import { ForestManager } from './forest.js';
 import { CarbonLayerManager } from './carbon-layer.js';
+import { ForestManager } from './forest.js';
+import { TerrainManager } from './terrain.js';
 
 export class ForestCarbonScene {
   constructor(container, options = {}) {
     this.container = container;
     this.options = Object.assign({
       reducedMotion: false,
+      isMobile: false,
+      pointCount: 45000,
       onParcelHover: null,
       onParcelClick: null,
       onFallback: null
@@ -45,17 +47,19 @@ export class ForestCarbonScene {
   }
 
   init() {
+    const isMobile = this.options.isMobile;
+
     // 1. Scene setup
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0x080d10);
     this.scene.fog = new THREE.FogExp2(0x080d10, 0.008);
 
-    // 2. Renderer setup
+    // 2. Renderer setup — P0-03: mobile gets antialias:false + DPR clamped to 1.0
     this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      antialias: !isMobile,
       powerPreference: 'high-performance'
     });
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.0 : 1.5);
     this.renderer.setPixelRatio(dpr);
     this.renderer.setSize(this.container.clientWidth, this.container.clientHeight || 500);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -74,9 +78,12 @@ export class ForestCarbonScene {
       reducedMotion: this.options.reducedMotion
     });
 
-    this.terrain = new TerrainManager(this.scene, { size: 80, segments: 100 });
-    this.forest = new ForestManager(this.scene, this.terrain, { count: 360 });
-    this.carbon = new CarbonLayerManager(this.scene, this.terrain, this.forest, { pointCount: 45000 });
+    this.terrain = new TerrainManager(this.scene, { size: 80, segments: isMobile ? 60 : 100 });
+    this.forest = new ForestManager(this.scene, this.terrain, { count: isMobile ? 180 : 360 });
+    // P0-02: Point count is passed from options — 12K mobile / 45K desktop
+    this.carbon = new CarbonLayerManager(this.scene, this.terrain, this.forest, {
+      pointCount: this.options.pointCount
+    });
 
     // 5. Raycasting for parcel interaction
     this.raycaster = new THREE.Raycaster();
@@ -84,12 +91,18 @@ export class ForestCarbonScene {
     this.hoveredParcel = null;
     this.setupInteractions();
 
-    // 6. Visibility observer
+    // 6. Visibility observer — P1-05: threshold 0.15 to avoid premature render start
     this.setupVisibilityObserver();
 
     // 7. Initial render & loop
     this.setState('A');
-    this.animate();
+
+    // P0-04: Do not start animation loop when prefers-reduced-motion is active
+    if (this.options.reducedMotion) {
+      this.renderer.render(this.scene, this.cameraRig.camera);
+    } else {
+      this.animate();
+    }
   }
 
   setupInteractions() {
@@ -134,11 +147,13 @@ export class ForestCarbonScene {
   setupVisibilityObserver() {
     this.intersectionObserver = new IntersectionObserver(([entry]) => {
       this.isVisible = entry.isIntersecting;
-      if (this.isVisible && !this.animationFrameId) {
+      // P1-05: Only restart loop if not in reduced-motion mode
+      if (this.isVisible && !this.animationFrameId && !this.options.reducedMotion) {
         this.lastTime = performance.now();
         this.animate();
       }
-    }, { threshold: 0.05 });
+    // P1-05: threshold 0.15 — only start rendering when 15% of the widget is visible
+    }, { threshold: 0.15 });
 
     this.intersectionObserver.observe(this.container);
   }

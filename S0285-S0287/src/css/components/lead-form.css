@@ -68,6 +68,22 @@
 .lead__input.error {
   border-color: var(--color-error);
 }
+/* P0-WG-03: aria-invalid visual style */
+.lead__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+/* P0-WG-03: Error message span */
+.lead__error {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+}
+/* P0-WG-03: Restore focus indicator on inputs (outline:none removed it) */
+.lead__input:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: none;
+}
 .lead__fieldset {
   border: none;
   display: flex;

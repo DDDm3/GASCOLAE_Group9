@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+/* P0-01: Google Fonts moved to HTML <head> <link rel="stylesheet"> to avoid render-blocking CSS @import */
 @import url('./tokens.css');
 @import url('./base.css');
 @import url('./components/navbar.css');
@@ -80,8 +80,15 @@
   .hero__eyebrow { order: 1; }
   .hero__headline { order: 2; }
   .hero__subheadline { order: 3; }
-  .hero__actions {
+  .hero__visual {
     order: 4;
+    width: 100%;
+    height: clamp(220px, 52vw, 300px);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  .hero__actions {
+    order: 5;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
@@ -91,13 +98,6 @@
     width: 100%;
     text-align: center;
     justify-content: center;
-  }
-  .hero__visual {
-    order: 5;
-    width: 100%;
-    height: clamp(220px, 52vw, 300px);
-    margin-top: var(--space-2);
-    margin-bottom: 0;
   }
 }
 

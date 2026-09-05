@@ -76,6 +76,26 @@ img, svg, video {
   outline-offset: 3px;
 }
 
+/* P0-WG-01: Skip Navigation Link */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-accent-lidar);
+  color: var(--color-base-950);
+  font-weight: var(--weight-bold);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-nav:focus {
+  top: 0;
+  outline: 2px solid var(--color-base-950);
+  outline-offset: 2px;
+}
+
 /* ── Utilities ── */
 .container {
   width: 100%;

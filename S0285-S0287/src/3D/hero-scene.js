@@ -838,15 +838,20 @@ export class HeroScene {
     if (this.laserRayMat) this.laserRayMat.opacity = laserRaysTargetOpacity;
     if (this.laserFootprintMat) this.laserFootprintMat.opacity = footprintTargetOpacity;
 
-    for (let i = 0; i < this.treeRecords.length; i++) {
-      const rec = this.treeRecords[i];
-      const blendedColor = rec.naturalColor.clone().lerp(rec.biomassColor, biomassBlendFactor);
-      rec.targetMesh.setColorAt(rec.instSubIdx, blendedColor);
+    // P1-03: Only upload instanceColor to GPU when biomassBlendFactor actually changes
+    const blendChanged = Math.abs(biomassBlendFactor - (this._lastBiomassBlend ?? -1)) > 0.001;
+    if (blendChanged) {
+      this._lastBiomassBlend = biomassBlendFactor;
+      for (let i = 0; i < this.treeRecords.length; i++) {
+        const rec = this.treeRecords[i];
+        const blendedColor = rec.naturalColor.clone().lerp(rec.biomassColor, biomassBlendFactor);
+        rec.targetMesh.setColorAt(rec.instSubIdx, blendedColor);
+      }
+      if (this.canopyMeshRegen.instanceColor) this.canopyMeshRegen.instanceColor.needsUpdate = true;
+      if (this.canopyMeshMid.instanceColor) this.canopyMeshMid.instanceColor.needsUpdate = true;
+      if (this.canopyMeshMature.instanceColor) this.canopyMeshMature.instanceColor.needsUpdate = true;
+      if (this.canopyMeshEmergent.instanceColor) this.canopyMeshEmergent.instanceColor.needsUpdate = true;
     }
-    if (this.canopyMeshRegen.instanceColor) this.canopyMeshRegen.instanceColor.needsUpdate = true;
-    if (this.canopyMeshMid.instanceColor) this.canopyMeshMid.instanceColor.needsUpdate = true;
-    if (this.canopyMeshMature.instanceColor) this.canopyMeshMature.instanceColor.needsUpdate = true;
-    if (this.canopyMeshEmergent.instanceColor) this.canopyMeshEmergent.instanceColor.needsUpdate = true;
 
     if (this.parcelGroup) {
       this.parcelGroup.children.forEach(child => {

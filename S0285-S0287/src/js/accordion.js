@@ -1,6 +1,6 @@
 export function initAccordion() {
-  const triggers = document.querySelectorAll('.accordion__trigger');
-  triggers.forEach(trigger => {
+  const triggers = Array.from(document.querySelectorAll('.accordion__trigger'));
+  triggers.forEach((trigger, idx) => {
     trigger.addEventListener('click', () => {
       const expanded = trigger.getAttribute('aria-expanded') === 'true';
       const panelId = trigger.getAttribute('aria-controls');
@@ -16,6 +16,20 @@ export function initAccordion() {
       if (!expanded && panel) {
         trigger.setAttribute('aria-expanded', 'true');
         panel.hidden = false;
+      }
+    });
+
+    // P1-WG-04: Arrow key navigation between accordion triggers (WAI-ARIA pattern)
+    trigger.addEventListener('keydown', (e) => {
+      let targetIdx = -1;
+      if (e.key === 'ArrowDown') { targetIdx = (idx + 1) % triggers.length; }
+      else if (e.key === 'ArrowUp') { targetIdx = (idx - 1 + triggers.length) % triggers.length; }
+      else if (e.key === 'Home') { targetIdx = 0; }
+      else if (e.key === 'End') { targetIdx = triggers.length - 1; }
+
+      if (targetIdx >= 0) {
+        e.preventDefault();
+        triggers[targetIdx].focus();
       }
     });
   });

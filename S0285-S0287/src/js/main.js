@@ -2,16 +2,20 @@
  * src/js/main.js
  * Landing Page Orchestrator & Multi-Scene 3D Viewport Binder
  */
-import { initNavbar } from './navbar.js';
-import { initAccordion } from './accordion.js';
-import { initProcessSteps } from './process-steps.js';
-import { initAiPanel } from './ai-panel.js';
-import { initLeadForm } from './lead-form.js';
-import { initReveal } from './reveal.js';
 import { HeroScene } from '../3d/hero-scene.js';
 import { ForestCarbonScene } from '../3d/scene.js';
+import { initAccordion } from './accordion.js';
+import { initAiPanel } from './ai-panel.js';
+import { initLeadForm } from './lead-form.js';
+import { initNavbar } from './navbar.js';
+import { initProcessSteps } from './process-steps.js';
+import { initReveal } from './reveal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Device capability detection (P0-02, P0-03, P0-04)
+  const isMobile = window.innerWidth < 768;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // 1. Initialize UI components
   initNavbar();
   initAccordion();
@@ -43,6 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (viewer3D) {
     interactiveScene = new ForestCarbonScene(viewer3D, {
+      // P0-02: Mobile gets 12K points instead of 45K — full 45K only on desktop
+      pointCount: isMobile ? 12000 : 45000,
+      // P0-03: Pass mobile flag for DPR clamping and antialias control
+      isMobile,
+      // P0-04: Respect prefers-reduced-motion
+      reducedMotion,
       onParcelHover: (parcel, e) => {
         if (parcel && hud) {
           hudTitle.innerText = parcel.name;
