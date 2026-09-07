@@ -1,0 +1,37 @@
+/* main.css */
+@import url('./tokens.css');
+@import url('./base.css');
+
+@import url('./components/navbar.css');
+@import url('./components/hero.css');
+@import url('./components/cards.css');
+@import url('./components/faq.css');
+@import url('./components/form.css');
+@import url('./components/agent.css');
+
+/* Custom Utility Classes */
+.text-gradient {
+  background: linear-gradient(135deg, var(--blue-600), var(--blue-800));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-soft {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-soft:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.bento-large { grid-column: span 2; }
+
+@media (max-width: 768px) {
+  .bento-large { grid-column: span 1; }
+  .card-soft { padding: 24px; }
+}

@@ -1,0 +1,38 @@
+/* tokens.css */
+:root {
+  /* Colors - Wing Style */
+  --bg-main: #f8f9fa; /* Off-white */
+  --bg-surface: #ffffff; /* White cards */
+  
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+  
+  --accent-yellow: #FFD500; /* Wing's vibrant yellow */
+  --accent-yellow-hover: #E5C000;
+  
+  --pastel-green: #D2EBE4; /* Soft green */
+  --pastel-yellow: #F0E5A8; /* Soft yellow */
+  --pastel-blue: #D9E8F5; /* Soft blue */
+  --pastel-red: #FCE8E8; /* Soft red for problems */
+  
+  --blue-900: #041e3d; /* GASCOLAE dark blue for branding */
+  --blue-800: #0b3b75;
+  --blue-600: #2563eb;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+  
+  /* Container */
+  --container-width: 1200px;
+  --section-spacing: 120px;
+}
