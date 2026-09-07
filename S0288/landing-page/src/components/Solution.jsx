@@ -8,10 +8,19 @@ export default function Solution() {
         <Reveal className="solution__intro">
           <span className="eyebrow">Giải pháp GASCOLAE</span>
           <h2 className="section-title section-title--upper">{solution.title}</h2>
-          <div className="solution__body">
-            {solution.paragraphs.map((text) => (
-              <p key={text.slice(0, 40)}>{text}</p>
-            ))}
+          <div className="solution__video-wrapper">
+            <video
+              className="solution__video"
+              controls
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="./UAV_video.mp4"
+            >
+              <source src="./UAV_video.mp4" type="video/mp4" />
+              Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
           </div>
         </Reveal>
 

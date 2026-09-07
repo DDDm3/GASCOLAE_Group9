@@ -96,18 +96,23 @@
   max-width: none;
 }
 
-.solution__body {
-  margin-top: 22px;
+.solution__video-wrapper {
+  margin-top: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  background: var(--blue-950);
+  position: relative;
 }
 
-.solution__body p + p {
-  margin-top: 18px;
+.solution__video {
+  width: 100%;
+  max-height: 520px;
+  display: block;
+  object-fit: cover;
 }
 
-.solution__body p {
-  font-size: 19.5px;
-  color: var(--ink-soft);
-}
 
 /* Bảng phạm vi dịch vụ: 2 cột (Bao gồm | Không bao gồm).
    Mỗi cột gồm ô tiêu đề và danh sách nằm cùng cột, nhờ vậy khi màn hình
