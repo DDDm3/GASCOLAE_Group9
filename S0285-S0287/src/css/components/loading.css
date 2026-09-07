@@ -1,0 +1,98 @@
+/* ── Section & Component Reveals ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-out),
+    transform var(--duration-reveal) var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Staggered Children for Grids ── */
+.reveal-stagger > *:nth-child(1) { transition-delay: 40ms; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 160ms; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 220ms; }
+.reveal-stagger > *:nth-child(5) { transition-delay: 280ms; }
+.reveal-stagger > *:nth-child(6) { transition-delay: 340ms; }
+
+/* ── Metric Highlight Animation on Scroll ── */
+.metric.visible .metric__value {
+  animation: metricGlow 600ms var(--ease-out) forwards;
+}
+
+@keyframes metricGlow {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── AI Incoming Message Motion ── */
+.ai-msg {
+  animation: msgSlideUp 250ms var(--ease-out) forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes msgSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Mobile Motion Optimization (Lighter & Faster) ── */
+@media (max-width: 767px) {
+  .reveal {
+    transform: translateY(10px);
+    transition-duration: 250ms;
+  }
+  .reveal-stagger > * {
+    transition-delay: 0ms !important;
+  }
+  .metric.visible .metric__value {
+    animation-duration: 300ms;
+  }
+}
+
+/* ── Strict Accessibility: Reduced Motion Override ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .metric.visible .metric__value {
+    animation: none !important;
+    transform: none !important;
+  }
+  .ai-msg {
+    animation: none !important;
+    transform: none !important;
+  }
+}

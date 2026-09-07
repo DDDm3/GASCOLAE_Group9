@@ -1,0 +1,72 @@
+.feature-card {
+  background: var(--color-base-900);
+  border: 1px solid var(--color-base-700);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color var(--duration-normal) ease, background var(--duration-normal) ease;
+  display: flex;
+  flex-direction: column;
+}
+.feature-card:hover {
+  border-color: var(--color-accent-lidar);
+  background: var(--color-base-850);
+}
+.feature-card__icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: var(--space-4);
+  color: var(--color-accent-lidar);
+}
+.feature-card__title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-3);
+}
+.feature-card__body {
+  font-size: var(--text-base);
+  color: var(--color-base-300);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+.feature-card__badge {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-base-500);
+  letter-spacing: var(--ls-wide);
+}
+
+/* Problem card variant */
+.feature-card--problem {
+  border-left: 3px solid var(--color-base-700);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.feature-card--problem:hover {
+  border-left-color: var(--color-accent-lidar);
+}
+.feature-card--problem .feature-card__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  color: var(--color-base-700);
+  margin-bottom: var(--space-2);
+}
+
+/* Use case card variant */
+.feature-card--usecase .feature-card__output {
+  border-left: 3px solid var(--color-accent-data);
+  background: var(--color-base-850);
+  padding: var(--space-3) var(--space-4);
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-base-300);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.feature-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+@media (max-width: 960px) {
+  .feature-card-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ UAV Giám sát Độ ẩm & Cảnh báo Cháy Đô thị | GASCOLAE</title>
+    <meta name="description" content="Ứng dụng UAV đo độ ẩm, ảnh nhiệt và đa phổ để lập bản đồ khô hạn, hỗ trợ cảnh báo hỏa hoạn cho lực lượng PCCC và quản lý đô thị.">
+    <meta name="keywords" content="UAV giám sát độ ẩm đô thị, UAV cảnh báo cháy đô thị, đo vi khí hậu UAV, thermal drone inspection, lập bản đồ khô hạn">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="./assets/GASCOLAE.svg" alt="GASCOLAE Logo" class="logo-img" style="height: 40px; transition: transform 0.2s ease;">
+                <!-- <span class="service-id badge">S0282</span> -->
+            </a>
+            <nav class="desktop-nav">
+                <a href="#overview">Tổng quan</a>
+                <a href="#benefits">Lợi ích</a>
+                <a href="#how-it-works">Quy trình</a>
+                <a href="#packages">Gói dịch vụ</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary">Đăng ký Khảo sát</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-elements">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <div class="badge premium-badge">Giám sát & Cảnh báo Sớm</div>
+                    <h1 class="headline">Giám sát Độ ẩm Đô thị & Cảnh báo Cháy bằng <span class="text-gradient">UAV</span></h1>
+                    <p class="sub-headline">Thu thập dữ liệu vi khí hậu, nhiệt và đa phổ từ UAV để lập bản đồ khô hạn, hỗ trợ phát hiện sớm nguy cơ hỏa hoạn tại các khu đô thị và nhà xưởng.</p>
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn btn--accent" style="border-radius: 999px; padding: 14px 32px; font-size: 16.5px;">Yêu cầu tư vấn</a>
+                        <a href="#packages" class="btn btn--ghost" style="border-radius: 999px; padding: 14px 32px; border: 2px solid rgba(255,255,255,0.25); font-size: 16.5px;">Xem các gói vi dịch vụ</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- UAV Scene: Hình ảnh 3D và giao diện quét radar sẽ được render bằng uav-scene.js -->
+                    <div class="uav-scene"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Customer Problems & 4. Key Benefits -->
+        <section id="overview" class="section problems-benefits-section">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <span class="eyebrow">Thực trạng & Giải pháp</span>
+                    <h2 class="section-title">Giải quyết thách thức quản lý rủi ro PCCC</h2>
+                    <p class="section-sub">Đột phá trong cách tiếp cận quản lý đô thị bằng dữ liệu không gian thời gian thực.</p>
+                </div>
+                
+                <div class="comparison-container" style="display: flex; flex-direction: column; gap: 24px;">
+                    <!-- Row 1 -->
+                    <div class="comparison-row">
+                        <!-- Thực trạng -->
+                        <div style="flex: 1; padding: 30px; background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-lg); box-shadow: none;">
+                            <span style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: var(--heat); margin-bottom: 15px; display: block;">Thực trạng</span>
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--heat); background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Quan trắc cố định không phản ánh đủ biến động</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Các điểm đo cố định trong đô thị không phản ánh đầy đủ sự thay đổi độ ẩm giữa các khu vực.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Giải pháp -->
+                        <div style="flex: 1; padding: 30px; background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius-lg); box-shadow: none;">
+                            <span style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; color: var(--green-600); margin-bottom: 15px; display: block;">Giải pháp</span>
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--green-600); background: rgba(34, 197, 94, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Dữ liệu độ ẩm có tính không gian</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Dữ liệu độ ẩm được vẽ bản đồ trên toàn khu vực thay vì chỉ ở vài điểm đo rời rạc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="comparison-row">
+                        <!-- Thực trạng -->
+                        <div style="flex: 1; padding: 30px; background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-lg); box-shadow: none;">
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--heat); background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Khó phát hiện sớm khu vực khô hạn cục bộ</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Kiểm tra thủ công tốn thời gian, khó phát hiện sớm khu vực khô hạn làm gia tăng rủi ro cháy.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Giải pháp -->
+                        <div style="flex: 1; padding: 30px; background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius-lg); box-shadow: none;">
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--green-600); background: rgba(34, 197, 94, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Phát hiện sớm khu vực khô hạn</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Cảnh báo nhanh chóng các điểm khô hạn nghiêm trọng trước cả các kỳ kiểm tra định kỳ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="comparison-row">
+                        <!-- Thực trạng -->
+                        <div style="flex: 1; padding: 30px; background: rgba(239, 68, 68, 0.04); border: 1px solid rgba(239, 68, 68, 0.15); border-radius: var(--radius-lg); box-shadow: none;">
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--heat); background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Nguồn lực PCCC hạn chế so với địa bàn</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Thiếu căn cứ dữ liệu định lượng nên thường phải kiểm tra dàn trải, không tập trung được vào trọng điểm.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Giải pháp -->
+                        <div style="flex: 1; padding: 30px; background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: var(--radius-lg); box-shadow: none;">
+                            <div style="display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="color: var(--green-600); background: rgba(34, 197, 94, 0.1); padding: 12px; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--ink-dark); margin-bottom: 8px; font-size: 17px; line-height: 1.4;">Hỗ trợ phân bổ nguồn lực kiểm tra</h4>
+                                    <p style="color: var(--ink-soft); font-size: 14.5px; line-height: 1.6;">Cung cấp danh sách khu vực ưu tiên giúp phân bổ lực lượng thanh tra PCCC hợp lý và hiệu quả nhất.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Solution / Service Overview (Banner) -->
+        <section class="section section--dark">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <h2 class="section-title text-white">Tổng quan giải pháp GASCOLAE</h2>
+                    <p class="section-sub mt-4" style="max-width: 900px; margin: 16px auto 0;">GASCOLAE đề xuất dịch vụ giám sát độ ẩm đô thị bằng <strong>UAV tích hợp cảm biến môi trường (RGB, multispectral, thermal)</strong>, kết hợp lấy mẫu ground-truth để tính chỉ số ẩm – khô hạn và xây dựng bản đồ phân vùng khô hạn. Phạm vi chính gồm khảo sát bay UAV theo khu vực xác định, xử lý và phân tích dữ liệu, xuất bản đồ, lớp GIS và danh sách khu vực ưu tiên kiểm tra PCCC. Kết quả giúp cơ quan quản lý có căn cứ dữ liệu định lượng để phân bổ nguồn lực kiểm tra.</p>
+                    <div style="background: rgba(255,122,26,0.15); border: 1px solid rgba(255,122,26,0.3); padding: 16px 24px; border-radius: var(--radius-sm); margin-top: 32px; display: inline-block; color: #ffebcc;">
+                        <strong>Lưu ý:</strong> Báo cáo đầu ra là công cụ hỗ trợ ra quyết định, không thay thế kết luận kiểm định PCCC chính thức.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Key Capabilities / Technology & 6. Use Cases -->
+        <section id="capabilities" class="section section--soft">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <span class="eyebrow">Nền tảng</span>
+                    <h2 class="section-title">Công nghệ cốt lõi & Tình huống sử dụng</h2>
+                </div>
+                
+                <!-- Capabilities -->
+                <div class="grid tech-grid grid--4 section--dark" style="padding: 40px; border-radius: var(--radius-lg); margin-bottom: 60px; text-align: center;">
+                    <div class="tech-card">
+                        <div style="color: var(--blue-400); margin-bottom: 12px; display: inline-flex;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9.5" width="6" height="5" rx="1.6"/><path d="M9 10 5.5 6.5M15 10l3.5-3.5M9 14l-3.5 3.5M15 14l3.5 3.5"/><circle cx="4.6" cy="5.6" r="1.8"/><circle cx="19.4" cy="5.6" r="1.8"/><circle cx="4.6" cy="18.4" r="1.8"/><circle cx="19.4" cy="18.4" r="1.8"/></svg>
+                        </div>
+                        <h3 style="font-size: 18px;">UAV Định vị RTK/PPK</h3>
+                    </div>
+                    <div class="tech-card">
+                        <div style="color: var(--blue-400); margin-bottom: 12px; display: inline-flex;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
+                        </div>
+                        <h3 style="font-size: 18px;">Cảm biến Đa phổ & Nhiệt</h3>
+                    </div>
+                    <div class="tech-card">
+                        <div style="color: var(--blue-400); margin-bottom: 12px; display: inline-flex;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V9l9-5 9 5v11"/><path d="M3 20h18"/><path d="M8 20v-6h8v6"/></svg>
+                        </div>
+                        <h3 style="font-size: 18px;">Chỉ số Ẩm & Khô hạn</h3>
+                    </div>
+                    <div class="tech-card">
+                        <div style="color: var(--blue-400); margin-bottom: 12px; display: inline-flex;">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg>
+                        </div>
+                        <h3 style="font-size: 18px;">AI / Machine Learning</h3>
+                    </div>
+                </div>
+
+                <!-- Use Cases -->
+                <div class="use-case-wrapper">
+                    
+                    
+                    <div style="margin-bottom: 30px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid var(--border);">
+                        <img src="./assets/usecase.png" alt="UAV Scanning City" style="width: 100%; display: block;">
+                    </div>
+                    <h3 class="text-center mb-4 text-blue" style="margin-bottom: 20px; font-size: 24px; align-items: center; display: flex; justify-content: center;">Tình huống ứng dụng thực tế </h3>
+                    <div class="grid grid--3">
+                        <div class="usecase" style="grid-template-columns: 1fr;">
+                            <div class="usecase__body">
+                                <h3>Giám sát định kỳ độ ẩm</h3>
+                                <dl>
+                                    <!-- <dt>Đối tượng / Tình huống</dt> -->
+                                    <dd>Cơ quan quản lý cần dữ liệu không gian cập nhật.</dd>
+                                    <div class="usecase__out">
+                                        <dt>Đầu ra</dt>
+                                        <dd class="is-output">Dữ liệu độ ẩm cập nhật theo không gian</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="usecase" style="grid-template-columns: 1fr;">
+                            <div class="usecase__body">
+                                <h3>Lập bản đồ phân bố độ ẩm</h3>
+                                <dl>
+                                    <!-- <dt>Đối tượng / Tình huống</dt> -->
+                                    <dd>Cần xác định các khu vực đang bị khô hạn nặng.</dd>
+                                    <div class="usecase__out">
+                                        <dt>Đầu ra</dt>
+                                        <dd class="is-output">Bản đồ phân vùng khô hạn</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="usecase" style="grid-template-columns: 1fr;">
+                            <div class="usecase__body">
+                                <h3>Ưu tiên kiểm tra PCCC</h3>
+                                <dl>
+                                    <!-- <dt>Đối tượng / Tình huống</dt> -->
+                                    <dd>Lực lượng PCCC cần danh sách cơ sở để thanh tra.</dd>
+                                    <div class="usecase__out">
+                                        <dt>Đầu ra</dt>
+                                        <dd class="is-output">Danh sách khu vực ưu tiên kiểm tra</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. How it works -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <span class="eyebrow">Quy trình</span>
+                    <h2 class="section-title">Quy trình triển khai dịch vụ</h2>
+                    <p class="section-sub">Chuẩn hóa 5 bước từ khảo sát đến bàn giao kết quả</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step__badge">01</div>
+                        <div>
+                            <h3>Khảo sát & Phương án</h3>
+                            <p style="margin-top: 10px; font-size: 15px; color: var(--ink-soft); line-height: 1.5;">Khảo sát yêu cầu và ranh giới khu vực.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__badge">02</div>
+                        <div>
+                            <h3>Thiết kế Mission bay</h3>
+                            <p style="margin-top: 10px; font-size: 15px; color: var(--ink-soft); line-height: 1.5;">Kiểm tra điều kiện bay và thiết kế mission.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__badge">03</div>
+                        <div>
+                            <h3>Thực thi hiện trường</h3>
+                            <p style="margin-top: 10px; font-size: 15px; color: var(--ink-soft); line-height: 1.5;">Bay thu dữ liệu và lấy mẫu ground-truth.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__badge">04</div>
+                        <div>
+                            <h3>Xử lý Dữ liệu</h3>
+                            <p style="margin-top: 10px; font-size: 15px; color: var(--ink-soft); line-height: 1.5;">Xử lý, tính chỉ số và phân tích mô hình.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__badge">05</div>
+                        <div>
+                            <h3>Bàn giao Báo cáo</h3>
+                            <p style="margin-top: 10px; font-size: 15px; color: var(--ink-soft); line-height: 1.5;">Bàn giao bản đồ phân vùng và báo cáo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Service Levels & 9. Deliverables -->
+        <section id="packages" class="section section--soft">
+            <div class="container">
+                <div class="section-head section-head--center">
+                    <span class="eyebrow">Bảng giá</span>
+                    <h2 class="section-title">Các gói  dịch vụ</h2>
+                    <p class="section-sub">Lựa chọn giải pháp phù hợp với quy mô và yêu cầu quản lý</p>
+                </div>
+
+                <div class="grid grid--3">
+                    <!-- Level 1 -->
+                    <div class="pkg" style="display: flex; flex-direction: column;">
+                        <div class="pkg__level">Level 1</div>
+                        <h3 class="pkg__name" style="font-size: 18px; line-height: 1.4;">Giám sát cơ bản<br><span style="font-size: 14px; font-weight: 500; color: var(--muted);">(Basic Environmental Survey)</span></h3>
+                        <div class="pkg__tagline" style="font-size: 13px; line-height: 1.4; padding: 10px; background: var(--bg-soft); border-radius: 8px;">
+                            <strong>Cấu hình:</strong> UAV + camera RGB + cảm biến khí tượng (nhiệt độ, độ ẩm, áp suất).
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Phạm vi (Scope)</strong>
+                            <p style="color: var(--ink-soft); line-height: 1.5;">Bay lưới/tuyến theo ranh giới khu vực; đo profile khí tượng tại các điểm/độ cao đã thống nhất.</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Sản phẩm bàn giao</strong>
+                            <ul class="pkg__outputs" style="margin-top: 8px;">
+                                <li>Orthomosaic RGB</li>
+                                <li>Bảng & biểu đồ số liệu nhiệt độ – độ ẩm – áp suất theo điểm/thời gian</li>
+                                <li>Báo cáo hiện trạng vi khí hậu khu vực</li>
+                            </ul>
+                        </div>
+                        <div class="pkg__cta" style="margin-top: auto; padding-top: 30px;">
+                            <a href="#contact" class="btn btn-outline btn-full">Liên hệ tư vấn</a>
+                        </div>
+                    </div>
+
+                    <!-- Level 2 -->
+                    <div class="pkg pkg--featured" style="display: flex; flex-direction: column;">
+                        <div class="pkg__ribbon">Đề xuất (Recommended)</div>
+                        <div class="pkg__level text-gradient">Level 2</div>
+                        <h3 class="pkg__name" style="font-size: 18px; line-height: 1.4;">Bản đồ độ ẩm & Phân vùng khô hạn<br><span style="font-size: 14px; font-weight: 500; color: var(--muted);">(Moisture Mapping & Dry-Zone Zoning)</span></h3>
+                        <div class="pkg__tagline" style="font-size: 13px; line-height: 1.4; padding: 10px; background: rgba(34,197,94,0.1); border-radius: 8px; color: var(--green-700);">
+                            <strong>Cấu hình:</strong> Level 1 + Multispectral + Thermal + Điểm Ground-truth.
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Phạm vi (Scope)</strong>
+                            <p style="color: var(--ink-soft); line-height: 1.5;">Hiệu chỉnh bức xạ/nhiệt; tính chỉ số ẩm – khô hạn; nội suy và phân vùng.</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Sản phẩm bàn giao</strong>
+                            <ul class="pkg__outputs" style="margin-top: 8px;">
+                                <li>Bản đồ nhiệt độ bề mặt & Bản đồ độ ẩm đất/chỉ số ẩm thực vật</li>
+                                <li>Bản đồ phân vùng khô hạn & Lớp GIS</li>
+                                <li>Báo cáo kèm sai số và điều kiện áp dụng</li>
+                            </ul>
+                        </div>
+                        <div class="pkg__cta" style="margin-top: auto; padding-top: 30px;">
+                            <a href="#contact" class="btn btn-primary btn-full">Liên hệ tư vấn</a>
+                        </div>
+                    </div>
+
+                    <!-- Level 3 -->
+                    <div class="pkg" style="display: flex; flex-direction: column;">
+                        <div class="pkg__level">Level 3</div>
+                        <h3 class="pkg__name" style="font-size: 18px; line-height: 1.4;">Giám sát định kỳ & Cảnh báo rủi ro<br><span style="font-size: 14px; font-weight: 500; color: var(--muted);">(Periodic Monitoring + Fire-Risk Model)</span></h3>
+                        <div class="pkg__tagline" style="font-size: 13px; line-height: 1.4; padding: 10px; background: var(--bg-soft); border-radius: 8px;">
+                            <strong>Cấu hình:</strong> Level 2 + Mô hình ML + Tích hợp rủi ro cháy + Dashboard.
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Phạm vi (Scope)</strong>
+                            <p style="color: var(--ink-soft); line-height: 1.5;">Xây chuỗi thời gian; so sánh biến động; xếp hạng ưu tiên kiểm tra; cảnh báo theo quy trình phối hợp.</p>
+                        </div>
+                        
+                        <div style="margin-top: 20px; font-size: 14px;">
+                            <strong style="color: var(--blue-800); display: block; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;">Sản phẩm bàn giao</strong>
+                            <ul class="pkg__outputs" style="margin-top: 8px;">
+                                <li>Bản đồ/xếp hạng nguy cơ cháy & Danh sách ưu tiên</li>
+                                <li>Báo cáo biến động giữa các đợt</li>
+                                <li>Lớp GIS + Dashboard theo dõi</li>
+                            </ul>
+                        </div>
+                        <div class="pkg__cta" style="margin-top: auto; padding-top: 30px;">
+                            <a href="#contact" class="btn btn-outline btn-full">Liên hệ tư vấn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cấu hình tần suất -->
+                <div style="margin-top: 40px; background: var(--white); border: 1px solid var(--blue-200); border-radius: var(--radius-lg); padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--blue-800); margin-bottom: 16px; font-size: 18px; display: flex; align-items: center; gap: 8px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--blue-500);"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Cấu hình tần suất (Áp dụng cho mọi Level)
+                    </h3>
+                    <div class="grid grid--3" style="gap: 20px;">
+                        <div style="background: var(--bg-soft); padding: 16px; border-radius: 8px;">
+                            <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--ink-dark);">1. Gói theo đợt (One-off)</h4>
+                            <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Khảo sát 1 lần theo yêu cầu đặc thù hoặc sự kiện phát sinh.</p>
+                        </div>
+                        <div style="background: var(--bg-soft); padding: 16px; border-radius: 8px;">
+                            <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--ink-dark);">2. Gói theo mùa khô</h4>
+                            <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Tăng tần suất bay giám sát trong các giai đoạn cao điểm nguy cơ cháy nổ.</p>
+                        </div>
+                        <div style="background: rgba(34,197,94,0.05); padding: 16px; border-radius: 8px; border: 1px solid rgba(34,197,94,0.2);">
+                            <h4 style="font-size: 15px; margin-bottom: 8px; color: var(--green-700);">3. Gói định kỳ/Thuê bao</h4>
+                            <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.5;">Gắn liền với chu kỳ kiểm tra PCCC (Điều 13 NĐ 105/2025/NĐ-CP): cơ sở nhóm 1 (1 năm/lần), nhóm 2 (2 năm/lần) phục vụ kiểm tra của UBND cấp xã.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5" style="margin-top: 80px;">
+                    <h3 class="mb-4 text-center text-blue">Sản phẩm bàn giao (Deliverables)</h3>
+                    <div class="grid grid--2" style="align-items: center; gap: 40px;">
+                        <!-- Cột Ảnh Minh Họa -->
+                        <div class="deliverables-img-wrapper" style="position: relative;">
+                            <img src="./assets/heatmap.png" alt="UAV Heatmap Dashboard" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: block; border: 1px solid var(--border);">
+                            
+                        </div>
+
+                        <!-- Cột Danh sách Sản phẩm -->
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <div class="deliverable">
+                                <div class="deliverable__no" style="color: var(--blue-500); background: var(--blue-50); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Bản đồ Orthomosaic / Bản đồ nhiệt</h3>
+                                    <p>Ảnh ghép toàn khu vực và lớp nhiệt độ bề mặt từ dữ liệu UAV.</p>
+                                </div>
+                            </div>
+                            <div class="deliverable">
+                                <div class="deliverable__no" style="color: var(--blue-500); background: var(--blue-50); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Bản đồ phân vùng khô hạn</h3>
+                                    <p>Lớp dữ liệu thể hiện phân bố độ ẩm và khu vực khô hạn trong đô thị.</p>
+                                </div>
+                            </div>
+                            <div class="deliverable">
+                                <div class="deliverable__no" style="color: var(--heat); background: rgba(255,122,26,0.1); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Danh sách ưu tiên</h3>
+                                    <p>Kết hợp dữ liệu độ ẩm với yếu tố nguy cơ để xếp hạng và ưu tiên kiểm tra.</p>
+                                </div>
+                            </div>
+                            <div class="deliverable">
+                                <div class="deliverable__no" style="color: var(--green-600); background: var(--green-100); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Lớp dữ liệu GIS & Báo cáo</h3>
+                                    <p>Dữ liệu số hóa phục vụ lưu trữ, tra cứu và so sánh giữa các đợt.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Why GASCOLAE -->
+        <section class="section">
+            <div class="container">
+                <div class="why">
+                    <div class="why__visual" style="display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--border); border-radius: var(--radius-lg); min-height: 400px; box-shadow: var(--shadow-sm);">
+                        <img src="./assets/GASCOLAE.svg" alt="GASCOLAE Logo" style="width: 320px;">
+                    </div>
+                    <div class="why__content">
+                        <h2 class="section-title mb-4">Tại sao chọn GASCOLAE?</h2>
+                        <ul class="why__list" style="display: flex; flex-direction: column; gap: 20px;">
+                            <li class="deliverable">
+                                <div class="deliverable__no" style="color: var(--blue-600); width: 40px; height: 40px;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Hỗ trợ kiểm tra an toàn PCCC</h3>
+                                    <p>Không chỉ khảo sát, chúng tôi cung cấp danh sách ưu tiên kiểm tra hỗ trợ an toàn PCCC.</p>
+                                </div>
+                            </li>
+                            <li class="deliverable">
+                                <div class="deliverable__no" style="color: var(--blue-600); width: 40px; height: 40px;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Tuân thủ Pháp lý Chặt chẽ</h3>
+                                    <p>Quy trình lập kế hoạch và bay tuân thủ nghiêm ngặt Nghị định 288/2025/NĐ-CP.</p>
+                                </div>
+                            </li>
+                            <li class="deliverable">
+                                <div class="deliverable__no" style="color: var(--blue-600); width: 40px; height: 40px;">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5c2 0 3.7.6 5.1 1.5"/><path d="M22 12s-3.6 6.5-10 6.5c-2 0-3.7-.6-5.1-1.5"/><circle cx="12" cy="12" r="2.6"/><path d="M3 3l18 18"/></svg>
+                                </div>
+                                <div class="deliverable__body">
+                                    <h3>Phân tích đa cảm biến</h3>
+                                    <p>Ứng dụng đồng thời dữ liệu RGB, ảnh nhiệt và đa phổ kết hợp lấy mẫu Ground-truth.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-4 text-sm text-gray">* Các tiêu chuẩn/chứng nhận chỉ công bố sau khi GASCOLAE xác minh nội bộ thành công.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FAQ -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Câu hỏi thường gặp (FAQ)</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Dịch vụ đo độ ẩm bằng cách nào?</h4>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>UAV bay theo lưới để thu ảnh RGB, đa phổ và nhiệt, kết hợp mẫu ground-truth để tính chỉ số ẩm khô hạn.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Tại sao UBND xã/phường lại cần bản đồ này?</h4>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Để có dữ liệu định lượng, từ đó phân bổ nguồn lực kiểm tra PCCC vào đúng khu vực rủi ro cao, tránh dàn trải.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Trời mưa có bay khảo sát được không?</h4>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Không. Khảo sát cần bề mặt khô ráo, không mưa và bức xạ ổn định. Trạng thái NO-GO sẽ được kích hoạt nếu có mưa.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Báo cáo dịch vụ có thay thế thanh tra PCCC nhà nước không?</h4>
+                            <span class="toggle-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Không. Dịch vụ cung cấp dữ liệu hỗ trợ ra quyết định và cảnh báo sớm; không thay thế kết luận kiểm định PCCC chính thức.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Lead Form & 13. AI Agent Integration Block -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="grid grid--2 gap-4">
+                    
+                    <!-- Call To Action / Lead Form -->
+                    <div class="form-wrapper" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto;">
+                        <h2 class="mb-2">Tìm hiểu giải pháp giám sát nguy cơ cháy cho khu vực của bạn</h2>
+                        <p class="mb-4">Điền thông tin bên dưới để nhận tư vấn chuyên sâu và báo giá từ chuyên gia GASCOLAE.</p>
+                        
+                        <form id="leadForm" class="lead-form">
+                            <div class="form-group">
+                                <label for="fullname">Họ và tên *</label>
+                                <input type="text" id="fullname" name="fullname" required placeholder="Nhập họ và tên">
+                            </div>
+                            <div class="form-group">
+                                <label for="organization">Cơ quan/Đơn vị *</label>
+                                <input type="text" id="organization" name="organization" required placeholder="Ví dụ: UBND Phường X / Công an PCCC...">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactInfo">Email / Điện thoại *</label>
+                                <input type="text" id="contactInfo" name="contactInfo" required placeholder="Nhập số điện thoại hoặc email">
+                            </div>
+                            <div class="form-group">
+                                <label for="area">Diện tích khảo sát dự kiến</label>
+                                <input type="text" id="area" name="area" placeholder="Ví dụ: 50 ha">
+                            </div>
+                            <div class="form-group">
+                                <label for="serviceLevel">Yêu cầu Level dịch vụ</label>
+                                <select id="serviceLevel" name="serviceLevel">
+                                    <option value="level1">Giám sát cơ bản (Basic Environmental Survey)</option>
+                                    <option value="level2" selected>Level 2 - Moisture Mapping (Recommended)</option>
+                                    <option value="level3">Level 3 - Periodic Monitoring + Model</option>
+                                    <option value="unsure">Chưa rõ, cần tư vấn thêm</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full mt-2">Yêu cầu tư vấn & Báo giá</button>
+                            <p class="form-note mt-2 text-sm text-gray text-center">* Lưu ý: Không yêu cầu nhập dữ liệu tọa độ bảo mật trên form này.</p>
+                        </form>
+                    </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 GASCOLAE. Digital & AI Assets • Version 1.0.</p>
+            <p class="text-sm mt-1">Dịch vụ S0282: Giám sát Độ ẩm Đô thị & Cảnh báo Cháy bằng UAV</p>
+        </div>
+    </footer>
+
+    <!-- Floating AI Chat Widget -->
+    <button type="button" class="chat-launcher" id="chatLauncher" aria-label="Mở khung chat">
+        <span class="chat-launcher__pulse" aria-hidden="true"></span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+        Trợ lý AI S0282
+    </button>
+
+    <div class="chat-panel" id="chatPanel" style="display: none;" role="dialog">
+        <div class="chat-panel__head">
+            <span class="chat-panel__avatar">🤖</span>
+            <div>
+                <div class="chat-panel__title">Trợ lý AI • Dịch vụ S0282</div>
+                <div class="chat-panel__status"><i aria-hidden="true"></i> AGENT_S0282</div>
+            </div>
+            <button type="button" class="chat-panel__close" id="chatClose" aria-label="Đóng khung chat">×</button>
+        </div>
+
+        <div class="chat-panel__body">
+            <div class="chat-msg">
+                <div class="chat-msg__bubble" id="chatWelcomeMsg">Xin chào! Tôi là Trợ lý AI phụ trách Dịch vụ S0282. Bạn đang cần tìm hiểu quy trình triển khai, tham khảo các gói dịch vụ hay đặt lịch khảo sát thực địa?</div>
+            </div>
+            <div id="chatMessages"></div>
+
+            <div class="chat-suggest" id="chatSuggestBox">
+                <span class="chat-suggest__label">Câu hỏi gợi ý</span>
+                <button type="button" class="suggestion-btn">Quy trình khảo sát UAV gồm mấy bước?</button>
+                <button type="button" class="suggestion-btn">Gói Level 2 và Level 3 khác nhau ra sao?</button>
+                <button type="button" class="suggestion-btn">Sau khi bay tôi sẽ nhận được bản đồ gì?</button>
+            </div>
+        </div>
+
+        <div class="chat-panel__foot">
+                <!-- <div class="chat-panel__soon">
+                    <strong>Sắp ra mắt:</strong> Khung hội thoại trực tuyến với AGENT_S0282 đang được hoàn thiện. Trong thời gian này, vui lòng gửi yêu cầu để chuyên gia kỹ thuật liên hệ trực tiếp.
+                </div> -->
+            <a class="btn btn-outline btn-full btn--sm" href="#contact" id="chatEscalateBtn" style="padding: 10px; font-size: 15px;">Chuyển chuyên gia tư vấn S0282</a>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="./uav-scene.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

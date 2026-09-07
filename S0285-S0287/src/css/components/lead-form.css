@@ -1,0 +1,121 @@
+.lead__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--space-16);
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .lead__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+}
+.lead__copy,
+.lead__form {
+  min-width: 0;
+  max-width: 100%;
+}
+.lead__copy h2 {
+  margin-bottom: var(--space-4);
+}
+.lead__copy p {
+  color: var(--color-base-300);
+  line-height: var(--lh-base);
+  margin-bottom: var(--space-6);
+}
+.lead__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-base-900);
+  border: 1px solid var(--color-base-700);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+@media (max-width: 640px) {
+  .lead__form {
+    padding: var(--space-6) var(--space-4);
+  }
+  .lead__form div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+.lead__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.lead__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-base-300);
+}
+.lead__input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: var(--color-base-850);
+  border: 1px solid var(--color-base-700);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-base-100);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  transition: border-color var(--duration-fast) ease;
+}
+.lead__input:focus {
+  border-color: var(--color-accent-lidar);
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+.lead__input.error {
+  border-color: var(--color-error);
+}
+/* P0-WG-03: aria-invalid visual style */
+.lead__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+/* P0-WG-03: Error message span */
+.lead__error {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  margin-top: var(--space-1);
+}
+/* P0-WG-03: Restore focus indicator on inputs (outline:none removed it) */
+.lead__input:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+.lead__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.lead__radio-group {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.lead__radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-base-300);
+  cursor: pointer;
+}
+.lead__privacy {
+  font-size: var(--text-xs);
+  color: var(--color-base-500);
+  margin-top: var(--space-2);
+}
+.lead__success {
+  text-align: center;
+  padding: var(--space-12) var(--space-8);
+  background: var(--color-base-900);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-xl);
+}
+.lead__success h3 {
+  color: var(--color-success);
+  margin-bottom: var(--space-3);
+}

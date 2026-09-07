@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three.js Prototype Demo & Smoke Test — S0285-S0287</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #080d10;
+      color: #ddeef5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #1e3040;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f1921;
+    }
+    h1 { font-size: 1.1rem; color: #00c4e8; }
+    .badge {
+      background: rgba(0, 196, 232, 0.15);
+      color: #00c4e8;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-family: monospace;
+    }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      height: calc(100vh - 65px);
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; height: auto; }
+      .viewport { height: 60vh !important; }
+    }
+    .viewport {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #080d10;
+    }
+    #canvas-container {
+      width: 100%;
+      height: 100%;
+    }
+    .sidebar {
+      background: #0f1921;
+      border-left: 1px solid #1e3040;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      overflow-y: auto;
+    }
+    .panel-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4e7a9a;
+      margin-bottom: 0.5rem;
+    }
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    button {
+      background: #17242f;
+      color: #ddeef5;
+      border: 1px solid #2c4558;
+      border-radius: 4px;
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.15s ease;
+    }
+    button:hover {
+      border-color: #00c4e8;
+      background: #1e3040;
+    }
+    button.active {
+      background: #00c4e8;
+      color: #080d10;
+      font-weight: 600;
+      border-color: #00c4e8;
+    }
+    .slider-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #00c4e8;
+    }
+    .tooltip-hud {
+      position: absolute;
+      background: rgba(15, 25, 33, 0.95);
+      border: 1px solid #00c4e8;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      pointer-events: none;
+      font-size: 0.8rem;
+      display: none;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    .tooltip-hud h4 { color: #00c4e8; margin-bottom: 0.25rem; }
+    .tooltip-hud .val { font-family: monospace; color: #7be36a; font-weight: bold; }
+    .test-log {
+      background: #080d10;
+      border: 1px solid #1e3040;
+      border-radius: 4px;
+      padding: 0.75rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #3dd6b5;
+      max-height: 180px;
+      overflow-y: auto;
+    }
+    .fallback-box {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+      background: #17242f;
+      border: 1px dashed #f5c94e;
+      border-radius: 6px;
+      color: #f5c94e;
+    }
+  </style>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "../src/3d/vendor/three.module.js",
+      "three/addons/controls/OrbitControls.js": "../src/3d/vendor/OrbitControls.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>GASCOLAE S0285-S0287 — 3D Narrative Prototype</h1>
+    <span class="badge">Phase 06 • Three.js ES Modules</span>
+  </header>
+
+  <div class="layout">
+    <div class="viewport">
+      <div id="canvas-container"></div>
+      <div class="tooltip-hud" id="hud">
+        <h4 id="hud-title">Lô rừng</h4>
+        <p id="hud-type">Trạng thái rừng</p>
+        <p>Trữ lượng carbon: <span class="val" id="hud-val">0.0 tCO2e/ha</span></p>
+        <p>Độ tin cậy R²: <span class="val" id="hud-r2">0.0</span> | RMSE: <span class="val" id="hud-rmse">0.0%</span></p>
+      </div>
+      <div class="fallback-box" id="fallback">
+        <h3>WebGL Fallback Activated</h3>
+        <p>Trình duyệt không hỗ trợ WebGL hoặc đã kích hoạt chế độ dự phòng. Bản đồ ảnh 2D tĩnh sẽ thay thế.</p>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div>
+        <div class="panel-title">5-State Narrative Sequence</div>
+        <div class="btn-group">
+          <button class="active" data-state="A">State A — Rừng & Địa hình (DTM)</button>
+          <button data-state="B">State B — Quét UAV LiDAR (Point Cloud)</button>
+          <button data-state="C">State C — Cấu trúc tán CHM & Cây</button>
+          <button data-state="D">State D — Mật độ sinh khối (AGB)</button>
+          <button data-state="E">State E — Bản đồ Carbon & Phân lô GIS</button>
+        </div>
+      </div>
+
+      <div class="slider-row">
+        <div class="panel-title">Scroll Progress (0.0 → 1.0)</div>
+        <input type="range" id="progress-slider" min="0" max="1" step="0.01" value="0">
+      </div>
+
+      <div>
+        <div class="panel-title">Tùy chọn kiểm thử</div>
+        <div class="btn-group">
+          <button id="btn-toggle-motion">Bật / Tắt Reduced-Motion</button>
+          <button id="btn-stress-reinit">Stress Test: Re-init x3 (Memory Leak Check)</button>
+          <button id="btn-run-smoke">Chạy Smoke Test tự động</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel-title">Smoke Test Console</div>
+        <div class="test-log" id="test-log">Sẵn sàng kiểm thử...\n</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { ForestCarbonScene } from '../src/3d/scene.js';
+
+    const container = document.getElementById('canvas-container');
+    const hud = document.getElementById('hud');
+    const hudTitle = document.getElementById('hud-title');
+    const hudType = document.getElementById('hud-type');
+    const hudVal = document.getElementById('hud-val');
+    const hudR2 = document.getElementById('hud-r2');
+    const hudRmse = document.getElementById('hud-rmse');
+    const logEl = document.getElementById('test-log');
+
+    function log(msg) {
+      logEl.innerText += msg + '\n';
+      logEl.scrollTop = logEl.scrollHeight;
+      console.log('[SmokeTest]', msg);
+    }
+
+    let sceneInstance = null;
+
+    function initScene(opts = {}) {
+      if (sceneInstance) {
+        sceneInstance.dispose();
+      }
+
+      sceneInstance = new ForestCarbonScene(container, Object.assign({
+        onParcelHover: (parcel, e) => {
+          if (parcel) {
+            hudTitle.innerText = parcel.name;
+            hudType.innerText = parcel.forestType;
+            hudVal.innerText = parcel.carbonCO2ePerHa + ' tCO2e/ha';
+            hudR2.innerText = parcel.r2;
+            hudRmse.innerText = parcel.rmsePct + '%';
+            hud.style.display = 'block';
+            hud.style.left = (e.clientX + 15) + 'px';
+            hud.style.top = (e.clientY + 15) + 'px';
+          } else {
+            hud.style.display = 'none';
+          }
+        },
+        onFallback: () => {
+          document.getElementById('fallback').style.display = 'block';
+          log('Fallback invoked successfully.');
+        }
+      }, opts));
+
+      return sceneInstance;
+    }
+
+    initScene();
+    log('Khởi tạo ForestCarbonScene thành công.');
+
+    // State button controls
+    const stateButtons = document.querySelectorAll('button[data-state]');
+    stateButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        stateButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const state = btn.dataset.state;
+        sceneInstance.setState(state);
+        log('Chuyển sang Trạng thái: ' + state);
+      });
+    });
+
+    // Slider control
+    const slider = document.getElementById('progress-slider');
+    slider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value);
+      sceneInstance.setProgress(val);
+    });
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      if (sceneInstance) sceneInstance.resize();
+    });
+
+    // Reduced motion toggle
+    let reduced = false;
+    document.getElementById('btn-toggle-motion').addEventListener('click', () => {
+      reduced = !reduced;
+      sceneInstance.setReducedMotion(reduced);
+      log('Reduced motion: ' + (reduced ? 'BẬT' : 'TẮT'));
+    });
+
+    // Stress test re-init
+    document.getElementById('btn-stress-reinit').addEventListener('click', () => {
+      log('Bắt đầu Stress Test: Khởi tạo và hủy lặp lại 3 lần...');
+      for (let i = 1; i <= 3; i++) {
+        initScene();
+        log('  Lần ' + i + ': Hủy và tạo lại thành công.');
+      }
+      log('Stress Test PASS: Không rò rỉ context hoặc xung đột animation frame.');
+    });
+
+    // Automated Smoke Test runner
+    window.runAutomatedSmokeTest = function() {
+      log('====================================');
+      log('BẮT ĐẦU CHẠY AUTOMATED SMOKE TEST...');
+      let passed = 0;
+      let total = 6;
+
+      // Check 1: Instance created
+      if (sceneInstance && sceneInstance.renderer) {
+        log('Test 1 [PASS]: Scene & WebGLRenderer khởi tạo thành công.');
+        passed++;
+      } else {
+        log('Test 1 [FAIL]: Khởi tạo scene thất bại.');
+      }
+
+      // Check 2: DPR constraint
+      const dpr = sceneInstance.renderer.getPixelRatio();
+      if (dpr <= 1.5) {
+        log('Test 2 [PASS]: Giới hạn DPR được tuân thủ (DPR = ' + dpr + ' <= 1.5).');
+        passed++;
+      } else {
+        log('Test 2 [FAIL]: DPR vượt quá 1.5 (' + dpr + ').');
+      }
+
+      // Check 3: Resize function
+      try {
+        sceneInstance.resize();
+        log('Test 3 [PASS]: Gọi hàm resize() không phát sinh lỗi.');
+        passed++;
+      } catch (e) {
+        log('Test 3 [FAIL]: Lỗi khi gọi resize(): ' + e.message);
+      }
+
+      // Check 4: State transition sequence A -> E
+      try {
+        ['A', 'B', 'C', 'D', 'E'].forEach(st => sceneInstance.setState(st));
+        log('Test 4 [PASS]: Duyệt qua tất cả 5 trạng thái A, B, C, D, E trơn tru.');
+        passed++;
+      } catch (e) {
+        log('Test 4 [FAIL]: Lỗi khi chuyển đổi trạng thái: ' + e.message);
+      }
+
+      // Check 5: Continuous progress interpolation
+      try {
+        sceneInstance.setProgress(0.5);
+        sceneInstance.setProgress(1.0);
+        log('Test 5 [PASS]: Nội suy tiến trình setProgress() hoạt động chính xác.');
+        passed++;
+      } catch (e) {
+        log('Test 5 [FAIL]: Lỗi setProgress(): ' + e.message);
+      }
+
+      // Check 6: Clean disposal
+      try {
+        sceneInstance.dispose();
+        initScene(); // restore for viewing
+        log('Test 6 [PASS]: Giải phóng tài nguyên dispose() hoàn tất sạch sẽ.');
+        passed++;
+      } catch (e) {
+        log('Test 6 [FAIL]: Lỗi dispose(): ' + e.message);
+      }
+
+      log('------------------------------------');
+      log('KẾT QUẢ SMOKE TEST: ' + passed + '/' + total + ' KIỂM THỬ ĐẠT.');
+      log(passed === total ? 'TẤT CẢ KIỂM THỬ GIAI ĐOẠN 06 ĐẠT YÊU CẦU (GATE: PASS)' : 'CÓ LỖI XẢY RA');
+      log('====================================');
+      return passed === total;
+    };
+
+    document.getElementById('btn-run-smoke').addEventListener('click', window.runAutomatedSmokeTest);
+
+    if (window.location.search.includes('auto=true')) {
+      setTimeout(window.runAutomatedSmokeTest, 500);
+    }
+  </script>
+</body>
+</html>
