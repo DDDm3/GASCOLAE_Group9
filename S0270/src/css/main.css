@@ -1,0 +1,36 @@
+/* Import all CSS files */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+
+@import 'tokens.css';
+@import 'base.css';
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/cards.css';
+@import 'components/faq.css';
+@import 'components/form.css';
+
+/* Agent UI Block Placeholder */
+.ai-agent-block {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+}
+
+.ai-agent-toggle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--color-deep-blue);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.ai-agent-toggle:hover {
+  transform: scale(1.1);
+}

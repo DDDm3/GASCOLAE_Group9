@@ -1,0 +1,65 @@
+/* Floating Navbar */
+.navbar {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1152px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-pill);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-glass);
+}
+
+.navbar.scrolled {
+  top: 12px;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  color: var(--color-deep-blue);
+  display: flex;
+  align-items: center;
+}
+
+/* If using SVG, pull it left to remove padding */
+.navbar-logo img {
+  height: 24px;
+  transform: scale(4);
+  transform-origin: left center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar-links a {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-dark);
+  transition: var(--transition-fast);
+}
+
+.navbar-links a:hover {
+  color: var(--color-accent-blue);
+}
+
+@media (max-width: 900px) {
+  .navbar-links {
+    display: none;
+  }
+}

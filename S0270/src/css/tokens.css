@@ -1,0 +1,31 @@
+:root {
+  --color-off-white: #f8f9fa;
+  --color-white: #ffffff;
+  --color-dark: #121212;
+  --color-deep-blue: #0b1a30;
+  --color-accent-yellow: #FFD500;
+  --color-accent-blue: #0056b3;
+  
+  /* Pastels */
+  --color-pastel-mint: #e8f5e9;
+  --color-pastel-yellow: #fffde7;
+  --color-pastel-blue: #e3f2fd;
+  --color-pastel-amber: #fff8e1;
+
+  /* Typography */
+  --font-family-main: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Border Radius */
+  --radius-pill: 999px;
+  --radius-large: 24px;
+  --radius-xl: 32px;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
