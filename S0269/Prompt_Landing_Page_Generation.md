@@ -13,7 +13,8 @@ Phát triển một trang Landing Page (HTML/CSS/JS) cho dịch vụ "Đánh gi�
   - `src/css/base.css` (reset css, typography, container, lưới grid)
   - `src/css/main.css` (kết nối các component)
   - `src/css/components/*.css` (tách riêng CSS cho navbar, hero, cards, faq, form)
-  - `src/js/main.js` (xử lý sự kiện scroll, accordion, toggle AI agent)
+  - `src/js/main.js` (xử lý sự kiện scroll, accordion)
+  - Thư mục `assets/` để chứa logo, video nền và các ảnh minh họa.
 
 ## 2. Ngôn ngữ Thiết kế & UI/UX (Bắt buộc tuân thủ)
 Lấy cảm hứng trực tiếp từ thiết kế website **Wing.com**:
@@ -26,32 +27,31 @@ Lấy cảm hứng trực tiếp từ thiết kế website **Wing.com**:
   - Màu thẻ: Trắng tinh hoặc các dải màu Pastel cực nhẹ (Mint, Soft Yellow, Soft Blue, Soft Amber) để phân vùng thông tin.
   - Màu nhấn (Accent): Vàng tươi (như `#FFD500`) hoặc Xanh dương đặc trưng của GASCOLAE.
 - **Bố cục Lưới (Bento Grid):** Không dùng các thẻ chữ nhật bằng nhau chằn chặn. Áp dụng lưới bất đối xứng (Bento) cho phần "Thực trạng" và "Lợi ích", ví dụ thẻ to chiếm 2 cột, thẻ nhỏ chiếm 1 cột đan xen nhau.
-- **Kiểu chữ (Typography):** Dùng font `Outfit` cho Heading (to, rõ ràng, bold) và font `Inter` cho body text.
+- **Kiểu chữ (Typography):** Bắt buộc sử dụng font **Plus Jakarta Sans** cho toàn bộ trang (Heading và Body) để đảm bảo hiển thị hoàn hảo dấu tiếng Việt, mang lại cảm giác geometric hiện đại. Không dùng Outfit hay Inter vì lỗi render.
 
 ## 3. Nội dung Cấu phần (Sections)
-Dựa vào file nội dung gốc của S0269, xây dựng các khối sau:
+Dựa vào file nội dung gốc, xây dựng các khối sau:
 
-1. **Floating Navbar**: Nổi ở lề trên, nền kính mờ (glassmorphism/backdrop-filter), tự co lại và có viền đổ bóng khi cuộn trang.
+1. **Floating Navbar**: Nổi ở lề trên, nền kính mờ (glassmorphism), tự co lại và đổ bóng khi cuộn. Logo SVG cần được phóng to và kéo sát lề trái bằng `margin-left` âm rất lớn (ví dụ `-90px`) hoặc `transform: scale() transform-origin: left` để triệt tiêu toàn bộ khoảng trắng thừa của file ảnh gốc.
 2. **Video Hero Section**:
-   - Sử dụng thẻ `<video autoplay loop muted playsinline>` làm background phủ kín màn hình (100vh).
-   - Có một lớp phủ (overlay) tối mờ để dễ đọc chữ.
-   - Text đặt ở giữa, Headline chữ cực lớn có chứa từ khóa **UAV** tô màu gradient.
-3. **Thực trạng & Lợi ích (Bento Grid)**: Trình bày các vấn đề thiếu hụt dữ liệu vệ tinh vs lợi ích độ phân giải centimet từ UAV. Dùng background pastel.
-4. **Giải pháp Tổng quan**: Text căn giữa, nhấn mạnh khả năng "Cầu nối Hiệu chuẩn".
-5. **Tính năng (Capabilities)**: Dạng Grid thẻ tĩnh với tiêu đề nổi bật.
-6. **Tình huống sử dụng (Use Cases)**: Các thẻ mềm mại đánh số thứ tự nổi bật (1, 2, 3...).
-7. **Quy trình (How it works)**: Timeline 6 bước dọc, phông chữ lớn đánh số 01-06.
-8. **Các Gói Dịch Vụ (Packages)**: Thẻ giá phân tầng Level 1, 2, 3. Đánh dấu thẻ Level 2 là "Phổ biến" (màu Accent viền sáng).
-9. **Sản phẩm Bàn giao (Deliverables)**: Hiển thị 4 loại bản đồ & báo cáo.
-10. **Lợi thế Cạnh tranh (Why Us)**: Dùng lưới 2 cột.
-11. **FAQ**: Tạo khối Accordion. Nội dung giải thích sự khác biệt giữa Albedo và Surface Reflectance, điều kiện bay...
-12. **Form Liên hệ**: Có bo góc lớn, bóng đổ mịn, thu thập thông tin và có phần lưu ý không thu thập tài liệu mật.
-13. **AI Agent Floating Block**: Một nút bấm hình tròn góc phải dưới màn hình. Khi bấm mở ra giao diện giả lập cửa sổ chat của "Trợ lý AI S0269", chứa 4 câu hỏi mồi sẵn.
+   - Sử dụng thẻ `<video autoplay loop muted playsinline>` làm background phủ kín màn hình (100vh). Nguồn video lấy từ thư mục `assets/`.
+   - Có lớp phủ (overlay) tối mờ mượt mà.
+3. **Thực trạng & Lợi ích (Bento Grid)**: Trình bày các vấn đề thiếu hụt dữ liệu vệ tinh vs lợi ích độ phân giải centimet từ UAV. Dùng background pastel xen kẽ trắng.
+4. **Giải pháp Tổng quan**: Khối nổi bật với nền màu tối đậm (Deep Blue), chữ căn giữa.
+5. **Tính năng (Capabilities)** & **Sản phẩm Bàn giao (Deliverables)**:
+   - Các thẻ card phải được chia làm 2 nửa: Nửa trên (chiếm khoảng 140px-160px chiều cao) là **Hình ảnh minh họa** (Image Placeholder hoặc Gradient block) chiếm trọn chiều rộng (`object-fit: cover`).
+   - Nửa dưới là padding chứa nội dung văn bản. Thiết kế này tạo trọng lượng thị giác lớn, xịn xò như các trang SaaS cao cấp, tránh cảm giác thẻ chỉ có toàn chữ trống trải.
+6. **Tình huống sử dụng (Use Cases)** & **Lợi thế Cạnh tranh (Why Us)**: 
+   - Ứng dụng thủ pháp **Typographic Numbering**: Số thứ tự (1, 2, 3...) không được dùng kiểu dấu chấm tròn nhỏ bé truyền thống. Phải dùng số khổng lồ (font-size 80px) in chìm dưới nền gradient nửa trên của thẻ, hoặc số in đậm (font-weight: 800) kích thước 24px lồng trong các ô vuông màu Pastel có màu chữ tone-sur-tone đậm, tạo điểm nhấn nghệ thuật.
+7. **Quy trình (How it works)**: Timeline dọc, phông chữ cực lớn đánh số 01-06.
+8. **Các Gói Dịch Vụ (Packages)**: Thẻ giá phân tầng Level 1, 2, 3. Đánh dấu thẻ Level 2 là "PHỔ BIẾN" bằng badge nổi bật viền màu vàng.
+9. **FAQ**: Tạo khối Accordion bằng Vanilla Javascript.
+10. **Form Liên hệ**: Có bo góc lớn, bóng đổ mịn. Không sử dụng chatbot hay popup rườm rà.
 
 ## 4. Yêu cầu Responsive
-- Trên thiết bị Mobile (<768px): Toàn bộ cấu trúc lưới 3-4 cột phải xếp chồng (stack dọc) thành 1 cột.
-- Ẩn hoàn toàn chữ trên Navbar, chỉ để lại Logo và nút bấm thu nhỏ.
-- Giảm kích thước Padding trong các thẻ Card từ 40px xuống 24px để tránh ngợp.
-- Hero Section phải canh chỉnh để chữ không bị sát lề 2 bên màn hình điện thoại.
+- Trên thiết bị Mobile (<900px): Toàn bộ cấu trúc lưới 3-4 cột phải xếp chồng (stack dọc) thành 1 cột.
+- Hero Section phải canh chỉnh khối chữ về chính giữa (center) thay vì bám phải như Desktop.
+- Ẩn hoàn toàn chữ trên Navbar, chỉ để lại Logo và nút CTA.
+- Giảm kích thước Padding trong các thẻ Card xuống 24px để tối ưu không gian hiển thị dọc.
 
-**Tiến hành:** Vui lòng bắt đầu bằng việc khởi tạo cấu trúc thư mục, CSS Tokens và Hero Section trước!
+**Tiến hành:** Vui lòng bắt đầu bằng việc khởi tạo cấu trúc thư mục, CSS Tokens và lập trình HTML/CSS cho từng khối.
