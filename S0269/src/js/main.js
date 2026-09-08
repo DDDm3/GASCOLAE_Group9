@@ -29,14 +29,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. AI Agent Toggle
-    const agentButton = document.querySelector('.agent-button');
-    const agentPanel = document.querySelector('.agent-panel');
-    
-    if (agentButton && agentPanel) {
-        agentButton.addEventListener('click', () => {
-            const isVisible = agentPanel.style.display === 'block';
-            agentPanel.style.display = isVisible ? 'none' : 'block';
-        });
-    }
+
 });
