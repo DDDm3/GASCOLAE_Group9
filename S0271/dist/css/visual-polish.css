@@ -1,0 +1,171 @@
+/* Final editorial pass: sharpen hierarchy and vary composition without changing content. */
+.hero-primary,
+.hero-play,
+.hero-close-video,
+.agent-escalation,
+.level-contact,
+.contact-submit,
+.contact-field input,
+.contact-field textarea,
+.contact-field select {
+  border-radius: var(--radius-none);
+}
+
+.deliverable-sheet {
+  box-shadow: none;
+}
+
+.contact-media,
+.contact-form,
+.agent-questions {
+  border-radius: var(--radius-none);
+}
+
+.technology-node {
+  border-radius: var(--radius-none);
+}
+
+.technology-detail,
+.sheet-copy,
+.level-landscape-copy,
+.why-principle,
+.faq-answer {
+  text-wrap: pretty;
+}
+
+@media (min-width: 64.0625rem) {
+  .problems {
+    padding-block: clamp(8rem, 10vw, 11rem) clamp(5rem, 7vw, 8rem);
+  }
+
+  .problems-heading {
+    margin-inline-start: 8.333%;
+  }
+
+  .technology {
+    padding-block: clamp(6rem, 8vw, 9rem) clamp(9rem, 12vw, 13rem);
+  }
+
+  .technology-heading {
+    margin-inline-start: 8.333%;
+    max-inline-size: 41rem;
+  }
+
+  .technology-layout {
+    grid-template-columns: minmax(0, 8fr) minmax(19rem, 4fr);
+  }
+
+  .technology-visual {
+    inline-size: 60%;
+  }
+
+  .journey-heading {
+    inline-size: 75%;
+    margin-inline-start: auto;
+  }
+
+  .before-after {
+    padding-block: clamp(9rem, 12vw, 13rem) clamp(6rem, 8vw, 9rem);
+  }
+
+  .before-after-heading {
+    grid-template-columns: minmax(0, 7fr) minmax(18rem, 4fr);
+  }
+
+  .before-after-evidence {
+    inline-size: 91.667%;
+    margin-inline-start: auto;
+  }
+
+  .deliverables {
+    padding-block: clamp(7rem, 9vw, 10rem) clamp(10rem, 13vw, 14rem);
+  }
+
+  .deliverables-heading {
+    margin-inline-start: 8.333%;
+  }
+
+  .deliverable-sheet + .deliverable-sheet {
+    margin-block-start: -2.75rem;
+  }
+
+  .deliverable-sheet:nth-child(2) {
+    margin-inline: 4rem 0;
+  }
+
+  .deliverable-sheet:nth-child(3) {
+    margin-inline: 0 5.5rem;
+  }
+
+  .deliverable-sheet:nth-child(4) {
+    margin-inline: 2rem 1rem;
+  }
+
+  .service-levels-heading {
+    margin-inline-start: 8.333%;
+  }
+
+  .level-landscape + .level-landscape {
+    margin-block-start: 0;
+    border-block-start: 1px solid rgb(246 242 232 / 0.45);
+  }
+
+  .why-heading {
+    inline-size: 58.333%;
+    margin-inline-start: auto;
+  }
+
+  .faq {
+    padding-block: clamp(8rem, 11vw, 12rem) clamp(6rem, 8vw, 9rem);
+  }
+
+  .faq-heading {
+    margin-inline-start: 8.333%;
+  }
+
+  .agent-consultation {
+    padding-block: clamp(6rem, 8vw, 9rem) clamp(9rem, 12vw, 13rem);
+  }
+
+  .agent-intro {
+    padding-block-start: var(--space-16);
+  }
+
+  .contact-shell {
+    grid-template-columns: minmax(0, 4fr) minmax(34rem, 7fr);
+  }
+
+  .contact-form {
+    margin-block-start: clamp(-4rem, -4vw, -2rem);
+  }
+}
+
+@media (max-width: 64rem) {
+  .technology-visual {
+    margin-inline-start: 8.333%;
+  }
+
+  .journey-stage:nth-child(even) .journey-copy,
+  .why-principles {
+    margin-inline-start: min(8.333%, 3rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  .technology-visual,
+  .journey-stage:nth-child(even) .journey-copy,
+  .why-principles {
+    margin-inline-start: 0;
+  }
+
+  .problems-heading,
+  .technology-heading,
+  .deliverables-heading,
+  .faq-heading {
+    margin-block-end: var(--space-12);
+  }
+
+  .deliverable-sheet:nth-child(n) {
+    margin-inline: 0;
+  }
+}

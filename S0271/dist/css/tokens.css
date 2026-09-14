@@ -1,0 +1,106 @@
+:root {
+  color-scheme: light;
+
+  --forest-950: #0B2E2A;
+  --forest-700: #176B5B;
+  --data-teal: #2FA98C;
+  --mint-100: #DDEFE8;
+  --sand-50: #F6F2E8;
+  --amber-500: #D7A93E;
+  --ink: #182523;
+  --white: #FFFFFF;
+
+  --color-background: var(--sand-50);
+  --color-surface: var(--white);
+  --color-text: var(--ink);
+  --color-heading: var(--forest-950);
+  --color-link: var(--forest-700);
+  --color-focus: var(--forest-700);
+  --color-border: #b8cbc3;
+  --color-selection-background: var(--forest-950);
+  --color-selection-text: var(--white);
+
+  --font-sans: "Manrope", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --font-size-xl: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  --font-size-2xl: clamp(1.75rem, 1.25rem + 2vw, 2.75rem);
+  --font-size-3xl: clamp(2.25rem, 1.5rem + 3vw, 4rem);
+  --font-size-display: clamp(2.75rem, 1.5rem + 5vw, 6rem);
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.1;
+  --line-height-heading: 1.2;
+  --line-height-body: 1.65;
+  --letter-spacing-tight: -0.035em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-label: 0.08em;
+
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-section: clamp(4rem, 2rem + 8vw, 9rem);
+  --page-gutter: clamp(1rem, 0.5rem + 2vw, 3rem);
+  --container-narrow: 48rem;
+  --container-default: 80rem;
+  --container-wide: 96rem;
+  --measure-copy: 65ch;
+
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+  --shadow-none: none;
+  --shadow-subtle: 0 2px 8px rgb(11 46 42 / 0.06);
+  --shadow-floating: 0 8px 24px rgb(11 46 42 / 0.1);
+
+  --z-base: 0;
+  --z-raised: 1;
+  --z-sticky: 10;
+  --z-navigation: 20;
+  --z-popover: 30;
+  --z-overlay: 40;
+  --z-dialog: 50;
+  --z-toast: 60;
+
+  --motion-duration-instant: 0ms;
+  --motion-duration-fast: 150ms;
+  --motion-duration-base: 250ms;
+  --motion-duration-slow: 450ms;
+  --motion-duration-reveal: 700ms;
+  --motion-delay-stagger: 60ms;
+  --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --motion-distance: 1.5rem;
+  --scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-fast: 0ms;
+    --motion-duration-base: 0ms;
+    --motion-duration-slow: 0ms;
+    --motion-duration-reveal: 0ms;
+    --motion-delay-stagger: 0ms;
+    --motion-distance: 0px;
+    --scroll-behavior: auto;
+  }
+}

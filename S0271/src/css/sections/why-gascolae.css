@@ -1,0 +1,20 @@
+.why-gascolae { padding-block: var(--space-section); }
+.why-heading { margin-block-end: clamp(3rem, 6vw, 6rem); }
+.why-eyebrow { color: var(--forest-700); font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: var(--letter-spacing-label); margin-block-end: var(--space-4); }
+.why-architecture { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+.why-words { min-inline-size: 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.why-words span { display: block; font-size: clamp(3rem, 7.7vw, 7rem); font-weight: var(--font-weight-semibold); line-height: 1; letter-spacing: -0.06em; color: var(--forest-950); }
+.why-words span:nth-child(2), .why-words span:nth-child(4) { align-self: flex-end; color: var(--forest-700); }
+.why-words span:last-child { padding-block-end: var(--space-6); border-block-end: 3px solid var(--amber-500); }
+.why-principles { min-inline-size: 0; }
+.why-principle { padding-block: var(--space-8); border-block-start: 1px solid var(--color-border); }
+.why-principle:first-child { padding-block-start: 0; border-block-start: 0; }
+.why-principle:last-child { padding-block-end: 0; }
+.why-principle h3 { font-size: var(--font-size-xl); }
+.why-principle p { margin-block-start: var(--space-4); max-inline-size: 52ch; }
+.why-condition { padding-inline-start: var(--space-4); border-inline-start: 2px solid var(--forest-700); font-size: var(--font-size-sm); }
+@media (max-width: 64rem) {
+  .why-architecture { grid-template-columns: 1fr; gap: var(--space-12); }
+  .why-words { max-inline-size: 42rem; }
+  .why-words span { font-size: clamp(3rem, 13vw, 7rem); }
+}

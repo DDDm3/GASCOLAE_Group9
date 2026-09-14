@@ -1,0 +1,39 @@
+.service-levels { padding-block-start: var(--space-section); }
+.service-levels-heading { margin-block-end: var(--space-12); }
+.service-levels-eyebrow { color: var(--forest-700); font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: var(--letter-spacing-label); margin-block-end: var(--space-4); }
+.level-landscape { position: relative; isolation: isolate; background: var(--forest-950); color: var(--sand-50); --color-focus: var(--sand-50); }
+.level-landscape + .level-landscape { margin-block-start: var(--space-8); }
+.level-landscape-image { position: absolute; inset: 0; z-index: -2; }
+.level-landscape-image img { inline-size: 100%; block-size: 100%; object-fit: cover; object-position: center; }
+.level-landscape::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgb(11 46 42 / 0.96), rgb(11 46 42 / 0.85) 58%, rgb(11 46 42 / 0.25)); }
+.level-landscape-inner { display: flex; flex-direction: column; justify-content: center; min-block-size: 42rem; padding-block: clamp(3rem, 6vw, 6rem); }
+.level-landscape-copy { inline-size: min(100%, 42rem); }
+.level-landscape-label { font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: 0.06em; margin-block-end: var(--space-6); }
+.level-landscape h3 { color: inherit; font-size: clamp(2rem, 4vw, 3.75rem); line-height: 1.1; overflow-wrap: break-word; }
+.level-positioning { margin-block-start: var(--space-6); font-size: var(--font-size-lg); }
+.level-description { margin-block-start: var(--space-5); }
+.level-condition { margin-block-start: var(--space-5); padding-inline-start: var(--space-4); border-inline-start: 2px solid var(--amber-500); font-size: var(--font-size-sm); }
+.level-limitation { margin-block-start: var(--space-4); font-size: var(--font-size-sm); }
+.level-contact { display: inline-flex; align-items: center; gap: var(--space-8); min-block-size: 3rem; padding: var(--space-3) var(--space-5); margin-block-start: var(--space-8); border: 1px solid var(--sand-50); border-radius: var(--radius-sm); background: var(--sand-50); color: var(--forest-950); text-decoration: none; font-weight: var(--font-weight-semibold); }
+.level-contact:hover { background: var(--white); }
+.level-image-caption { margin-block-start: var(--space-8); font-size: var(--font-size-xs); }
+.level-landscape--2::before { background: linear-gradient(270deg, rgb(11 46 42 / 0.97), rgb(11 46 42 / 0.87) 58%, rgb(11 46 42 / 0.25)); }
+.level-landscape--2 .level-landscape-copy, .level-landscape--2 .level-image-caption { margin-inline-start: auto; }
+.level-landscape--3 .level-landscape-inner { min-block-size: 50rem; justify-content: flex-end; padding-block-start: 12rem; }
+.level-landscape--3 .level-landscape-copy { inline-size: min(100%, 54rem); }
+.level-landscape--3::before { background: linear-gradient(0deg, rgb(11 46 42 / 0.98), rgb(11 46 42 / 0.90) 75%, rgb(11 46 42 / 0.35)); }
+@media (max-width: 64rem) {
+  .level-landscape-copy { inline-size: min(100%, 38rem); }
+  .level-landscape::before { background: rgb(11 46 42 / 0.86); }
+}
+@media (max-width: 48rem) {
+  .level-landscape-inner, .level-landscape--3 .level-landscape-inner { min-block-size: 0; padding-block: var(--space-16); }
+  .level-landscape + .level-landscape { margin-block-start: var(--space-4); }
+  .level-landscape h3 { font-size: clamp(2rem, 8vw, 3rem); }
+  .level-landscape-label { line-height: 1.6; }
+}
+@media (forced-colors: active) {
+  .level-landscape { background: Canvas; color: CanvasText; }
+  .level-landscape::before { background: Canvas; }
+  .level-contact { border-color: ButtonText; }
+}

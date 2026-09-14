@@ -1,0 +1,20 @@
+.site-footer { padding-block: clamp(4rem, 7vw, 7rem) var(--space-8); background: var(--forest-950); color: var(--sand-50); --color-focus: var(--sand-50); border-block-start: 1px solid rgb(246 242 232 / 0.22); }
+.footer-inner { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); align-items: start; gap: var(--space-12) var(--space-6); }
+.footer-brand { grid-column: 1 / 6; display: inline-flex; align-items: center; gap: var(--space-4); inline-size: fit-content; color: var(--sand-50); text-decoration: none; }
+.footer-brand-mark { position: relative; display: block; flex: 0 0 auto; inline-size: 4.25rem; block-size: 4rem; overflow: hidden; }
+.footer-brand-mark img { position: absolute; inset: 50% auto auto 50%; inline-size: 18rem; max-inline-size: none; block-size: auto; transform: translate(-50%, -50%); }
+.footer-brand-name { font-size: clamp(1.5rem, 2.5vw, 2.25rem); font-weight: var(--font-weight-semibold); letter-spacing: 0.1em; line-height: 1; }
+.footer-service { grid-column: 7 / 9; display: flex; flex-direction: column; gap: var(--space-1); padding-block-start: var(--space-3); font-family: var(--font-mono); }
+.footer-service span { font-size: var(--font-size-xs); letter-spacing: var(--letter-spacing-label); color: var(--mint-100); }
+.footer-service strong { font-size: var(--font-size-lg); }
+.footer-navigation { grid-column: 9 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-1) var(--space-6); }
+.footer-navigation a { display: inline-flex; align-items: center; min-block-size: 2.75rem; color: var(--sand-50); font-size: var(--font-size-sm); text-underline-offset: 0.35em; }
+.footer-note { grid-column: 1 / 9; max-inline-size: 32ch; padding-block-start: var(--space-6); border-block-start: 1px solid rgb(246 242 232 / 0.22); color: var(--mint-100); font-size: var(--font-size-lg); }
+@media (max-width: 48rem) {
+  .site-footer { padding-block-start: var(--space-16); }
+  .footer-inner { grid-template-columns: 1fr auto; gap: var(--space-8) var(--space-4); }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-service { grid-column: 1 / -1; padding-block-start: 0; }
+  .footer-navigation { grid-column: 1 / -1; padding-block: var(--space-5); border-block: 1px solid rgb(246 242 232 / 0.22); }
+  .footer-note { grid-column: 1 / -1; padding-block-start: 0; border-block-start: 0; }
+}

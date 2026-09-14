@@ -1,0 +1,15 @@
+.before-after { padding-block: var(--space-section); }
+.before-after-heading { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: end; gap: clamp(2rem, 6vw, 6rem); margin-block-end: clamp(2.5rem, 5vw, 5rem); }
+.before-after-eyebrow { margin-block-end: var(--space-4); color: var(--forest-700); font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: var(--letter-spacing-label); }
+.before-after-heading h2 { max-inline-size: 18ch; }
+.before-after-condition { max-inline-size: 48ch; font-size: var(--font-size-lg); }
+.before-after-labels { display: flex; justify-content: space-between; gap: var(--space-4); padding-block: var(--space-5); border-block-start: 1px solid var(--color-border); color: var(--forest-950); font-family: var(--font-mono); font-size: var(--font-size-sm); letter-spacing: var(--letter-spacing-label); }
+.before-after-labels span:last-child { text-align: end; }
+.before-after-video { display: block; inline-size: 100%; aspect-ratio: 16 / 9; block-size: auto; object-fit: contain; background: var(--forest-950); }
+.before-after-evidence figcaption { margin-block-start: var(--space-4); max-inline-size: 75ch; color: var(--forest-700); font-size: var(--font-size-sm); }
+.before-after-help { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3) var(--space-6); margin-block-start: var(--space-4); font-size: var(--font-size-sm); }
+.before-after-help a { display: inline-flex; align-items: center; min-block-size: 2.75rem; text-underline-offset: 0.3em; }
+@media (max-width: 48rem) {
+  .before-after-heading { grid-template-columns: 1fr; gap: var(--space-6); }
+  .before-after-labels { font-size: var(--font-size-xs); letter-spacing: 0.03em; }
+}

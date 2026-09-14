@@ -1,0 +1,284 @@
+GASCOLAE PLATFORM
+09_GASCOLAE_SERVICE_LANDING_PAGE CONTENT
+Digital & AI Assets • Version 1.0
+HƯỚNG DẪN: Đây là CONTENT SPECIFICATION cho Landing Page, không phải file thiết kế website. Sinh viên viết nội dung theo form; Team Dev dùng nội dung này để đưa vào Landing Page Template chuẩn. Chỉ dùng dữ liệu đã có trong Asset 01–08. Không tự tạo claim, giá, tiêu chuẩn, số liệu hiệu quả hoặc cam kết.
+A. THÔNG TIN NHẬN DIỆN
+Trường
+Nội dung
+Service ID
+S0271
+Tên dịch vụ
+Đo hiệu quả giảm phát thải CO₂
+Tên tiếng Anh
+Measuring CO₂ Emission Reduction Efficiency
+Target Audience
+Chủ/đơn vị vận hành bãi chôn lấp; công ty môi trường và xử lý chất thải; dự án thu hồi khí/phát điện; đội môi trường, vận hành, HSE, GIS; ban quản lý/chủ dự án và bên thẩm định.
+Primary CTA
+Đăng ký khảo sát thử và tư vấn phạm vi
+Nguồn đầu vào
+Assets 01–08 của service
+1. HERO SECTION
+HƯỚNG DẪN: Viết thật ngắn: khách hàng nhìn 5–10 giây phải hiểu service là gì và giá trị chính.
+Thành phần
+Nội dung
+Headline
+Đo hiệu quả giảm phát thải CO₂ bằng UAV tại bãi chôn lấp
+Sub-headline
+Lập bản đồ phát tán methane, định vị điểm phát thải cao và đo lặp trước–sau biện pháp khắc phục. Khi đủ điều kiện định lượng, kết quả CH₄ giảm được quy đổi sang CO₂e kèm dải bất định.
+Primary CTA
+Đăng ký khảo sát thử
+Secondary CTA
+Tư vấn chọn gói dịch vụ
+Visual Suggestion
+UAV bay trên bãi chôn lấp, lớp bản đồ CH₄ theo không gian, hướng gió và các điểm cần kiểm tra; không minh họa ppm như tCO₂e.
+2. CUSTOMER PROBLEMS
+HƯỚNG DẪN: Chỉ lấy pain point đã có nguồn. Không phóng đại vấn đề để làm marketing.
+Problem
+Ý nghĩa với khách hàng
+Nguồn Asset
+Nguồn methane phân tán trên diện rộng
+Khó bố trí điểm đo cố định và khó bao phủ toàn bộ bề mặt bãi bằng khảo sát theo điểm.
+Asset 01, 02; SRC-07, SRC-12
+Thiếu vị trí ưu tiên để khắc phục
+Không có tọa độ điểm phát thải cao khiến đội vận hành khó xếp thứ tự kiểm tra và sửa chữa.
+Asset 01, 02; SRC-05, SRC-07
+Thiếu bằng chứng trước–sau có truy vết
+Khó chứng minh hiệu quả biện pháp khắc phục và cung cấp dữ liệu cho kiểm kê hoặc thẩm định bên thứ ba.
+Asset 01, 02; SRC-02, SRC-07, SRC-12, SRC-13
+3. SOLUTION / SERVICE OVERVIEW
+Dịch vụ sử dụng UAV công nghiệp mang cảm biến CH₄, cảm biến gió và GNSS/RTK để thu dữ liệu methane đồng bộ theo vị trí, độ cao và thời gian. Dữ liệu được hiệu chỉnh, QA/QC và thể hiện trên bản đồ nhằm khoanh vùng điểm phát thải cao, hỗ trợ đội vận hành kiểm tra và khắc phục. Với Level 2 hoặc Level 3, kỳ nền được so sánh với kỳ xác nhận. Flux, lượng CH₄ giảm, hiệu suất thu gom và tCO₂e chỉ được tính khi thiết kế bay, dữ liệu gió, dữ liệu vận hành và phương pháp đáp ứng điều kiện; kết quả kèm dải bất định và không thay thế khảo sát tuân thủ hoặc chứng thư xác minh.
+4. KEY BENEFITS
+HƯỚNG DẪN: Benefit phải xuất phát từ capability/deliverable. Không tự tạo % tiết kiệm, % tăng năng suất hoặc ROI.
+Benefit
+Diễn giải ngắn
+Nguồn
+Bao phủ và định vị trên diện rộng
+Hỗ trợ phát hiện vùng methane cao, gắn tọa độ và ưu tiên vị trí cần kiểm tra.
+Asset 01, 02, 06; SRC-05, SRC-07
+Bằng chứng đánh giá hiệu quả khắc phục
+So sánh kỳ nền và kỳ xác nhận để lượng hóa thay đổi khi hai kỳ đủ điều kiện so sánh.
+Asset 01, 02, 05; SRC-02, SRC-07
+Dữ liệu có truy vết cho rà soát
+Kết hợp dữ liệu không gian, gió, hiệu chuẩn, vết bay và nhật ký QA/QC để hỗ trợ kiểm kê và thẩm định.
+Asset 01, 02, 04; SRC-04, SRC-12
+5. KEY CAPABILITIES / TECHNOLOGY
+Capability
+Mô tả
+Trạng thái
+Khảo sát CH₄ bằng UAV
+Thu chuỗi nồng độ methane trên bề mặt bãi bằng UAV mang cảm biến chuyên dụng.
+Đã xác minh về phương pháp; model cảm biến cần GASCOLAE xác nhận
+Đồng bộ không gian, thời gian và khí tượng
+Ghép CH₄ với GNSS/RTK, độ cao, thời gian và dữ liệu gió.
+Đã xác minh
+Lập bản đồ, QA/QC và định lượng có điều kiện
+Khoanh điểm phát thải cao; kiểm tra hiệu chuẩn, độ trôi, độ trễ và độ phủ; tính flux/tCO₂e khi đủ điều kiện.
+Đã xác minh về nguyên tắc; ngưỡng và bộ hệ số cần xác minh
+6. USE CASES
+Use Case
+Khách hàng / tình huống
+Output chính
+Khảo sát nền và định vị điểm phát thải cao
+Bãi cần xác định hiện trạng và vị trí ưu tiên trước khi sửa chữa.
+Bản đồ CH₄, danh sách điểm có tọa độ và hồ sơ QA/QC
+Đo xác nhận sau khắc phục
+Bãi đã sửa màng phủ, giếng thu hoặc đường ống và cần bằng chứng trước–sau.
+So sánh hai kỳ; CH₄ giảm và tCO₂e nếu đủ điều kiện
+Giám sát định kỳ và hỗ trợ thẩm định
+Cụm bãi hoặc dự án thu hồi khí cần theo dõi theo quý/mùa và tích hợp dữ liệu vận hành.
+Chuỗi thời gian, phân tích bất định và bộ hồ sơ bằng chứng
+7. HOW IT WORKS
+HƯỚNG DẪN: Landing Page chỉ mô tả quy trình ở mức 4–6 bước. SOP chi tiết nằm ở Asset 04.
+Bước
+Nội dung
+01
+Tiếp nhận brief, chốt ranh giới bãi, mục tiêu đo, Level và dữ liệu đầu vào.
+02
+Rà soát dữ liệu, giấy phép bay, HSE, khí tượng và quyết định GO/NO-GO.
+03
+Thiết kế mission, chuẩn bị thiết bị và hiệu chuẩn cảm biến trước–sau ca bay.
+04
+Bay đo kỳ nền; khách hàng khắc phục; thực hiện kỳ xác nhận theo phương pháp có thể so sánh.
+05
+Xử lý, QA/QC, lập bản đồ, định lượng có điều kiện, báo cáo và bàn giao.
+8. SERVICE LEVELS / PACKAGES
+HƯỚNG DẪN: Chỉ mô tả package đã có trong Profile/Pricing. Giá không bắt buộc hiển thị trên Landing Page.
+Level
+Định vị
+Nội dung chính
+Pricing Display
+Level 1 – Emission Screening & Mapping
+Sàng lọc và lập bản đồ nguồn trong một khu vực, một kỳ đo.
+Bản đồ CH₄, điểm cần kiểm tra, vết bay và QA/QC; không tính flux hoặc tCO₂e.
+Liên hệ tư vấn; giá chỉ là đề xuất nội bộ, cần Sales/Finance phê duyệt
+Level 2 – Quantification & Before–After
+Định lượng toàn bãi và đo lặp kỳ nền–xác nhận.
+Toàn bộ Level 1 cho hai kỳ; flux, hiệu suất thu gom khi có dữ liệu, CH₄ giảm, tCO₂e và lớp GIS.
+Liên hệ tư vấn; giá phụ thuộc diện tích/phạm vi và cần Sales/Finance phê duyệt
+Level 3 – Multi-site Monitoring & Verification Support
+Giám sát định kỳ nhiều bãi và hỗ trợ thẩm định.
+Toàn bộ Level 2 theo kỳ; chuỗi thời gian, phân tích bất định, hồ sơ bằng chứng và Web GIS Dashboard.
+Liên hệ tư vấn; báo giá theo site/chu kỳ và cần Sales/Finance phê duyệt
+9. DELIVERABLES
+Deliverable
+Mô tả trên Landing Page
+Trạng thái
+Bản đồ CH₄ và danh sách điểm phát thải cao
+Phân bố nồng độ bề mặt, tọa độ GNSS và mức ưu tiên kiểm tra.
+Đã xác minh; Level 1–3
+Hồ sơ truy vết và báo cáo QA/QC
+Vết bay, hướng gió, hiệu chuẩn, độ phủ và tính đầy đủ dữ liệu.
+Đã xác minh; Level 1–3
+Báo cáo trước–sau, flux và CO₂e
+Chênh lệch kỳ nền–xác nhận, flux, CH₄ giảm và tCO₂e kèm bất định khi đủ điều kiện.
+Đã xác minh có điều kiện; từ Level 2
+10. WHY GASCOLAE / POSITIONING
+HƯỚNG DẪN: Chỉ dùng năng lực đã có bằng chứng. Không tự tạo số lượng dự án, khách hàng, chứng nhận hoặc claim dẫn đầu.
+Điểm nhấn
+Nội dung
+Chuỗi đo lường khép kín
+Kết nối phát hiện → định vị → khắc phục → bay xác nhận → lượng hóa thay đổi.
+Dữ liệu tích hợp và có truy vết
+Kết hợp bản đồ không gian, gió, dữ liệu vận hành và nhật ký cho từng chuyến bay.
+Ranh giới dịch vụ minh bạch
+Tách rõ sàng lọc với định lượng; hỗ trợ kiểm kê/thẩm định nhưng không thay Method 21, không cấp chứng thư và không phát hành tín chỉ carbon.
+11. FAQ
+Câu hỏi
+Câu trả lời dự kiến
+Nguồn
+Đo được ppm có quy đổi ngay ra tấn CO₂e không?
+Không. ppm là nồng độ tại thời điểm đo. Cần ước tính flux từ thiết kế lấy mẫu và dữ liệu gió, sau đó áp dụng hệ số được duyệt; nếu thiếu điều kiện thì chỉ bàn giao kết quả sàng lọc.
+Asset 01, 04, 08; SRC-02, SRC-04, SRC-17
+Dịch vụ có thay thế khảo sát Method 21 không?
+Không. Dịch vụ bổ trợ bằng cách bao phủ diện rộng và ưu tiên vị trí kiểm tra; không thay phép đo mặt đất phục vụ tuân thủ.
+Asset 01, 02, 06; SRC-16
+Kết quả có tự động dùng để xin tín chỉ carbon không?
+Không. Dịch vụ cung cấp dữ liệu và hồ sơ hỗ trợ thẩm định, không phải chứng thư xác minh và không tự phát hành tín chỉ carbon.
+Asset 02, 05, 06; SRC-02, SRC-13
+Chi phí dịch vụ được xác định thế nào?
+Theo site/đợt hoặc chu kỳ, phụ thuộc diện tích, Level, số kỳ, cấu hình cảm biến, hiện trường, mô hình và QA/QC. Giá hiện có là đề xuất tham khảo; cần Sales/Finance phê duyệt trước khi báo giá chính thức.
+Asset 02, 07, 08
+12. CALL TO ACTION / LEAD FORM
+Thành phần
+Nội dung
+CTA Headline
+Bắt đầu bằng một phạm vi khảo sát phù hợp với bãi của bạn
+CTA Button
+Đăng ký tư vấn khảo sát
+Lead Fields
+Họ tên; Tổ chức; Email/Số điện thoại; Vị trí và diện tích bãi; Mục tiêu đo; Level quan tâm; Thời điểm dự kiến; Ghi chú dữ liệu sẵn có.
+Routing
+Chuyển cho đầu mối Sales/Service Owner để rà soát phạm vi; câu hỏi kỹ thuật, pháp lý hoặc giá chưa phê duyệt phải chuyển chuyên gia phụ trách.
+Lưu ý
+Không yêu cầu tải lên dữ liệu Restricted tại form công khai. Báo giá, lịch bay và khả năng định lượng chỉ xác nhận sau bước rà soát kỹ thuật, HSE, pháp lý và dữ liệu.
+13. AI AGENT INTEGRATION BLOCK
+HƯỚNG DẪN: Đây chỉ là nội dung/UX cho vùng AI Agent trên Landing Page. Cấu hình kỹ thuật nằm ở Asset 10.
+Field
+Nội dung
+Agent Display Name
+Trợ lý tư vấn S0271
+Welcome Message
+Xin chào. Tôi có thể giải thích dịch vụ đo hiệu quả giảm phát thải CO₂ bằng UAV, so sánh ba Level và giúp bạn chuẩn bị thông tin cho buổi tư vấn.
+Suggested Question 1
+Dịch vụ S0271 phù hợp với bãi chôn lấp của tôi như thế nào?
+Suggested Question 2
+Level 1, Level 2 và Level 3 khác nhau ở đâu?
+Suggested Question 3
+Sau khảo sát tôi sẽ nhận được những đầu ra nào?
+Suggested Question 4
+Cần những điều kiện gì để quy đổi kết quả sang tCO₂e?
+Escalation CTA
+Liên hệ chuyên gia GASCOLAE
+Restriction
+Chỉ dùng Assets 01–08 của S0271; không tự tạo claim, giá, timeline, ngưỡng kỹ thuật hoặc kết luận pháp lý. Không suy tCO₂e trực tiếp từ ppm; không tiết lộ dữ liệu Internal/Restricted. Chuyển chuyên gia khi thiếu dữ liệu hoặc cần xác nhận kỹ thuật, HSE, pháp lý, giá hay thẩm định.
+14. SEO / PLATFORM METADATA
+HƯỚNG DẪN: Sinh viên chỉ chuẩn bị nội dung; Team Dev quyết định cách triển khai SEO/technical metadata.
+Field
+Nội dung
+Page Title
+Đo hiệu quả giảm phát thải CO₂ bằng UAV tại bãi chôn lấp | S0271
+Meta Description
+Dịch vụ UAV lập bản đồ methane, định vị điểm phát thải cao và đo trước–sau biện pháp khắc phục tại bãi chôn lấp; hỗ trợ định lượng CO₂e khi đủ điều kiện.
+Primary Keyword
+đo giảm phát thải CO₂ bằng UAV
+Related Keywords
+đo methane bãi chôn lấp; bản đồ CH₄ bằng UAV; đo phát thải trước sau; giám sát khí bãi rác; định lượng tCO₂e
+Service ID
+S0271
+Canonical / URL Slug
+Team Dev xác định; đề xuất: /dich-vu/s0271-do-hieu-qua-giam-phat-thai-co2
+15. SOURCE TRACEABILITY
+Landing Page Section
+Nguồn Asset ưu tiên
+Hero / Overview
+01 KB; 02 Profile
+Problems / Benefits
+01 KB; 02 Profile
+Capabilities / Use Cases
+01 KB; 03 Metadata
+How It Works
+04 SOP
+Service Levels
+02 Profile; 07 Pricing
+Deliverables
+04 SOP; 05 Proposal
+Why GASCOLAE
+02 Profile; 06 Sales Kit
+FAQ
+01–07
+AI Agent Block
+08; 10
+16. VALIDATION CHECKLIST
+STT
+Tiêu chí
+Kết quả
+Ghi chú
+1
+Headline/Sub-headline nói đúng service và không phóng đại
+☑ Đạt ☐ Chưa đạt
+Đạt – mô tả đúng UAV/CH₄ và giữ điều kiện định lượng.
+2
+Không trộn dữ liệu service khác
+☑ Đạt ☐ Chưa đạt
+Đạt – chỉ sử dụng dữ liệu S0271.
+3
+Problems/Benefits có nguồn
+☑ Đạt ☐ Chưa đạt
+Đạt – gắn nguồn Asset/SRC tại từng bảng.
+4
+Capabilities không biến nội dung CẦN XÁC MINH thành fact
+☑ Đạt ☐ Chưa đạt
+Đạt – giữ rõ các mục cảm biến, ngưỡng và hệ số cần xác minh.
+5
+Service Levels thống nhất Profile/Pricing
+☑ Đạt ☐ Chưa đạt
+Đạt – ba Level đồng bộ Asset 02 và 07; không công bố giá số.
+6
+Deliverables thống nhất Proposal/SOP
+☑ Đạt ☐ Chưa đạt
+Đạt – đồng bộ Asset 04 và 05; đầu ra có điều kiện được ghi rõ.
+7
+Không tự hiển thị giá nếu chưa được phê duyệt
+☑ Đạt ☐ Chưa đạt
+Đạt – chỉ hiển thị “Liên hệ tư vấn”; giá tham khảo chưa được dùng như giá niêm yết.
+8
+FAQ không tự trả lời nếu không có thông tin mà chuyển về cho người phụ trách
+☑ Đạt ☐ Chưa đạt
+Đạt – FAQ dựa trên Assets; nội dung chưa xác nhận được chuyển chuyên gia.
+9
+AI Agent block có restriction và escalation
+☑ Đạt ☐ Chưa đạt
+Đạt – có restriction và escalation rõ ràng.
+10
+Không chứa dữ liệu Restricted/Internal
+☑ Đạt ☐ Chưa đạt
+Đạt – không đưa logic chi phí, bảng giá nội bộ hoặc dữ liệu Restricted.
+11
+CTA rõ ràng và lead form không thu thập dữ liệu thừa
+☑ Đạt ☐ Chưa đạt
+Đạt – CTA rõ; trường lead tối thiểu và cảnh báo không tải dữ liệu Restricted.
+12
+Source Traceability hoàn chỉnh
+☑ Đạt ☐ Chưa đạt
+Đạt – bảng truy vết bao phủ toàn bộ section và Assets 01–08.
+NGUYÊN TẮC CUỐI: Sinh viên tạo Landing Page Content. Team Dev tạo giao diện, component, integration và deployment. Không yêu cầu sinh viên tự code hoặc tự thiết kế một website riêng cho từng service.

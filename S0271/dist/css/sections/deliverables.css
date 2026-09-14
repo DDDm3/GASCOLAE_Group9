@@ -1,0 +1,25 @@
+.deliverables { padding-block: var(--space-section); }
+.deliverables-heading { max-inline-size: 48rem; margin-block-end: var(--space-16); }
+.deliverables-eyebrow { font-family: var(--font-mono); font-size: var(--font-size-xs); letter-spacing: var(--letter-spacing-label); color: var(--forest-700); margin-block-end: var(--space-4); }
+.deliverables-stack { list-style: none; margin: 0; padding: 0; isolation: isolate; }
+.deliverable-sheet { position: relative; padding: clamp(1.5rem, 4vw, 4rem); padding-block-end: clamp(3.5rem, 6vw, 6rem); border: 1px solid var(--color-border); background: var(--white); box-shadow: var(--shadow-subtle); }
+.deliverable-sheet + .deliverable-sheet { margin-block-start: -2rem; }
+.deliverable-sheet:nth-child(2) { margin-inline-start: 2.5rem; background: #f5faf7; }
+.deliverable-sheet:nth-child(3) { margin-inline-end: 2.5rem; }
+.deliverable-sheet:nth-child(4) { margin-inline-start: 1.25rem; background: var(--mint-100); }
+.sheet-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-3); padding-block-end: var(--space-5); margin-block-end: var(--space-8); border-block-end: 1px solid var(--color-border); font-family: var(--font-mono); font-size: var(--font-size-sm); color: var(--forest-700); }
+.sheet-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; gap: clamp(1.5rem, 4vw, 4rem); }
+.sheet-copy h3 { font-size: clamp(1.75rem, 2.6vw, 2.75rem); }
+.sheet-copy p { margin-block-start: var(--space-5); max-inline-size: 48ch; }
+.sheet-condition { border-inline-start: 2px solid var(--forest-700); padding-inline-start: var(--space-4); font-size: var(--font-size-sm); }
+.sheet-media { min-inline-size: 0; }
+.sheet-media picture { aspect-ratio: 4 / 3; overflow: hidden; background: var(--mint-100); }
+.sheet-media img { inline-size: 100%; block-size: 100%; object-fit: cover; }
+.sheet-media figcaption { margin-block-start: var(--space-3); font-size: var(--font-size-xs); color: var(--forest-700); }
+@media (max-width: 48rem) {
+  .deliverable-sheet { padding: var(--space-5); padding-block-end: var(--space-10); }
+  .deliverable-sheet + .deliverable-sheet { margin-block-start: -0.5rem; }
+  .deliverable-sheet:nth-child(n) { margin-inline: 0; }
+  .sheet-layout { grid-template-columns: 1fr; }
+  .sheet-meta { font-size: var(--font-size-xs); margin-block-end: var(--space-6); }
+}
