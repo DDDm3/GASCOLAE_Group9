@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Theo dõi thay đổi thảm thực vật bằng khảo sát UAV RGB và đa phổ, bản đồ biến động và dữ liệu GIS theo khu vực.">
+    <title>Theo dõi thay đổi thảm thực vật | GASCOLAE</title>
+    <link rel="icon" type="image/png" href="assets/logo/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#noi-dung-chinh">Đến nội dung chính</a>
+
+    <header class="site-header">
+      <div class="container header-layout">
+        <a class="brand" href="#tong-quan" aria-label="GASCOLAE — về đầu trang">
+          <img class="brand-logo" src="assets/logo/LOGO_no-bg.png" width="1046" height="300" alt="GASCOLAE">
+          <span class="brand-service">Theo dõi thay đổi thảm thực vật</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="menu-toggle-text">Menu</span>
+          <span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Điều hướng chính">
+          <ul>
+            <li><a href="#giai-phap">Giải pháp</a></li>
+            <li><a href="#ket-qua">Kết quả bàn giao</a></li>
+            <li><a href="#ung-dung">Ứng dụng</a></li>
+            <li><a href="#quy-trinh">Quy trình</a></li>
+            <li><a href="#goi-dich-vu">Gói dịch vụ</a></li>
+            <li class="nav-cta"><a class="button button-primary" href="#lien-he">Nhận tư vấn</a></li>
+          </ul>
+        </nav>
+
+        <a class="button button-primary header-cta" href="#lien-he">Nhận tư vấn</a>
+      </div>
+    </header>
+
+    <main id="noi-dung-chinh" tabindex="-1">
+      <section class="section hero" id="tong-quan" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-heading">
+            <p class="hero-eyebrow"><span aria-hidden="true"></span> Dịch vụ giám sát bằng UAV &amp; GIS</p>
+            <h1 id="hero-title">Theo dõi thay đổi thảm thực vật qua từng kỳ khảo sát</h1>
+          </div>
+          <div class="hero-copy">
+            <p class="lead">Khảo sát lặp bằng thiết bị bay không người lái (UAV), kết hợp ảnh màu RGB và ảnh đa phổ để lập bản đồ vùng tăng, ổn định, suy giảm hoặc không đủ dữ liệu. Kết quả giúp xác định nơi cần ưu tiên kiểm tra thực địa.</p>
+            <p class="hero-context"><strong>AOI</strong> là khu vực cần theo dõi. Bắt đầu từ ranh giới khu vực và mục tiêu giám sát của bạn.</p>
+            <div class="button-row">
+              <a class="button button-primary" href="#lien-he">Trao đổi nhu cầu</a>
+              <a class="button button-secondary" href="#ket-qua">Xem kết quả bàn giao</a>
+            </div>
+          </div>
+          <figure class="media-figure hero-media">
+            <img src="assets/images/S0283_1.jpg" width="1024" height="572" alt="Toàn cảnh các lô cây trồng trên đồi và đường đi giữa rừng" fetchpriority="high">
+            <figcaption><span>01</span> Hình minh họa toàn cảnh khu vực rừng trồng nhìn từ trên cao.</figcaption>
+          </figure>
+
+          <div class="hero-video-block">
+            <div class="hero-video-intro">
+              <p class="hero-eyebrow"><span aria-hidden="true"></span> Góc nhìn thực địa</p>
+              <h2>Quan sát quy trình theo dõi</h2>
+              <p>Video giới thiệu cách dữ liệu hình ảnh hỗ trợ quan sát khu vực và đối chiếu qua từng kỳ khảo sát.</p>
+            </div>
+            <figure class="media-figure hero-video">
+              <video controls preload="metadata" poster="assets/images/S0283_1.jpg" aria-label="Video minh họa quy trình theo dõi thảm thực vật">
+                <source src="assets/videos/vegetation-monitoring.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ video HTML5.
+              </video>
+              <figcaption>Video minh họa theo dõi thảm thực vật. Video không tự phát.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-sand" id="giai-phap" aria-labelledby="giai-phap-title">
+        <div class="container solution-layout">
+          <div class="solution-copy">
+            <p class="section-kicker">Vấn đề &amp; giải pháp</p>
+            <h2 id="giai-phap-title">Từ ảnh rời rạc đến bản đồ thay đổi có thể đối chiếu</h2>
+            <p class="lead">Ảnh chụp ở những thời điểm và điều kiện khác nhau có thể khiến việc nhận biết thay đổi trở nên khó khăn. Chênh lệch mùa, ánh sáng hoặc vị trí ảnh cũng có thể tạo ra tín hiệu thay đổi giả.</p>
+            <ol class="problem-list">
+              <li>
+                <div><strong>Khác điều kiện thu nhận</strong><span>Mùa, ánh sáng và giai đoạn sinh trưởng khác nhau có thể tạo tín hiệu thay đổi giả.</span></div>
+              </li>
+              <li>
+                <div><strong>Lệch vị trí giữa các kỳ</strong><span>Ảnh chưa được căn chỉnh khiến cùng một khu vực khó đặt cạnh nhau để đối chiếu.</span></div>
+              </li>
+              <li>
+                <div><strong>Phạm vi theo dõi thiếu nhất quán</strong><span>Ranh khu vực hoặc lô thay đổi làm kết quả giữa các kỳ khó tổng hợp theo cùng một đơn vị.</span></div>
+              </li>
+            </ol>
+            <div class="solution-answer">
+              <p class="solution-label">Cách GASCOLAE xử lý</p>
+              <p>GASCOLAE xây dựng kế hoạch khảo sát lặp, duy trì cùng phạm vi, chuẩn hóa dữ liệu và căn chỉnh ảnh giữa các kỳ. Bản đồ biến động phân biệt vùng tăng, ổn định, suy giảm hoặc không đủ dữ liệu; thống kê theo lô giúp khoanh vùng và ưu tiên kiểm tra hiện trường.</p>
+              <a class="text-link" href="#ket-qua">Xem kết quả bàn giao <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+          <figure class="media-figure solution-media">
+            <img src="assets/images/S0283_2.jpg" width="1024" height="765" loading="lazy" alt="Hai người chuẩn bị thiết bị định vị và UAV bên đường trong khu vực trồng rừng">
+            <figcaption>Hình minh họa khảo sát hiện trường với thiết bị định vị và UAV.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section comparison" id="so-sanh" aria-labelledby="so-sanh-title">
+        <div class="container container-narrow">
+          <p class="section-kicker">Đối chiếu theo thời gian</p>
+          <h2 id="so-sanh-title">Quan sát thay đổi giữa hai kỳ khảo sát</h2>
+          <p class="lead">So sánh ảnh của cùng khu vực sau khi được chuẩn hóa và căn chỉnh. Việc diễn giải cần xem xét mùa, giai đoạn sinh trưởng, ánh sáng và cảm biến sử dụng trong mỗi kỳ.</p>
+
+          <div class="comparison-module" data-comparison style="--comparison-position: 50%;">
+            <p class="comparison-status">Minh họa cách đọc dữ liệu — chưa phải kết quả khảo sát đã được xác minh.</p>
+            <div class="comparison-stage">
+              <img class="comparison-image comparison-image-followup" src="assets/images/S0283_4.jpg" width="1024" height="572" loading="lazy" alt="Ảnh minh họa khu vực trồng cây ở kỳ theo dõi, có ranh giới và nhãn lô">
+              <div class="comparison-overlay" aria-hidden="true">
+                <img class="comparison-image comparison-image-baseline" src="assets/images/S0283_3.jpg" width="1024" height="572" loading="lazy" alt="">
+              </div>
+              <span class="comparison-period comparison-period-baseline">Kỳ gốc</span>
+              <span class="comparison-period comparison-period-followup">Kỳ theo dõi</span>
+              <span class="comparison-divider" aria-hidden="true"><span></span></span>
+            </div>
+            <div class="comparison-control">
+              <label for="comparison-range">Vị trí thanh so sánh: <output for="comparison-range" data-comparison-output>50%</output></label>
+              <input id="comparison-range" data-comparison-range type="range" min="0" max="100" value="50" step="1" aria-describedby="comparison-help">
+              <p id="comparison-help">Kéo thanh để mở từng lớp ảnh. Khi dùng bàn phím, chọn thanh rồi dùng phím mũi tên, Home hoặc End.</p>
+            </div>
+          </div>
+
+          <div class="comparison-grid comparison-fallback" aria-label="Hai ảnh minh họa dùng để đối chiếu giữa các kỳ">
+            <figure class="media-figure">
+              <img src="assets/images/S0283_3.jpg" width="1024" height="572" loading="lazy" alt="Ảnh khu vực trồng cây nhìn từ trên cao, có ranh giới và nhãn lô ở kỳ gốc">
+              <figcaption>Kỳ gốc — hình minh họa, chưa xác minh ngày khảo sát.</figcaption>
+            </figure>
+            <figure class="media-figure">
+              <img src="assets/images/S0283_4.jpg" width="1024" height="572" loading="lazy" alt="Ảnh cùng khu vực có ranh giới và nhãn lô ở kỳ theo dõi">
+              <figcaption>Kỳ theo dõi — hình minh họa, chưa xác minh ngày khảo sát.</figcaption>
+            </figure>
+          </div>
+          <div class="comparison-summary">
+            <p><strong>Cách đọc:</strong> thanh điều khiển chỉ thể hiện tỷ lệ khung ảnh đang được mở từ 0–100%, không phải tỷ lệ biến động thảm thực vật.</p>
+            <p class="comparison-note">Tín hiệu thay đổi giúp khoanh vùng cần kiểm tra. Nguyên nhân cần được xác minh bằng thông tin hiện trường và chuyên gia.</p>
+          </div>
+          <a class="text-link" href="#ket-qua">Xem kết quả bàn giao</a>
+        </div>
+      </section>
+
+      <section class="section results" id="ket-qua" aria-labelledby="ket-qua-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Kết quả bàn giao</p>
+            <h2 id="ket-qua-title">Bản đồ, thống kê và dữ liệu để theo dõi từng khu vực</h2>
+            <p class="lead">Kết quả được tổ chức theo kỳ khảo sát và phạm vi đã thống nhất, kèm phương pháp xử lý, điều kiện thu nhận và giới hạn diễn giải.</p>
+          </div>
+          <div class="results-layout">
+            <div class="result-visual">
+              <figure class="media-figure result-map">
+                <img src="assets/images/S0283_5.jpg" width="1024" height="765" loading="lazy" alt="Bản đồ có các vùng màu, ranh lô và chú giải tăng, ổn định, suy giảm, không đủ dữ liệu">
+                <figcaption>Minh họa bản đồ biến động; dữ liệu nền và các giá trị trong ảnh chưa được xác minh độc lập.</figcaption>
+              </figure>
+              <ul class="change-legend" aria-label="Chú giải bốn trạng thái biến động">
+                <li><span class="legend-symbol legend-increase" aria-hidden="true">↑</span><strong>Tăng</strong></li>
+                <li><span class="legend-symbol legend-stable" aria-hidden="true">—</span><strong>Ổn định</strong></li>
+                <li><span class="legend-symbol legend-decrease" aria-hidden="true">↓</span><strong>Suy giảm</strong></li>
+                <li><span class="legend-symbol legend-unknown" aria-hidden="true">?</span><strong>Không đủ dữ liệu</strong></li>
+              </ul>
+            </div>
+            <ol class="deliverable-list">
+              <li><strong>Ảnh bản đồ theo từng kỳ</strong><span>Ảnh trực giao RGB/đa phổ gắn tọa độ để đối chiếu cùng khu vực.</span></li>
+              <li><strong>Bản đồ chỉ số và biến động</strong><span>Thể hiện chỉ số thực vật phù hợp cùng các vùng tăng, ổn định, suy giảm hoặc không đủ dữ liệu.</span></li>
+              <li><strong>Thống kê và điểm cần kiểm tra</strong><span>Diện tích, tỷ lệ theo lô và danh sách điểm nóng khi thuộc phạm vi dịch vụ.</span></li>
+              <li><strong>Dữ liệu bản đồ và báo cáo</strong><span>Dữ liệu GIS (hệ thống thông tin địa lý), thông tin đi kèm và báo cáo kiểm soát chất lượng; định dạng được thống nhất theo hệ thống sử dụng.</span></li>
+            </ol>
+          </div>
+          <!-- <div class="table-wrap" tabindex="0" role="region" aria-label="Mẫu cấu trúc thống kê" aria-describedby="table-note">
+            <table>
+              <caption id="table-note">Mẫu cấu trúc thống kê — chưa có số liệu khảo sát.</caption>
+              <thead>
+                <tr><th scope="col">Khu vực/lô</th><th scope="col">Lớp biến động</th><th scope="col">Diện tích (ha)</th><th scope="col">Tỷ lệ (%)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Chưa có dữ liệu</td><td>Chưa có dữ liệu</td><td>Chưa có dữ liệu</td><td>Chưa có dữ liệu</td></tr>
+              </tbody>
+            </table>
+          </div> -->
+          <div class="report-preview">
+            <div class="report-copy">
+              <p class="section-kicker">Mẫu báo cáo</p>
+              <h3>Cấu trúc giúp đối chiếu và lưu vết từng kỳ</h3>
+              <p>Minh họa cách bản đồ, thống kê và thông tin kiểm soát chất lượng có thể được tổ chức trong báo cáo bàn giao.</p>
+              <p class="asset-disclaimer">Mẫu minh họa, không phải kết quả khách hàng. Nội dung đóng trong ảnh chưa được dùng làm số liệu trên trang.</p>
+              <a class="button button-primary" href="#lien-he">Trao đổi nhu cầu</a>
+            </div>
+            <figure class="media-figure report-sample">
+              <img src="assets/images/S0283_6.png" width="1600" height="1205" loading="lazy" alt="Mẫu báo cáo định kỳ gồm bảng thống kê, biểu đồ, thông tin kiểm soát chất lượng và phê duyệt kỹ thuật">
+              <figcaption>Tài sản minh họa mẫu báo cáo định kỳ và thống kê theo lô.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section applications" id="ung-dung" aria-labelledby="ung-dung-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Ứng dụng</p>
+            <h2 id="ung-dung-title">Theo dõi thảm thực vật theo mục tiêu quản lý</h2>
+            <p class="lead">Dành cho chủ rừng, khu bảo tồn, doanh nghiệp nông–lâm nghiệp và các dự án phục hồi, hoàn nguyên cần theo dõi thay đổi theo không gian và thời gian.</p>
+            <p class="application-status">Các tình huống dưới đây mô tả phạm vi ứng dụng, không phải danh sách dự án đã thực hiện.</p>
+          </div>
+          <div class="application-grid">
+            <article>
+              <figure class="media-figure"><img src="assets/images/S0283_1.jpg" width="1024" height="572" loading="lazy" alt="Toàn cảnh các lô cây trồng trên đồi"><figcaption>Rừng trồng nhìn từ trên cao.</figcaption></figure>
+              <p class="application-index">01</p>
+              <h3>Rừng trồng và tái sinh</h3>
+              <p>Theo dõi biến động lớp phủ theo lô để nhận biết khu vực phục hồi hoặc có dấu hiệu suy giảm giữa các kỳ.</p>
+            </article>
+            <article>
+              <figure class="media-figure"><img src="assets/images/S0283_7.jpg" width="1024" height="765" loading="lazy" alt="Vùng tán cây thưa được khoanh đường nét đứt và ghi chú cần kiểm tra thực địa"><figcaption>Vùng ưu tiên kiểm tra thực địa.</figcaption></figure>
+              <p class="application-index">02</p>
+              <h3>Suy giảm tán</h3>
+              <p>Khoanh vùng nơi có dấu hiệu mất hoặc suy giảm lớp phủ, hỗ trợ đội hiện trường lựa chọn vị trí cần kiểm tra.</p>
+            </article>
+            <article>
+              <figure class="media-figure"><img src="assets/images/S0283_8.jpg" width="1024" height="765" loading="lazy" alt="Khu đất có các hàng cây trồng mới cạnh sườn đồi"><figcaption>Khu vực phục hồi và hoàn nguyên.</figcaption></figure>
+              <p class="application-index">03</p>
+              <h3>Phục hồi và hoàn nguyên</h3>
+              <p>Đối chiếu kỳ gốc với các kỳ tiếp theo để theo dõi diễn biến phục hồi lớp phủ trong khu vực dự án.</p>
+            </article>
+          </div>
+          <a class="button button-primary" href="#lien-he">Trao đổi nhu cầu</a>
+        </div>
+      </section>
+
+      <section class="section section-sage process" id="quy-trinh" aria-labelledby="quy-trinh-title">
+        <div class="container process-layout">
+          <div class="process-intro">
+            <p class="section-kicker">Quy trình</p>
+            <h2 id="quy-trinh-title">Năm bước từ nhu cầu đến kết quả theo dõi</h2>
+            <p>Phạm vi, lịch khảo sát và đầu ra được thống nhất theo khu vực và mục tiêu giám sát.</p>
+            <a class="button button-primary" href="#lien-he">Trao đổi nhu cầu</a>
+          </div>
+          <ol class="process-list">
+            <li><div><p class="process-phase">Xác định</p><h3>Khu vực và mục tiêu</h3><p>Làm rõ ranh giới, mục tiêu, dữ liệu kỳ gốc, số kỳ và kết quả cần bàn giao.</p></div></li>
+            <li><div><p class="process-phase">Chuẩn bị</p><h3>Thiết kế phương án</h3><p>Thống nhất phương án khảo sát lặp; rà soát điều kiện tiếp cận, an toàn, yêu cầu pháp lý và thời tiết.</p></div></li>
+            <li><div><p class="process-phase">Thực hiện</p><h3>Khảo sát và thu nhận</h3><p>Khảo sát UAV RGB/đa phổ và thu thông tin kiểm chứng hiện trường theo kế hoạch đã thống nhất.</p></div></li>
+            <li><div><p class="process-phase">Xử lý</p><h3>Phân tích và kiểm chứng</h3><p>Chuẩn hóa, căn chỉnh ảnh giữa các kỳ; tính chỉ số, phân lớp biến động, thống kê và kiểm tra điểm cần xác minh.</p></div></li>
+            <li><div><p class="process-phase">Hoàn tất</p><h3>Bàn giao và kỳ tiếp theo</h3><p>Kiểm soát chất lượng, bàn giao bản đồ và báo cáo theo phạm vi; thống nhất kỳ theo dõi tiếp theo.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section-sand packages" id="goi-dich-vu" aria-labelledby="goi-dich-vu-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Gói dịch vụ</p>
+            <h2 id="goi-dich-vu-title">Chọn phạm vi theo dõi phù hợp</h2>
+            <p class="lead">Các gói và mức giá dưới đây là cấu hình đề xuất để tham khảo. Phạm vi, lịch khảo sát và đầu ra được xác nhận theo khu vực và nhu cầu thực tế.</p>
+          </div>
+          <div class="package-grid">
+            <article class="package">
+              <div class="package-heading"><p class="package-status">Cấu hình đề xuất</p><h3>Pilot</h3><p class="package-scope">Tối đa 50 ha <span>·</span> 2 kỳ khảo sát</p></div>
+              <p class="package-description">Đánh giá tính khả thi và thiết lập dữ liệu kỳ gốc; ảnh bản đồ, chỉ số, bản đồ biến động cơ bản và báo cáo.</p>
+              <p class="package-note">Phạm vi cuối cùng chốt sau khảo sát nhu cầu.</p>
+              <p class="package-price"><span>Giá đề xuất</span><strong>65 triệu VNĐ</strong><small>/ gói dự án</small></p><a class="button button-secondary" href="#lien-he">Trao đổi nhu cầu</a>
+            </article>
+            <article class="package">
+              <div class="package-heading"><p class="package-status">Cấu hình đề xuất</p><h3>Standard</h3><p class="package-scope">Tối đa 200 ha <span>·</span> 4 kỳ trong 12 tháng</p></div>
+              <p class="package-description">Theo dõi định kỳ, phân tích biến động, thống kê theo lô, dữ liệu GIS và điểm nóng cần kiểm tra.</p>
+              <p class="package-note">Phạm vi cuối cùng chốt sau khảo sát nhu cầu.</p>
+              <p class="package-price"><span>Giá đề xuất</span><strong>165 triệu VNĐ</strong><small>/ gói dự án</small></p><a class="button button-secondary" href="#lien-he">Trao đổi nhu cầu</a>
+            </article>
+            <article class="package">
+              <div class="package-heading"><p class="package-status">Cấu hình đề xuất</p><h3>Advanced</h3><p class="package-scope">Tối đa 500 ha <span>·</span> 6 kỳ trong 12 tháng</p></div>
+              <p class="package-description">Phân tích nâng cao và báo cáo định kỳ. AI tùy chỉnh, bảng theo dõi trực tuyến hoặc kết nối API chỉ thuộc phạm vi nâng cao khi được thống nhất.</p>
+              <p class="package-note">Phạm vi cuối cùng chốt sau khảo sát nhu cầu.</p>
+              <p class="package-price"><span>Giá đề xuất</span><strong>420 triệu VNĐ</strong><small>/ gói dự án</small></p><a class="button button-secondary" href="#lien-he">Trao đổi nhu cầu</a>
+            </article>
+          </div>
+          <p class="package-disclaimer"><strong>Lưu ý:</strong> giá trên áp dụng cho cấu hình đề xuất tương ứng. Phạm vi, thuế, chi phí phát sinh và điều khoản thanh toán được xác nhận trong báo giá chính thức. Nếu nhu cầu vượt cấu hình, hãy trao đổi để xác định phạm vi phù hợp.</p>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq" aria-labelledby="faq-title">
+        <div class="container container-faq">
+          <p class="section-kicker">Câu hỏi thường gặp</p>
+          <h2 id="faq-title">Những điều cần biết trước khi khảo sát</h2>
+          <p class="faq-intro">Các câu trả lời giúp xác định điều kiện dữ liệu, phạm vi diễn giải và thông tin cần chuẩn bị trước khi trao đổi.</p>
+          <div class="faq-list">
+            <details><summary>Vì sao cần ảnh đa phổ?<span aria-hidden="true"></span></summary><p>Ảnh đa phổ ghi nhận thêm các dải ánh sáng, trong đó có cận hồng ngoại, để tính chỉ số thực vật. Ảnh RGB giúp quan sát hình thái, còn chỉ số sử dụng được lựa chọn theo cảm biến và mục tiêu theo dõi.</p></details>
+            <details><summary>Có thể so sánh hai chuyến bay bất kỳ không?<span aria-hidden="true"></span></summary><p>Không nên so sánh trực tiếp khi điều kiện thu nhận khác nhau. Cần căn chỉnh vị trí, chuẩn hóa dữ liệu và xem xét mùa, giai đoạn sinh trưởng, ánh sáng, độ phân giải và cảm biến để hạn chế tín hiệu thay đổi giả.</p></details>
+            <details><summary>Kết quả có cho biết nguyên nhân cây suy giảm không?<span aria-hidden="true"></span></summary><p>Dữ liệu giúp khoanh vùng tín hiệu thay đổi. Để xác định nguyên nhân, cần đối chiếu lịch tác động, kiểm tra thực địa và đánh giá của chuyên gia.</p></details>
+            <details><summary>Có thể dùng kết quả để tính carbon hoặc chứng nhận MRV không?<span aria-hidden="true"></span></summary><p>S0283 cung cấp bằng chứng về lớp phủ và biến động. Việc tính hoặc xác minh carbon cần mô hình được hiệu chuẩn và quy trình đo đạc, báo cáo, thẩm định (MRV) phù hợp; bản đồ biến động không thay thế các bước đó.</p></details>
+            <details><summary>Cần chuẩn bị gì để trao đổi nhu cầu?<span aria-hidden="true"></span></summary><p>Bạn có thể cung cấp địa điểm, ranh giới hoặc mô tả khu vực, diện tích ước tính, mục tiêu và số kỳ mong muốn. Nếu đã có ảnh hoặc dữ liệu kỳ gốc, hãy cho biết để cùng đánh giá khả năng sử dụng.</p></details>
+          </div>
+          <a class="button button-primary" href="#lien-he">Trao đổi nhu cầu</a>
+        </div>
+      </section>
+
+      <section class="section contact" id="lien-he" aria-labelledby="lien-he-title">
+        <div class="container contact-layout">
+          <div class="contact-intro">
+            <p class="section-kicker">Trao đổi nhu cầu</p>
+            <h2 id="lien-he-title">Trao đổi về khu vực bạn cần theo dõi</h2>
+            <p class="lead">Cho biết khu vực và mục tiêu giám sát để cùng xác định phạm vi khảo sát phù hợp.</p>
+            <p class="demo-notice"><strong>Bản demo — thông tin chưa được gửi.</strong> Kênh liên hệ chính thức đang được cập nhật.</p>
+          </div>
+          <form class="contact-form" data-demo-form aria-describedby="form-note demo-form-status" novalidate>
+            <p id="form-note" class="form-note"><span aria-hidden="true">*</span> Trường bắt buộc. Chỉ cung cấp thông tin cần thiết cho việc trao đổi phạm vi khảo sát.</p>
+            <div class="field">
+              <label for="ho-ten">Họ tên <span aria-hidden="true">*</span></label>
+              <input id="ho-ten" name="ho-ten" type="text" autocomplete="name" placeholder="Nhập họ tên của bạn" required aria-describedby="ho-ten-error">
+              <p class="field-error" id="ho-ten-error"></p>
+            </div>
+            <div class="field">
+              <label for="don-vi">Đơn vị</label>
+              <input id="don-vi" name="don-vi" type="text" autocomplete="organization" placeholder="Tên đơn vị, nếu có">
+            </div>
+            <fieldset class="field-full contact-choice" aria-describedby="contact-help">
+              <legend>Email hoặc số điện thoại <span aria-hidden="true">*</span></legend>
+              <p id="contact-help">Cung cấp ít nhất một cách liên hệ hợp lệ; không bắt buộc nhập cả hai.</p>
+              <div class="contact-choice-grid">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="ten@donvi.vn" aria-describedby="email-error">
+                  <p class="field-error" id="email-error"></p>
+                </div>
+                <div class="field">
+                  <label for="so-dien-thoai">Số điện thoại</label>
+                  <input id="so-dien-thoai" name="so-dien-thoai" type="tel" autocomplete="tel" inputmode="tel" placeholder="Nhập số liên hệ" aria-describedby="so-dien-thoai-error">
+                  <p class="field-error" id="so-dien-thoai-error"></p>
+                </div>
+              </div>
+            </fieldset>
+            <div class="field field-full">
+              <label for="aoi">Khu vực cần theo dõi (AOI) <span aria-hidden="true">*</span></label>
+              <textarea id="aoi" name="aoi" rows="3" placeholder="Địa điểm hoặc mô tả ranh giới khu vực" required aria-describedby="aoi-error"></textarea>
+              <p class="field-error" id="aoi-error"></p>
+            </div>
+            <div class="field">
+              <label for="dien-tich">Diện tích ước tính (ha)</label>
+              <input id="dien-tich" name="dien-tich" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Có thể để trống" aria-describedby="dien-tich-hint dien-tich-error">
+              <p class="field-hint" id="dien-tich-hint">Nếu nhập, diện tích phải lớn hơn 0.</p>
+              <p class="field-error" id="dien-tich-error"></p>
+            </div>
+            <div class="field">
+              <label for="tan-suat">Số kỳ hoặc tần suất mong muốn</label>
+              <input id="tan-suat" name="tan-suat" type="text" placeholder="Có thể để trống nếu cần tư vấn">
+            </div>
+            <div class="field field-full">
+              <label for="muc-tieu">Mục tiêu giám sát <span aria-hidden="true">*</span></label>
+              <textarea id="muc-tieu" name="muc-tieu" rows="4" placeholder="Bạn muốn theo dõi thay đổi nào?" required aria-describedby="muc-tieu-error"></textarea>
+              <p class="field-error" id="muc-tieu-error"></p>
+            </div>
+            <div class="field field-full">
+              <label for="du-lieu-goc">Dữ liệu kỳ gốc hiện có</label>
+              <textarea id="du-lieu-goc" name="du-lieu-goc" rows="3" placeholder="Mô tả ảnh hoặc dữ liệu đã có, nếu có"></textarea>
+            </div>
+            <div class="field-full form-actions">
+              <button class="button button-primary" data-demo-submit type="button">Kiểm tra thông tin</button>
+              <p class="form-status" id="demo-form-status" role="status" aria-live="polite">Bản demo — thông tin chưa được gửi.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-shell">
+        <div class="footer-cta">
+          <div>
+            <p class="footer-kicker">Bắt đầu từ khu vực cần theo dõi</p>
+            <h2>Sẵn sàng theo dõi khu vực của bạn?</h2>
+            <p>Chia sẻ ranh giới, diện tích và mục tiêu để cùng xác định phạm vi khảo sát phù hợp.</p>
+          </div>
+          <a class="button footer-cta-button" href="#lien-he">Trao đổi nhu cầu</a>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-brand">
+            <picture>
+              <source srcset="assets/logo/GASCOLAE.svg" type="image/svg+xml">
+              <img class="footer-logo" src="assets/logo/GASCOLAE.png" width="1569" height="450" loading="lazy" alt="GASCOLAE">
+            </picture>
+            <p>S0283 cung cấp dữ liệu hình ảnh, bản đồ biến động và thông tin GIS để theo dõi sự thay đổi thảm thực vật qua từng kỳ khảo sát.</p>
+          </div>
+
+          <nav class="footer-nav" aria-label="Điều hướng cuối trang">
+            <h2>Liên kết nhanh</h2>
+            <ul>
+              <li><a href="#giai-phap">Giải pháp</a></li>
+              <li><a href="#ket-qua">Kết quả bàn giao</a></li>
+              <li><a href="#ung-dung">Ứng dụng</a></li>
+              <li><a href="#quy-trinh">Quy trình</a></li>
+              <li><a href="#goi-dich-vu">Gói dịch vụ</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-project">
+            <h2>Thông tin dự án</h2>
+            <dl>
+              <div><dt>Mã dịch vụ</dt><dd>S0283</dd></div>
+              <div><dt>Trạng thái liên hệ</dt><dd>Thông tin chính thức đang cập nhật</dd></div>
+            </dl>
+            <a class="footer-text-link" href="#lien-he">Đến biểu mẫu trao đổi <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>GASCOLAE <span aria-hidden="true">·</span> S0283</p>
+          <a href="#tong-quan">Về đầu trang <span aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
