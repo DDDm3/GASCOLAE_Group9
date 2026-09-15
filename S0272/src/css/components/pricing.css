@@ -1,0 +1,109 @@
+/* Pricing Packages */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--color-accent);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+  z-index: 1;
+}
+
+.pricing-card.popular:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent);
+  color: var(--color-text-main);
+  padding: 8px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing-level {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-brand);
+  margin-bottom: var(--space-xs);
+}
+
+.pricing-name {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.pricing-features {
+  flex-grow: 1;
+  margin-bottom: var(--space-xl);
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-muted);
+}
+
+.pricing-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-brand);
+  font-weight: bold;
+}
+
+.pricing-action {
+  text-align: center;
+}
+
+.pricing-action .btn {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .pricing-card.popular {
+    transform: none;
+  }
+  
+  .pricing-card.popular:hover {
+    transform: translateY(-8px);
+  }
+}

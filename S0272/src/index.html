@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch vụ Lập bản đồ Carbon Footprint bằng UAV & GIS | GASCOLAE</title>
+  <meta name="description" content="Dịch vụ lập bản đồ carbon footprint S0272 ứng dụng UAV RTK và GIS để trực quan hóa nguồn phát thải khí nhà kính, khoanh vùng điểm nóng và hỗ trợ báo cáo ESG/MRV cho cơ sở sản xuất, khu công nghiệp.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components/faq.css">
+  <link rel="stylesheet" href="css/components/form.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+</head>
+<body>
+
+  <!-- Floating Navbar -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <img src="../assets/logo/LOGO.svg" alt="GASCOLAE Logo">
+    </a>
+    <div class="nav-links">
+      <a href="#giai-phap">Giải pháp</a>
+      <a href="#nang-luc">Năng lực</a>
+      <a href="#bang-gia">Bảng giá</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#lien-he" class="btn btn-accent">Nhận báo giá</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg">
+      <video autoplay loop muted playsinline>
+        <source src="../assets/videodemo_S0272.mp4" type="video/mp4">
+        <!-- Fallback if video is missing -->
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="heading-xl">Lập bản đồ Carbon Footprint theo không gian bằng UAV & GIS</h1>
+      <p class="body-lg">Chuyển hóa số liệu kiểm kê khí nhà kính dạng bảng thành bản đồ số trực quan, định vị chính xác nguồn phát thải và khoanh vùng điểm nóng (hotspot) phục vụ tối ưu hóa cắt giảm và báo cáo ESG.</p>
+      <div class="hero-buttons">
+        <a href="#lien-he" class="btn btn-accent">Đăng ký tư vấn kỹ thuật</a>
+        <a href="#bang-gia" class="btn btn-primary">Khám phá các gói dịch vụ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Grid: Thực trạng & Lợi ích -->
+  <section class="section-padding" id="thuc-trang">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Vấn đề & Giá trị mang lại</h2>
+      </div>
+      
+      <div class="bento-grid">
+        <!-- Vấn đề (Bento) -->
+        <div class="bento-item bg-mint">
+          <img src="../assets/illustrations/bento_no_space_1789006549441.jpg" alt="Thiếu góc nhìn không gian" class="bento-img">
+          <h3>Thiếu góc nhìn không gian</h3>
+          <p>Doanh nghiệp có tổng số liệu phát thải nhưng số liệu phân tán trong bảng tính, khó trả lời chính xác phát sinh ở đâu và khu vực nào cần ưu tiên.</p>
+        </div>
+        
+        <!-- Lợi ích (Chiếm 2 cột) -->
+        <div class="bento-item bento-col-2 bg-blue">
+          <img src="../assets/illustrations/bento_has_space_1789006626256.jpg" alt="Thông tin carbon có vị trí" class="bento-img">
+          <h3>Thông tin carbon có vị trí</h3>
+          <p>Chuyển kiểm kê dạng bảng thành bản đồ số hóa trực quan, giúp người dùng nhận diện ngay khu vực, tài sản hoặc tuyến vận tải cần ưu tiên xử lý thay vì chỉ xem tổng số phát thải.</p>
+        </div>
+        
+        <!-- Vấn đề (Chiếm 2 dòng) -->
+        <div class="bento-item bento-row-2 bg-yellow">
+          <img src="../assets/illustrations/bento_large_site_1789006659715.jpg" alt="Site rộng khó kiểm soát nguồn" class="bento-img">
+          <h3>Site rộng khó kiểm soát nguồn</h3>
+          <p>Khuôn viên KCN, nhà máy diện tích lớn khiến việc khảo sát thủ công tại mặt đất tốn kém, dễ bỏ sót nguồn và thiếu bằng chứng vị trí đồng nhất.</p>
+        </div>
+        
+        <!-- Vấn đề -->
+        <div class="bento-item bg-amber">
+          <img src="../assets/illustrations/bento_scattered_data_1789006673371.jpg" alt="Dữ liệu phân tán" class="bento-img">
+          <h3>Dữ liệu phân tán, thiếu liên kết</h3>
+          <p>Hóa đơn năng lượng, số liệu vận hành và vị trí tài sản chưa được tích hợp trên cùng một nền tảng GIS để quản trị tập trung.</p>
+        </div>
+        
+        <!-- Lợi ích -->
+        <div class="bento-item bg-mint">
+          <img src="../assets/illustrations/bento_unified_data_1789006688309.jpg" alt="Dữ liệu hợp nhất" class="bento-img">
+          <h3>Dữ liệu hợp nhất & Truy xuất gốc</h3>
+          <p>Kết nối đồng bộ giữa ảnh UAV, số liệu hoạt động, hệ số phát thải và lớp GIS. Mọi giá trị CO2e đều truy xuất được công thức.</p>
+        </div>
+        
+        <!-- Lợi ích -->
+        <div class="bento-item bento-col-2 bg-blue">
+          <img src="../assets/illustrations/bento_esg_1789006704288.jpg" alt="Dữ liệu sẵn sàng cho ESG" class="bento-img">
+          <h3>Dữ liệu số hóa sẵn sàng cho ESG & MRV</h3>
+          <p>Bộ dữ liệu GIS chuẩn hóa (GeoTIFF, Shapefile, CSV, WebGIS) giúp doanh nghiệp chủ động chuẩn bị hồ sơ bằng chứng phục vụ thẩm tra khí nhà kính theo quy định pháp luật.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Giải pháp Tổng quan (Deep Blue Background) -->
+  <section class="section-padding bg-deep-blue" id="giai-phap" style="background-color: var(--color-deep-blue); color: white;">
+    <div class="container text-center">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <h2 class="heading-lg" style="margin-bottom: var(--space-md);">Giải pháp Tích hợp 4 Lớp Kỹ thuật</h2>
+        <p class="body-lg" style="color: rgba(255,255,255,0.8); margin-bottom: var(--space-xl);">
+          GASCOLAE cung cấp Dịch vụ lập bản đồ carbon footprint nhằm số hóa công tác quản trị phát thải qua 4 lớp cốt lõi:
+        </p>
+      </div>
+      
+      <div class="card-grid" style="text-align: left; margin-bottom: var(--space-xl);">
+        <!-- Lớp 1 -->
+        <div class="media-card" style="color: var(--color-text-main);">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/layer1_taxonomy_1789008430038.jpg" alt="Lớp 1: Khóa ranh giới">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Lớp 1</span>
+            <h3>Khóa ranh giới kiểm kê</h3>
+            <p>Xác định chính xác ranh giới cơ sở và phân loại taxonomy các nguồn phát thải.</p>
+          </div>
+        </div>
+        
+        <!-- Lớp 2 -->
+        <div class="media-card" style="color: var(--color-text-main);">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/layer2_data_1789008442629.jpg" alt="Lớp 2: Thu thập dữ liệu">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Lớp 2</span>
+            <h3>Chuẩn hóa dữ liệu</h3>
+            <p>Thu thập, làm sạch và chuẩn hóa toàn bộ dữ liệu hoạt động tiêu thụ năng lượng.</p>
+          </div>
+        </div>
+        
+        <!-- Lớp 3 -->
+        <div class="media-card" style="color: var(--color-text-main);">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/layer3_uav_1789008456228.jpg" alt="Lớp 3: UAV RTK">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Lớp 3</span>
+            <h3>Bằng chứng không gian</h3>
+            <p>Thiết lập bằng chứng vị trí bằng thiết bị bay UAV RTK quang học RGB (Core).</p>
+          </div>
+        </div>
+        
+        <!-- Lớp 4 -->
+        <div class="media-card" style="color: var(--color-text-main);">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/card_gis_1789006756984.jpg" alt="Lớp 4: GIS">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Lớp 4</span>
+            <h3>Phân bổ trên GIS</h3>
+            <p>Ứng dụng động cơ phân bổ không gian trên GIS để tính toán và trực quan hóa lượng CO2e.</p>
+          </div>
+        </div>
+      </div>
+      <p style="color: rgba(255,255,255,0.6); font-size: 14px; font-style: italic;">
+        *Lưu ý: Lượng phát thải CO2e được tính toán trên cơ sở dữ liệu hoạt động và hệ số phát thải, không suy ra trực tiếp chỉ từ ảnh chụp UAV.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tính năng & Sản phẩm Bàn giao -->
+  <section class="section-padding" id="nang-luc">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Năng lực & Sản phẩm Bàn giao</h2>
+      </div>
+      
+      <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="media-card">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/card_uav_1789006717697.jpg" alt="Khảo sát UAV có định vị">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Core Capability</span>
+            <h3>Khảo sát UAV có định vị</h3>
+            <p>Thiết bị bay UAV tích hợp GNSS RTK/PPK và mốc khống chế thu thập ảnh quang học RGB độ phân giải cao hệ tọa độ VN-2000.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="media-card">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/card_hotspot_1789006729196.jpg" alt="Carbon Hotspot Map">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Deliverable</span>
+            <h3>Carbon Hotspot Map</h3>
+            <p>Bản đồ nhiệt biểu diễn mật độ phát thải CO2e theo không gian, trực quan hóa các phân khu trọng điểm phát thải vượt trội.</p>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="media-card">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/card_accounting_1789006742942.jpg" alt="Carbon Accounting">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Core Capability</span>
+            <h3>Carbon Accounting có Provenance</h3>
+            <p>Chuẩn hóa số liệu, áp dụng hệ số phát thải hợp lệ, phân định nhãn dữ liệu và liên kết nguồn gốc tính toán.</p>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="media-card">
+          <div class="media-card-visual">
+            <img src="../assets/illustrations/card_gis_1789006756984.jpg" alt="GIS Dataset & WebGIS">
+          </div>
+          <div class="media-card-content">
+            <span class="badge badge-source">Deliverable</span>
+            <h3>GIS Dataset & WebGIS</h3>
+            <p>Bộ tệp dữ liệu không gian và nền tảng WebGIS tra cứu điểm phát thải trực tuyến cho khách hàng gói Level 2-3.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases & Why Us -->
+  <section class="section-padding bg-mint">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Tình huống Sử dụng Điển hình</h2>
+      </div>
+      
+      <div class="card-grid">
+        <!-- Typographic Numbering Cards -->
+        <div class="typo-card">
+          <div class="typo-card-number">1</div>
+          <h3>Baseline Carbon Map</h3>
+          <p>Dành cho cơ sở sản xuất hoặc KCN cần thiết lập bức tranh phát thải cơ sở ban đầu. Bàn giao bản đồ vị trí nguồn phát thải và Hotspot Map.</p>
+        </div>
+        
+        <div class="typo-card">
+          <div class="typo-card-number">2</div>
+          <h3>Theo dõi sau dự án</h3>
+          <p>Đánh giá hiệu quả sau khi doanh nghiệp đầu tư công nghệ tiết kiệm năng lượng. Cung cấp bản đồ biến động (Change Map).</p>
+        </div>
+        
+        <div class="typo-card">
+          <div class="typo-card-number">3</div>
+          <h3>Quản trị Multi-site</h3>
+          <p>Tập đoàn sở hữu nhiều nhà máy cần quản lý tập trung qua WebGIS Dashboard đa site, hỗ trợ lọc và truy vấn theo vị trí.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (Timeline) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Quy trình Triển khai</h2>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-number">01</div>
+          <div class="timeline-content">
+            <h3>Khởi động & Tiếp nhận dữ liệu</h3>
+            <p>Xác định ranh giới cơ sở, mục tiêu kiểm kê, gửi biểu mẫu thu thập dữ liệu hoạt động tiêu thụ.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">02</div>
+          <div class="timeline-content">
+            <h3>Kiểm tra pháp lý & Kế hoạch bay</h3>
+            <p>Tra cứu vùng bay, xin cấp phép bay theo NĐ 288/2025/NĐ-CP và thiết lập đường bay UAV.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">03</div>
+          <div class="timeline-content">
+            <h3>Khảo sát thực địa UAV & Đo mốc</h3>
+            <p>Bay chụp ảnh trực giao RGB RTK theo lưới thiết kế; đo đạc mốc tọa độ mặt đất.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">04</div>
+          <div class="timeline-content">
+            <h3>Xử lý bình đồ & Tính toán</h3>
+            <p>Ghép bình đồ Orthomosaic; áp dụng thuật toán phân bổ không gian CO2e lên bản đồ cơ sở.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">05</div>
+          <div class="timeline-content">
+            <h3>QA/QC & Bàn giao</h3>
+            <p>Kiểm tra sai số, xuất bộ dataset GIS, báo cáo kỹ thuật và bàn giao nghiệm thu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="section-padding bg-blue" id="bang-gia">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Các Gói Dịch vụ</h2>
+      </div>
+      
+      <div class="pricing-grid">
+        <!-- Level 1 -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-level">Level 1</div>
+            <div class="pricing-name">Pilot / Basic (Baseline ban đầu)</div>
+          </div>
+          <ul class="pricing-features">
+            <li>Quy mô ≤20 ha/site</li>
+            <li>01 đợt bay khảo sát</li>
+            <li>UAV RTK + RGB Core</li>
+            <li>SLA mục tiêu 7–10 ngày làm việc</li>
+            <li>Output: Orthomosaic, Carbon Source Map, Báo cáo baseline</li>
+          </ul>
+          <div class="pricing-action">
+            <a href="#lien-he" class="btn btn-primary">Liên hệ tư vấn</a>
+          </div>
+        </div>
+        
+        <!-- Level 2 -->
+        <div class="pricing-card popular">
+          <div class="popular-badge">PHỔ BIẾN</div>
+          <div class="pricing-header">
+            <div class="pricing-level">Level 2</div>
+            <div class="pricing-name">Standard (Đánh giá biến động)</div>
+          </div>
+          <ul class="pricing-features">
+            <li>Quy mô ≤100 ha/site</li>
+            <li>02 đợt khảo sát (≤3 tháng)</li>
+            <li>Scope 1, Scope 2 đầy đủ</li>
+            <li>SLA mục tiêu 10–15 ngày làm việc/đợt</li>
+            <li>Toàn bộ Level 1 + Carbon Hotspot Map, Change Map, WebGIS nhẹ</li>
+          </ul>
+          <div class="pricing-action">
+            <a href="#lien-he" class="btn btn-accent">Nhận báo giá ngay</a>
+          </div>
+        </div>
+        
+        <!-- Level 3 -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <div class="pricing-level">Level 3</div>
+            <div class="pricing-name">Advanced / Enterprise</div>
+          </div>
+          <ul class="pricing-features">
+            <li>Quy mô ≤500 ha hoặc Multi-site</li>
+            <li>04 đợt bay/năm</li>
+            <li>Tùy chọn cảm biến LiDAR/Gas</li>
+            <li>SLA mục tiêu 15–20 ngày làm việc/đợt</li>
+            <li>Toàn bộ Level 2 + WebGIS đa site, phân tích chuỗi thời gian</li>
+          </ul>
+          <div class="pricing-action">
+            <a href="#lien-he" class="btn btn-primary">Liên hệ tư vấn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding" id="faq">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-xl);">
+        <h2 class="heading-lg">Câu hỏi Thường gặp</h2>
+      </div>
+      
+      <div class="faq-container">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            UAV có tự bay và đo được toàn bộ carbon footprint không?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Không. UAV chủ yếu tạo bản đồ nền và bằng chứng không gian hiện trường. Tổng lượng phát thải CO2e bắt buộc phải được tính toán dựa trên dữ liệu hoạt động tiêu thụ (điện, dầu, than, gas...) và hệ số phát thải hợp lệ theo chuẩn GHG Protocol.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Dịch vụ khác gì so với báo cáo kiểm kê GHG thông thường?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Kiểm kê thông thường chỉ dừng lại ở các con số tổng hợp trong bảng tính. Dịch vụ S0272 bổ sung tọa độ không gian cho từng nguồn phát thải, tài sản và phân xưởng trên nền GIS, giúp nhìn thấy trực quan các điểm nóng để ưu tiên xử lý.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Hoạt động bay UAV trên khuôn viên nhà máy có an toàn và hợp pháp không?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Có. Mọi hoạt động bay khảo sát của GASCOLAE đều tuân thủ nghiêm ngặt quy định kiểm tra vùng cấm/hạn chế bay và xin cấp phép bay hợp lệ theo Nghị định 288/2025/NĐ-CP trước khi triển khai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Form -->
+  <section class="lead-section" id="lien-he">
+    <div class="container">
+      <div class="form-container">
+        <div class="text-center" style="margin-bottom: var(--space-lg);">
+          <h2 class="heading-md">Số hóa Dấu chân Carbon & Tối ưu hóa Lộ trình Giảm phát thải</h2>
+          <p class="body-lg">Yêu cầu tư vấn kỹ thuật & Báo giá</p>
+        </div>
+        
+        <form>
+          <div class="form-group">
+            <label class="form-label">Họ và tên *</label>
+            <input type="text" class="form-control" placeholder="Nhập họ và tên" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tên Đơn vị/Nhà máy *</label>
+            <input type="text" class="form-control" placeholder="Tên công ty hoặc nhà máy" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email công vụ *</label>
+            <input type="email" class="form-control" placeholder="email@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Yêu cầu khảo sát trọng tâm</label>
+            <select class="form-control">
+              <option>Kiểm kê baseline</option>
+              <option>Đánh giá biến động</option>
+              <option>Khảo sát thảm cây</option>
+            </select>
+          </div>
+          <div class="text-center" style="margin-top: var(--space-xl);">
+            <button type="submit" class="btn btn-accent btn-large" style="width: 100%; font-size: 18px;">Gửi Yêu Cầu</button>
+          </div>
+          <p class="text-center" style="margin-top: 16px; font-size: 14px; color: var(--color-text-muted);">Không yêu cầu nhập thông tin bảo mật hay dữ liệu hoạt động nhạy cảm.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Agent Integration Block (Placeholder) -->
+  <!-- <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <div style="background: var(--color-white); padding: 16px; border-radius: 20px; box-shadow: var(--shadow-lg); width: 300px; display: none;" id="ai-agent-placeholder">
+      <h4 style="color: var(--color-brand); margin-bottom: 8px;">Trợ lý AI - Dịch vụ S0272</h4>
+      <p style="font-size: 14px; margin-bottom: 12px;">Tôi có thể hỗ trợ bạn tìm hiểu về giải pháp trực quan hóa điểm nóng phát thải...</p>
+      <button class="btn btn-primary" style="width: 100%; padding: 8px; font-size: 14px;">Chat ngay</button>
+    </div>
+    <button class="btn btn-brand" style="width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--color-brand); color: white; box-shadow: var(--shadow-md); cursor: pointer; float: right;" onclick="document.getElementById('ai-agent-placeholder').style.display = document.getElementById('ai-agent-placeholder').style.display === 'none' ? 'block' : 'none';">
+      AI
+    </button>
+  </div> -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- Sử dụng filter trắng để logo sáng nổi bật trên nền Deep Blue -->
+       
+          <p>Dịch vụ lập bản đồ Carbon Footprint (S0272) bằng công nghệ UAV RTK và GIS, giúp doanh nghiệp số hóa và quản trị điểm nóng phát thải hiệu quả, hỗ trợ đắc lực báo cáo ESG.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Về dịch vụ</h4>
+          <ul>
+            <li><a href="#giai-phap">Giải pháp</a></li>
+            <li><a href="#nang-luc">Năng lực</a></li>
+            <li><a href="#bang-gia">Bảng giá</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Liên hệ & Hỗ trợ</h4>
+          <ul>
+            <li><a href="#lien-he">Tư vấn dự án</a></li>
+            <li><a href="#">Tài liệu kỹ thuật</a></li>
+            <li><a href="#">Hotline: 1900 xxxx</a></li>
+            <li><a href="#">Email: contact@gascolae.vn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GASCOLAE. All rights reserved.</p>
+        <p>S0272 - Carbon Footprint Mapping</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

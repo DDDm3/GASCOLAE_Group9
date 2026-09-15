@@ -1,0 +1,41 @@
+:root {
+  /* Colors */
+  --color-bg: #f8f9fa; /* Off-white */
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-accent: #FFD500; /* Vàng tươi */
+  --color-brand: #0056b3; /* Xanh dương mặc định, sẽ được cập nhật nếu có mã màu cụ thể */
+  --color-deep-blue: #0A192F;
+  --color-white: #ffffff;
+  
+  /* Pastel Colors cho thẻ */
+  --color-pastel-mint: #e8f5e9;
+  --color-pastel-yellow: #fffde7;
+  --color-pastel-blue: #e3f2fd;
+  --color-pastel-amber: #fff8e1;
+
+  /* Typography */
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Border Radius */
+  --radius-pill: 999px;
+  --radius-card-sm: 16px;
+  --radius-card: 24px;
+  --radius-card-lg: 32px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+  --shadow-glass: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 120px;
+}
