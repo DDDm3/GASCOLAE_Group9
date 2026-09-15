@@ -1,0 +1,116 @@
+/* Regular Cards (Capabilities/Deliverables) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.media-card {
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.media-card-visual {
+  height: 180px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient placeholder if no image */
+.media-card-visual.gradient-1 { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+.media-card-visual.gradient-2 { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
+.media-card-visual.gradient-3 { background: linear-gradient(135deg, #fff3e0, #ffe0b2); }
+
+.media-card-content {
+  padding: var(--space-lg);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-card-content h3 {
+  margin-bottom: var(--space-xs);
+  font-size: 20px;
+}
+
+.media-card-content p {
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  width: fit-content;
+}
+
+.badge-source {
+  background: var(--color-pastel-blue);
+  color: var(--color-brand);
+}
+
+/* Typographic Numbering Cards (Use Cases) */
+.typo-card {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  z-index: 1;
+}
+
+.typo-card-number {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 160px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-bg);
+  z-index: -1;
+  user-select: none;
+}
+
+.typo-card h3 {
+  font-size: 24px;
+  margin-bottom: var(--space-sm);
+  color: var(--color-brand);
+}
+
+.typo-card p {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .media-card-content {
+    padding: var(--space-md);
+  }
+  .typo-card {
+    padding: var(--space-md);
+  }
+}
