@@ -1,0 +1,184 @@
+/* components/agent.css - AI Agent Assistant Component */
+.agent-card {
+  background: linear-gradient(135deg, #041e3d 0%, #0b3b75 100%);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agent-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 213, 0, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.agent-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-yellow) 0%, #f59e0b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-weight: 800;
+  font-size: 22px;
+  box-shadow: 0 4px 16px rgba(255, 213, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.agent-meta h3 {
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.agent-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #86efac;
+}
+
+.agent-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+.agent-welcome-bubble {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  border-top-left-radius: 4px;
+  padding: 20px 24px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  backdrop-filter: blur(8px);
+}
+
+.agent-questions-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-yellow);
+  margin-bottom: 16px;
+}
+
+.agent-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.agent-q-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 12px 22px;
+  color: #ffffff;
+  font-family: var(--font-family-main);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agent-q-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--accent-yellow);
+  transform: translateX(4px);
+}
+
+.agent-q-btn .q-arrow {
+  color: var(--accent-yellow);
+  font-weight: 700;
+}
+
+/* AI Answer Box */
+.agent-answer-box {
+  display: none;
+  background: rgba(255, 213, 0, 0.12);
+  border: 1.5px solid var(--accent-yellow);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.agent-answer-box.active {
+  display: block;
+}
+
+.agent-answer-q {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--accent-yellow);
+  margin-bottom: 8px;
+}
+
+.agent-answer-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.agent-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.agent-restriction {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .agent-card {
+    padding: 32px 20px;
+  }
+
+  .agent-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .agent-footer .btn {
+    width: 100%;
+  }
+}

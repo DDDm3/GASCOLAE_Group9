@@ -1,0 +1,95 @@
+/* components/footer.css - Footer Component */
+.footer {
+  background: var(--bg-darker);
+  color: #ffffff;
+  padding: 80px 0 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.footer-brand .footer-logo {
+  margin-left: -90px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.footer-brand .footer-logo img {
+  height: 52px;
+  filter: brightness(0) invert(1); /* Chuyển logo sang màu trắng tinh trên nền tối */
+  transform: scale(1.2);
+  transform-origin: left center;
+}
+
+.footer-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 440px;
+  margin-top: 12px;
+}
+
+.footer-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--accent-yellow);
+  transform: translateX(4px);
+}
+
+.footer-bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-badge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--accent-yellow);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand .footer-logo {
+    margin-left: -70px;
+  }
+}

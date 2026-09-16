@@ -1,0 +1,56 @@
+/* tokens.css - GASCOLAE S0274 Design Tokens */
+:root {
+  /* Colors - Wing.com Inspiration & GASCOLAE Identity */
+  --bg-main: #f8f9fa;               /* Off-white */
+  --bg-surface: #ffffff;            /* Pure white */
+  --bg-dark: #041e3d;               /* Deep Blue section */
+  --bg-darker: #021226;             /* Footer & deep accents */
+
+  --text-primary: #0f172a;          /* Slate 900 */
+  --text-secondary: #475569;        /* Slate 600 */
+  --text-muted: #94a3b8;            /* Slate 400 */
+  --text-inverse: #ffffff;          /* White text */
+
+  --accent-yellow: #FFD500;         /* Wing-style vibrant yellow */
+  --accent-yellow-hover: #eab308;   /* Hover state */
+  --accent-yellow-light: #fef9c3;   /* Light badge background */
+
+  --brand-blue: #041e3d;
+  --blue-600: #1d4ed8;
+  --blue-500: #2563eb;
+  --blue-400: #60a5fa;
+
+  /* Pastels for Bento & Category Cards */
+  --pastel-green: #e6f4ea;
+  --pastel-green-text: #166534;
+  --pastel-yellow: #fef9c3;
+  --pastel-yellow-text: #854d0e;
+  --pastel-blue: #e0f2fe;
+  --pastel-blue-text: #1e40af;
+  --pastel-red: #fee2e2;
+  --pastel-red-text: #991b1b;
+  --pastel-amber: #fef3c7;
+  --pastel-amber-text: #92400e;
+
+  /* Border Radii */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.12);
+  --shadow-glow-yellow: 0 10px 25px rgba(255, 213, 0, 0.35);
+  --shadow-glow-blue: 0 10px 25px rgba(37, 99, 235, 0.25);
+
+  /* Layout */
+  --container-width: 1240px;
+  --section-spacing: 110px;
+  --section-spacing-mobile: 70px;
+
+  /* Typography */
+  --font-family-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

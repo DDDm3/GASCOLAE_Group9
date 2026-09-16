@@ -1,0 +1,123 @@
+/* components/hero.css - Video Background Hero Section (100vh) */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  padding: 120px 24px 80px;
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 18, 38, 0.72) 0%,
+    rgba(4, 30, 61, 0.65) 60%,
+    rgba(2, 18, 38, 0.85) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-headline {
+  font-size: clamp(34px, 5.2vw, 62px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.hero-headline .text-gradient-accent {
+  background: linear-gradient(135deg, #FFD500 0%, #ffea75 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: clamp(17px, 2.1vw, 22px);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 820px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.hero-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 28px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge-tag .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  box-shadow: 0 0 10px var(--accent-yellow);
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 100px 20px 60px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin-top: 40px;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+}

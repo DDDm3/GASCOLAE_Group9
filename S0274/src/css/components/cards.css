@@ -1,0 +1,259 @@
+/* components/cards.css - Two-Half Visual Cards & Typographic Numbering Cards */
+
+/* Two-Half Cards for Capabilities & Deliverables */
+.media-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.media-card-visual {
+  height: 160px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #e2e8f0;
+}
+
+.media-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.media-card:hover .media-card-visual img {
+  transform: scale(1.05);
+}
+
+.media-card-body {
+  padding: 28px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-card-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--pastel-blue);
+  color: var(--pastel-blue-text);
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.media-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.media-card-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.media-card-output {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  font-size: 13.5px;
+  color: var(--blue-600);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Dark variant of media card (e.g. for Deliverables in dark section) */
+.media-card-dark {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.media-card-dark .media-card-title {
+  color: #ffffff;
+}
+
+.media-card-dark .media-card-desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.media-card-dark .media-card-output {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--accent-yellow);
+}
+
+/* Typographic Numbering Cards (Use Cases) */
+.num-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.num-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.num-card-header {
+  height: 140px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.num-card-header.gradient-blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+}
+
+.num-card-header.gradient-green {
+  background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+}
+
+.num-card-header.gradient-yellow {
+  background: linear-gradient(135deg, #fef9c3 0%, #fefce8 100%);
+}
+
+.num-card-header.gradient-purple {
+  background: linear-gradient(135deg, #ede9fe 0%, #f5f3ff 100%);
+}
+
+/* Khổng lồ 80px Typographic Number */
+.num-giant {
+  font-size: 88px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  user-select: none;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  position: absolute;
+}
+
+.num-card-body {
+  padding: 30px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.num-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.num-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex-grow: 1;
+  margin-bottom: 16px;
+}
+
+/* Why Us / Competitive Advantage Feature Box */
+.feature-box {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-num-box {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.feature-num-box.pastel-blue {
+  background: var(--pastel-blue);
+  color: var(--pastel-blue-text);
+}
+
+.feature-num-box.pastel-green {
+  background: var(--pastel-green);
+  color: var(--pastel-green-text);
+}
+
+.feature-num-box.pastel-yellow {
+  background: var(--pastel-yellow);
+  color: var(--pastel-yellow-text);
+}
+
+.feature-num-box.pastel-red {
+  background: var(--pastel-red);
+  color: var(--pastel-red-text);
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.feature-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .media-card-body, .num-card-body, .feature-box {
+    padding: 24px;
+  }
+
+  .feature-box {
+    gap: 16px;
+  }
+
+  .feature-num-box {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}

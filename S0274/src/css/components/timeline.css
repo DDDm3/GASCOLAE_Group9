@@ -1,0 +1,80 @@
+/* components/timeline.css - Vertical Process Timeline (Steps 01-06) */
+.timeline-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.timeline-item {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 28px 36px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.timeline-item:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-500);
+}
+
+.timeline-number {
+  font-size: clamp(36px, 4.5vw, 48px);
+  font-weight: 800;
+  color: #93c5fd;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+  min-width: 70px;
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover .timeline-number {
+  color: var(--blue-600);
+}
+
+.timeline-content {
+  flex-grow: 1;
+}
+
+.timeline-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    padding: 22px 24px;
+    gap: 20px;
+  }
+
+  .timeline-number {
+    font-size: 32px;
+    min-width: 48px;
+  }
+
+  .timeline-title {
+    font-size: 17px;
+  }
+
+  .timeline-desc {
+    font-size: 14px;
+  }
+}

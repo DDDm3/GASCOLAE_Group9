@@ -1,0 +1,102 @@
+/* components/faq.css - Interactive Accordion FAQ Component */
+.faq-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-item.active {
+  border-color: var(--blue-600);
+}
+
+.faq-header {
+  width: 100%;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-family-main);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.faq-item.active .faq-header {
+  color: var(--blue-600);
+}
+
+.faq-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.faq-icon::before {
+  content: '+';
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text-secondary);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  background: var(--pastel-blue);
+}
+
+.faq-item.active .faq-icon::before {
+  color: var(--blue-600);
+}
+
+.faq-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-content {
+  padding: 0 32px 28px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .faq-header {
+    padding: 20px 24px;
+    font-size: 16px;
+  }
+
+  .faq-content {
+    padding: 0 24px 22px;
+    font-size: 14.5px;
+  }
+}

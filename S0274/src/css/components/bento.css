@@ -1,0 +1,140 @@
+/* bento.css - Cards for Thực trạng & Lợi ích vượt trội */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.bento-card {
+  border-radius: var(--radius-lg);
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.bento-header {
+  margin-bottom: 24px;
+}
+
+.bento-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.bento-tag.problem {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.bento-tag.benefit {
+  background: rgba(34, 197, 94, 0.14);
+  color: #15803d;
+}
+
+.bento-tag.benefit-blue {
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.bento-title {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.bento-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Color variations for pastel theme */
+.bg-red {
+  background: #fdf2f2;
+  border: 1px solid rgba(248, 113, 113, 0.28);
+}
+.bg-red .bento-title {
+  color: #991b1b;
+}
+
+.bg-yellow {
+  background: #fefce8;
+  border: 1px solid rgba(250, 204, 21, 0.32);
+}
+.bg-yellow .bento-title {
+  color: #854d0e;
+}
+
+.bg-amber {
+  background: #fffbeb;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.bg-amber .bento-title {
+  color: #92400e;
+}
+
+.bg-green {
+  background: #f0fdf4;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+.bg-green .bento-title {
+  color: #14532d;
+}
+
+.bg-blue {
+  background: #eff6ff;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.bg-blue .bento-title {
+  color: #1e3a8a;
+}
+
+/* Visual illustration container */
+.bento-visual {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+  margin-top: auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+}
+
+.bento-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.bento-card:hover .bento-visual img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-visual {
+    height: 200px;
+  }
+}
