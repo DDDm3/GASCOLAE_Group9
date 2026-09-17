@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dịch vụ Đo độ ẩm tán rừng bằng cảm biến UAV (FMC) | GASCOLAE</title>
+  <meta name="description" content="Khảo sát và lập bản đồ độ ẩm tán rừng (FMC) bằng UAV đa phổ và nhiệt, phát hiện sớm stress hạn và khoanh vùng nguy cơ cháy rừng theo chuẩn dữ liệu số hóa.">
+  <meta name="keywords" content="đo độ ẩm tán rừng bằng cảm biến UAV, canopy moisture monitoring, đo FMC tán rừng, UAV viễn thám lâm nghiệp, bản đồ khô hạn rừng, giám sát sức khỏe rừng UAV">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <!-- 1. Full-width Edge-to-Edge Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <a href="#" class="nav-brand" title="GASCOLAE - Nền tảng Dịch vụ UAV & GIS Lâm nghiệp">
+      <img src="../assets/LOGO.svg" alt="GASCOLAE Logo">
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#thuc-trang">Thực trạng</a>
+      <a href="#giai-phap">Giải pháp</a>
+      <a href="#loi-ich">Lợi ích</a>
+      <a href="#cong-nghe">Công nghệ</a>
+      <a href="#tinh-huong">Ứng dụng</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#bang-gia">Gói dịch vụ</a>
+      <a href="#ban-giao">Sản phẩm</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#lien-he" class="btn btn-emerald" id="navCtaBtn">Đăng ký Khảo sát</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 2. Asymmetric Split Video Hero Section (100vh Full Viewport) -->
+    <section class="hero-section" id="hero">
+      <video class="hero-video-bg" autoplay loop muted playsinline poster="../assets/illustrations/hero_canopy_drone.jpg">
+        <source src="../assets/video_S0284.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-split-grid">
+          <!-- Left Column: Typography & CTAs -->
+          <div class="hero-text-col">
+            <div class="hero-badge-tag">
+              <span class="dot"></span>
+              <span>Dịch vụ S0284 • Viễn thám Sinh thái Rừng</span>
+            </div>
+            
+            <h1 class="hero-headline">
+              Đo độ ẩm tán rừng bằng cảm biến <span class="text-gradient-emerald">UAV</span>
+            </h1>
+            
+            <p class="hero-sub">
+              Thu thập dữ liệu đa phổ và nhiệt từ UAV kết hợp mẫu kiểm chứng mặt đất để ước tính hàm lượng ẩm lá (FMC), hỗ trợ giám sát sức khỏe rừng và phòng ngừa nguy cơ cháy rừng.
+            </p>
+            
+            <div class="hero-cta">
+              <a href="#lien-he" class="btn btn-emerald" id="heroPrimaryCta">Yêu cầu tư vấn</a>
+              <a href="#bang-gia" class="btn btn-outline-white" id="heroSecondaryCta">Xem phạm vi dịch vụ</a>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Canopy Telemetry Glass Widget -->
+          <!-- <div class="telemetry-col">
+            <div class="telemetry-widget">
+              <div class="telemetry-header">
+                <div class="telemetry-title">
+                  <span class="icon-live"></span>
+                  <span>Canopy Telemetry System</span>
+                </div>
+                <span class="telemetry-badge">RTK Active</span>
+              </div>
+
+              <div class="telemetry-main-metric">
+                <div class="telemetry-main-label">Hàm lượng ẩm lá trung bình (FMC)</div>
+                <div class="telemetry-main-value-row">
+                  <span class="telemetry-main-value" id="telemetryFmcVal">138.4%</span>
+                  <span class="telemetry-main-status">Đủ nước (Hydrated)</span>
+                </div>
+              </div>
+
+              <div class="telemetry-grid">
+                <div class="telemetry-item">
+                  <div class="telemetry-item-label">Nhiệt độ tán (LWIR)</div>
+                  <div class="telemetry-item-value" id="telemetryTempVal">24.8°C</div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-item-label">Bám ngọn tán (AGL)</div>
+                  <div class="telemetry-item-value">35m Terrain</div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-item-label">Độ phân giải GSD</div>
+                  <div class="telemetry-item-value">4.5 cm/px</div>
+                </div>
+
+                <div class="telemetry-item">
+                  <div class="telemetry-item-label">Độ chính xác R²</div>
+                  <div class="telemetry-item-value">0.87 (ML Fit)</div>
+                </div>
+              </div>
+
+              <div class="telemetry-footer-bar">
+                <span>📍 Tọa độ GNSS: WGS-84 / VN-2000</span>
+                <span>📡 Dữ liệu kiểm chứng Lab: Chuẩn 105°C</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Customer Problems (Ma trận Khoảng trống Quản lý Lâm nghiệp) -->
+    <section class="section" id="thuc-trang">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Thực trạng & Thách thức</span>
+          <h2 class="section-title">Khoảng trống Trong Quản lý Độ ẩm & Khô hạn Rừng</h2>
+          <p class="section-sub">
+            Khắc phục các rào cản cố hữu của việc đo đạc thủ công rời rạc, thiếu vắng số liệu định lượng về độ khô thảm lá ngọn tán trước cao điểm mùa khô.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Problem 1 (Pastel Rose) -->
+          <div class="problem-card bg-rose">
+            <div class="problem-header">
+              <span class="problem-status-tag status-blindspot">Mù địa hình</span>
+              <h3 class="problem-title">Thiếu dữ liệu độ ẩm diện rộng có độ phân giải cao</h3>
+              <p class="problem-desc">
+                Đo đạc thủ công chỉ lấy được vài điểm mẫu đơn lẻ, không phản ánh tính biến thiên liên tục trên lâm phận lớn hàng trăm hecta đồi núi hiểm trở.
+              </p>
+            </div>
+            <div class="problem-visual">
+              <img src="../assets/illustrations/prob_ground_blindspot.jpg" alt="Đo đạc thủ công mặt đất bị hạn chế tầm với tán cao">
+            </div>
+          </div>
+
+          <!-- Problem 2 (Pastel Amber) -->
+          <div class="problem-card bg-amber">
+            <div class="problem-header">
+              <span class="problem-status-tag status-invisible">Khó nhận diện sớm</span>
+              <h3 class="problem-title">Khó phát hiện sớm stress hạn và cây khô héo</h3>
+              <p class="problem-desc">
+                Tán cây bị suy kiệt độ ẩm tế bào thường không biểu hiện rõ qua mắt thường ở giai đoạn đầu, dẫn đến phản ứng ứng phó chậm trễ khi rừng đã bước vào trạng thái dễ bắt cháy.
+              </p>
+            </div>
+            <div class="problem-visual">
+              <img src="../assets/illustrations/prob_stress_detection.jpg" alt="Stress hạn tế bào lá không nhìn thấy bằng mắt thường">
+            </div>
+          </div>
+
+          <!-- Problem 3 (Pastel Mint) -->
+          <div class="problem-card bg-mint">
+            <div class="problem-header">
+              <span class="problem-status-tag status-delay">Độ trễ cao</span>
+              <h3 class="problem-title">Hạn chế của phương pháp sấy mẫu thủ công</h3>
+              <p class="problem-desc">
+                Quy trình trèo cắt cành tán cao và sấy mẫu mất nhiều ngày công lao động, số liệu trả về chậm, không kịp thời phục vụ chỉ đạo khẩn cấp mùa cao điểm PCCC rừng.
+              </p>
+            </div>
+            <div class="problem-visual">
+              <img src="../assets/illustrations/prob_manual_climb.jpg" alt="Phương pháp trèo cắt cành thủ công tốn thời gian và rủi ro">
+            </div>
+          </div>
+
+          <!-- Problem 4 (Pastel Cyan) -->
+          <div class="problem-card bg-cyan">
+            <div class="problem-header">
+              <span class="problem-status-tag status-nondigital">Chưa số hóa</span>
+              <h3 class="problem-title">Thiếu dữ liệu số hóa theo dõi diễn biến rừng</h3>
+              <p class="problem-desc">
+                Đơn vị quản lý thiếu các lớp bản đồ số hóa cập nhật định kỳ để theo dõi biến động khô hạn và sức khỏe rừng theo chuỗi thời gian liên tục qua các năm.
+              </p>
+            </div>
+            <div class="problem-visual">
+              <img src="../assets/illustrations/prob_digital_gap.jpg" alt="Khoảng trống dữ liệu số hóa không gian chuỗi thời gian">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Solution Overview (Deep Forest Emerald Section with 5 Spectral Bands) -->
+    <section class="section section-solution" id="giai-phap">
+      <div class="container">
+        <div class="solution-container">
+          <span class="eyebrow eyebrow-dark">Giải pháp Tổng quan</span>
+          <h2 class="solution-title">Đo & Ước tính Độ ẩm Tán rừng bằng UAV Tích hợp Đa tầng</h2>
+          
+          <p class="solution-lead">
+            GASCOLAE cung cấp dịch vụ đo và ước tính độ ẩm tán rừng bằng UAV, sử dụng cảm biến quang học đa phổ và cảm biến nhiệt radiometric kết hợp mẫu kiểm chứng mặt đất (ground-truth) để ước tính hàm lượng ẩm của lá (FMC), lập bản đồ phân vùng khô hạn và xác định tọa độ các khu vực có nguy cơ cao, hỗ trợ công tác quản lý sức khỏe rừng và phòng ngừa cháy rừng.
+          </p>
+
+          <div class="solution-callout">
+            <div class="solution-callout-icon">!</div>
+            <div>
+              <strong>Lưu ý khoa học:</strong> Các ngưỡng phân loại FMC chuẩn cho từng loài rừng Việt Nam, quy trình phối hợp báo động và cam kết pháp lý về PCCC chỉ được công bố khi đã được GASCOLAE và cơ quan chức năng xác nhận chính thức.
+            </div>
+          </div>
+
+          <!-- 5 Multi-spectral & Thermal Spectral Bands Array -->
+          <div class="spectral-bands-grid">
+            <div class="spectral-band-card">
+              <div class="band-indicator band-green">560nm</div>
+              <div class="band-name">Green Band</div>
+              <div class="band-wavelength">560 ± 16 nm</div>
+              <div class="band-role">Đo phản xạ diệp lục tán lá & sức sống thực bì</div>
+            </div>
+
+            <div class="spectral-band-card">
+              <div class="band-indicator band-red">650nm</div>
+              <div class="band-name">Red Band</div>
+              <div class="band-wavelength">650 ± 16 nm</div>
+              <div class="band-role">Hấp thụ quang hợp cực đại, đánh giá sinh khối</div>
+            </div>
+
+            <div class="spectral-band-card">
+              <div class="band-indicator band-rededge">705nm</div>
+              <div class="band-name">Red-Edge</div>
+              <div class="band-wavelength">705 ± 10 nm</div>
+              <div class="band-role">Vùng nhạy cảm chuyển tiếp, phát hiện sớm stress hạn</div>
+            </div>
+
+            <div class="spectral-band-card">
+              <div class="band-indicator band-nir">840nm</div>
+              <div class="band-name">NIR Band</div>
+              <div class="band-wavelength">840 ± 20 nm</div>
+              <div class="band-role">Phản xạ cấu trúc tế bào xốp, tương quan độ ẩm lá</div>
+            </div>
+
+            <div class="spectral-band-card">
+              <div class="band-indicator band-lwir">LWIR</div>
+              <div class="band-name">Thermal LWIR</div>
+              <div class="band-wavelength">8 – 14 μm</div>
+              <div class="band-role">Bức xạ nhiệt bề mặt tán, đo thoát hơi nước (ET)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Key Benefits (Anchor Bento Grid Layout) -->
+    <section class="section" id="loi-ich">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Lợi ích Vượt trội</span>
+          <h2 class="section-title">Chuyển dịch sang Quản trị Lâm phận Số hóa</h2>
+          <p class="section-sub">
+            Cung cấp bức tranh không gian liên tục với độ chính xác cao thay thế hoàn toàn các ước đoán cảm tính trên lâm phận đồi núi.
+          </p>
+        </div>
+
+        <div class="anchor-bento-grid">
+          <!-- Left Column: Anchor Card (Big Focus Card) -->
+          <div class="anchor-card">
+            <div class="bento-header">
+              <span class="bento-tag status-nondigital">Lợi ích Trọng tâm</span>
+              <h3 class="bento-title" style="font-size: 26px;">Bao phủ diện rộng, xóa điểm mù địa hình đồi núi</h3>
+              <p class="bento-desc">
+                UAV RTK hỗ trợ thu thập dữ liệu trên hàng trăm hecta đồi núi hiểm trở theo kế hoạch nhiệm vụ lập trình tự động bám địa hình ngọn tán (Terrain Following), đảm bảo cự ly quét đồng nhất đến từng ngọn cây mà không phụ thuộc vào đường mòn hay độ dốc hiểm trở.
+              </p>
+            </div>
+            <div class="anchor-visual">
+              <img src="../assets/illustrations/benefit_wide_coverage.jpg" alt="UAV quét phủ diện rộng xóa điểm mù địa hình rừng đồi núi">
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Satellite Cards -->
+          <div class="satellite-col">
+            <!-- Satellite 1 -->
+            <div class="satellite-card bg-amber">
+              <div class="satellite-body">
+                <span class="satellite-tag" style="background: rgba(245, 158, 11, 0.18); color: #92400e;">Cảnh báo Sớm</span>
+                <h4 class="satellite-title">Cảnh báo sớm trạng thái stress hạn</h4>
+                <p class="satellite-desc">
+                  Phát hiện sự suy giảm hàm lượng nước tế bào lá (FMC) trước khi tán cây xuất hiện dấu hiệu vàng héo bằng mắt thường từ 7–14 ngày.
+                </p>
+              </div>
+              <div class="satellite-visual">
+                <img src="../assets/illustrations/benefit_early_stress.jpg" alt="Phát hiện sớm stress nước tế bào lá">
+              </div>
+            </div>
+
+            <!-- Satellite 2 -->
+            <div class="satellite-card bg-rose">
+              <div class="satellite-body">
+                <span class="satellite-tag" style="background: rgba(239, 68, 68, 0.16); color: #9f1239;">Hỗ trợ PCCCR</span>
+                <h4 class="satellite-title">Căn cứ định lượng hỗ trợ điều hành</h4>
+                <p class="satellite-desc">
+                  Xuất danh mục tọa độ điểm nóng khô hạn (hotspot) hỗ trợ lực lượng kiểm lâm và chủ rừng bố trí chốt gác, tuần tra trúng đích vào mùa khô.
+                </p>
+              </div>
+              <div class="satellite-visual">
+                <img src="../assets/illustrations/benefit_hotspot_action.jpg" alt="Định vị điểm nóng hỗ trợ tuần tra PCCCR">
+              </div>
+            </div>
+
+            <!-- Satellite 3 -->
+            <div class="satellite-card bg-cyan">
+              <div class="satellite-body">
+                <span class="satellite-tag" style="background: rgba(2, 132, 199, 0.16); color: #0369a1;">Cơ sở Dữ liệu</span>
+                <h4 class="satellite-title">Cơ sở dữ liệu số hóa chuỗi thời gian</h4>
+                <p class="satellite-desc">
+                  Dữ liệu viễn thám chuẩn hóa được lưu trữ, đối chiếu qua các mùa khô để theo dõi sức khỏe rừng và biến động hạn hán lâu dài.
+                </p>
+              </div>
+              <div class="satellite-visual">
+                <img src="../assets/illustrations/benefit_timeseries_db.jpg" alt="Dữ liệu chuỗi thời gian theo dõi qua các năm">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Key Capabilities & Technologies (Two-Half Cards) -->
+    <section class="section" id="cong-nghe" style="background: #f0f4f1;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Công nghệ Nền tảng</span>
+          <h2 class="section-title">Năng lực Thu thập & Mô hình hóa Khô hạn Rừng</h2>
+          <p class="section-sub">
+            Tích hợp nền tảng bay thấp bám địa hình, hệ cảm biến quang học đa phổ - nhiệt và thuật toán học máy đối chuẩn phòng thí nghiệm.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Capability 1 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_terrain_following.jpg" alt="UAV RTK Terrain Following bám ngọn tán">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge">Nền tảng Bay</span>
+              <h3 class="media-card-title">UAV Terrain Following</h3>
+              <p class="media-card-desc">
+                UAV RTK bay bám sát ngọn tán rừng trên địa hình đồi núi dốc, định vị độ chính xác centimet, duy trì khoảng cách cảm biến không đổi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capability 2 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_multispectral_payload.jpg" alt="Camera đa phổ 4 băng tần">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge">Cảm biến Quang phổ</span>
+              <h3 class="media-card-title">Multispectral Imaging</h3>
+              <p class="media-card-desc">
+                Camera đa phổ 4 băng tần (Green, Red, Red-Edge, NIR) bóc tách cấu trúc tế bào lá, hàm lượng diệp lục và độ che phủ thực bì.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capability 3 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_radiometric_thermal.jpg" alt="Cảm biến nhiệt radiometric LWIR">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge">Cảm biến Nhiệt</span>
+              <h3 class="media-card-title">Radiometric Thermal</h3>
+              <p class="media-card-desc">
+                Cảm biến nhiệt hồng ngoại sóng dài (LWIR 8–14 μm) đo phát xạ nhiệt và bốc thoát hơi nước tán lá phục vụ tính toán chỉ số bốc hơi.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capability 4 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_ground_truth_lab.jpg" alt="Hiệu chuẩn tấm chuẩn và lấy mẫu lá sấy phòng thí nghiệm">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge">Đối chứng Chuẩn</span>
+              <h3 class="media-card-title">Ground-truth Calibration</h3>
+              <p class="media-card-desc">
+                Lấy mẫu lá tươi cân sấy phòng lab tiêu chuẩn (85–105°C) đồng bộ với ca bay làm căn cứ đối chứng huấn luyện mô hình Machine Learning.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capability 5 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_ai_crown_segmentation.jpg" alt="Mô hình AI Mask R-CNN bóc tách tán cây riêng lẻ">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-verify">Cần xác minh</span>
+              <h3 class="media-card-title">AI Crown Segmentation</h3>
+              <p class="media-card-desc">
+                Mô hình Mask R-CNN bóc tách tán cây riêng lẻ (Level 3); hỗ trợ thống kê mức độ chịu hạn chi tiết theo từng cây mục tiêu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Capability 6 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/cap_webgis_platform.jpg" alt="Web GIS Dashboard theo dõi chuỗi thời gian">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-verify">Cần xác minh</span>
+              <h3 class="media-card-title">Web GIS Dashboard</h3>
+              <p class="media-card-desc">
+                Nền tảng GIS trực tuyến theo dõi chuỗi thời gian, tích hợp cảnh báo ranh giới nguy cơ cháy và chia sẻ dữ liệu đa cấp đơn vị quản lý.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Use Cases (Typographic Numbering 01 - 04) -->
+    <section class="section" id="tinh-huong">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Tình huống Ứng dụng</span>
+          <h2 class="section-title">Ai Cần Dữ liệu Độ ẩm Tán rừng từ UAV?</h2>
+          <p class="section-sub">
+            Giải pháp chuyên sâu phục vụ các Ban quản lý rừng, lực lượng Kiểm lâm PCCC, viện nghiên cứu sinh thái và đơn vị phát triển tín chỉ carbon.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Use Case 1 -->
+          <div class="usecase-card">
+            <div class="usecase-number-box">01</div>
+            <div>
+              <h3 class="usecase-title">Lập bản đồ độ ẩm tán rừng (FMC)</h3>
+              <p class="usecase-desc">
+                Chủ rừng và ban quản lý cần xác định mức độ ẩm thực tế của thảm lá chi tiết theo từng vạt cây hoặc ô tiêu chuẩn định kỳ.
+              </p>
+            </div>
+            <div class="usecase-output-badge">
+              <strong>Output chính:</strong> Bản đồ không gian FMC & phân hạng mức độ ẩm
+            </div>
+          </div>
+
+          <!-- Use Case 2 -->
+          <div class="usecase-card">
+            <div class="usecase-number-box">02</div>
+            <div>
+              <h3 class="usecase-title">Theo dõi stress nước theo mùa</h3>
+              <p class="usecase-desc">
+                Ban quản lý cần theo dõi diễn biến khô hạn qua các đợt bay trước, trong và sau cao điểm mùa khô để đánh giá nguy cơ suy thoái.
+              </p>
+            </div>
+            <div class="usecase-output-badge">
+              <strong>Output chính:</strong> Báo cáo chuỗi thời gian & bản đồ biến động nhiệt/ẩm
+            </div>
+          </div>
+
+          <!-- Use Case 3 -->
+          <div class="usecase-card">
+            <div class="usecase-number-box">03</div>
+            <div>
+              <h3 class="usecase-title">Đánh giá vật liệu cháy phục vụ PCCCR</h3>
+              <p class="usecase-desc">
+                Lực lượng kiểm lâm cần dữ liệu định lượng độ khô kiệt của thảm lá sống để chủ động bố trí phương án chốt chặn tuần tra mùa cháy.
+              </p>
+            </div>
+            <div class="usecase-output-badge">
+              <strong>Output chính:</strong> Bản đồ LFMC & danh mục tọa độ khoảnh rừng nguy cơ cao
+            </div>
+          </div>
+
+          <!-- Use Case 4 -->
+          <div class="usecase-card">
+            <div class="usecase-number-box">04</div>
+            <div>
+              <h3 class="usecase-title">Khoanh vùng ưu tiên kiểm tra thực địa</h3>
+              <p class="usecase-desc">
+                Đội bảo vệ rừng cần định vị chính xác các vạt rừng bị sốc khô hạn để điều phối lực lượng tuần tra trúng đích, tiết kiệm nguồn lực.
+              </p>
+            </div>
+            <div class="usecase-output-badge">
+              <strong>Output chính:</strong> Lớp vector polygon vùng khô hạn & bảng tọa độ tâm (X, Y)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. How It Works (6-Step Forestry Remote Sensing SOP) -->
+    <section class="section" id="quy-trinh" style="background: #ffffff;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quy trình Triển khai</span>
+          <h2 class="section-title">6 Bước Khảo sát Viễn thám Tán rừng Chuẩn hóa</h2>
+          <p class="section-sub">
+            Quy trình khép kín từ cấp phép bay Cục Tác chiến, bay quét đa phổ - nhiệt bám địa hình ngọn tán đến kiểm định mẫu sấy phòng lab.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <!-- Step 1 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">01</div>
+            <span class="timeline-step-badge">Khảo sát Sơ bộ</span>
+            <h3 class="timeline-step-title">Tiếp nhận Ranh giới & Lâm phận</h3>
+            <p class="timeline-step-desc">
+              Tiếp nhận file KML/Shapefile ranh giới tiểu khu rừng, đánh giá đặc điểm địa hình dốc và lập kế hoạch bay chi tiết.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">02</div>
+            <span class="timeline-step-badge">Pháp lý & Tuyến bay</span>
+            <h3 class="timeline-step-title">Cấp phép Bay & Lập Tuyến</h3>
+            <p class="timeline-step-desc">
+              Hoàn tất thủ tục cấp phép bay Cục Tác chiến (theo NĐ 288/2025/NĐ-CP) và thiết kế tuyến bay Terrain Following bám ngọn tán.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">03</div>
+            <span class="timeline-step-badge">Hiệu chuẩn Thực địa</span>
+            <h3 class="timeline-step-title">Hiệu chuẩn Quang học & Điểm mẫu</h3>
+            <p class="timeline-step-desc">
+              Hiệu chuẩn tấm chuẩn phản xạ quang học hiện trường, định vị mạng lưới lấy mẫu mặt đất GNSS và kiểm tra điều kiện GO/NO-GO.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">04</div>
+            <span class="timeline-step-badge">Bay Quét & Thu mẫu</span>
+            <h3 class="timeline-step-title">Bay Đa phổ/Nhiệt & Lấy Mẫu lá</h3>
+            <p class="timeline-step-desc">
+              Thực hiện ca bay thu thập dữ liệu đa phổ/nhiệt, đồng thời đội mặt đất thu thập mẫu lá tươi đại diện theo đúng quy trình bảo quản kín.
+            </p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">05</div>
+            <span class="timeline-step-badge">Xử lý Lab & ML</span>
+            <h3 class="timeline-step-title">Sấy Mẫu Lab & Huấn luyện ML</h3>
+            <p class="timeline-step-desc">
+              Sấy mẫu lá phòng thí nghiệm (85–105°C), xác định tỷ lệ nước thực tế và huấn luyện mô hình Machine Learning ước tính FMC.
+            </p>
+          </div>
+
+          <!-- Step 6 -->
+          <div class="timeline-step-card">
+            <div class="timeline-number">06</div>
+            <span class="timeline-step-badge">Bàn giao Sản phẩm</span>
+            <h3 class="timeline-step-title">Xuất Báo cáo & Lớp GIS Lâm nghiệp</h3>
+            <p class="timeline-step-desc">
+              Bàn giao trọn gói ảnh trực giao GeoTIFF, bản đồ nhiệt, bản đồ raster FMC, polygon điểm nóng và báo cáo kiểm định sai số RMSE.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Service Levels / Packages -->
+    <section class="section" id="bang-gia" style="background: #f5f8f6;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Các Gói Dịch vụ</span>
+          <h2 class="section-title">Lựa chọn Cấp độ Khảo sát Phù hợp</h2>
+          <p class="section-sub">
+            Thiết kế linh hoạt theo quy mô diện tích, mục đích giám sát sinh thái hay đánh giá nguy cơ cháy rừng mùa khô.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Level 1 -->
+          <div class="pricing-card">
+            <div>
+              <h3 class="pricing-tier-name">Level 1</h3>
+              <div class="pricing-tier-sub">Khảo sát Cơ bản (Basic Survey)</div>
+              
+              <div class="pricing-price-box">
+                <div class="pricing-display-val">Liên hệ tư vấn</div>
+                <div class="pricing-display-note">Tùy theo quy mô lâm phận & địa hình</div>
+              </div>
+
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Bay quét quang phổ cơ bản kênh RGB / NIR</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Ảnh trực giao Orthomosaic GeoTIFF nắn chỉnh RTK</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Bản đồ hiện trạng phản xạ diệp lục ngọn tán</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Báo cáo thông số kỹ thuật chuyến bay & thời tiết</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#lien-he" class="btn btn-outline-dark pricing-cta">Yêu cầu báo giá Level 1</a>
+          </div>
+
+          <!-- Level 2 (Popular) -->
+          <div class="pricing-card popular">
+            <div class="pricing-badge-popular">Khuyên dùng cho PCCCR</div>
+            <div>
+              <h3 class="pricing-tier-name">Level 2</h3>
+              <div class="pricing-tier-sub">FMC Mapping & Zoning (Bản đồ FMC Chuyên sâu)</div>
+              
+              <div class="pricing-price-box">
+                <div class="pricing-display-val">Liên hệ tư vấn</div>
+                <div class="pricing-display-note">Tối ưu cho Ban quản lý rừng & Kiểm lâm</div>
+              </div>
+
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Camera đa phổ 4 băng tần (Green, Red, Red-Edge, NIR)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Lấy mẫu lá tươi mặt đất & sấy phòng lab tiêu chuẩn 105°C</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Mô hình Machine Learning ước tính định lượng % FMC</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Bản đồ raster FMC và vector polygon khoanh vùng điểm nóng</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Danh mục tọa độ tâm (X, Y) phục vụ tuần tra kiểm tra</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Báo cáo kiểm định sai số mô hình hồi quy (RMSE, R²)</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#lien-he" class="btn btn-emerald pricing-cta">Yêu cầu tư vấn Level 2</a>
+          </div>
+
+          <!-- Level 3 -->
+          <div class="pricing-card">
+            <div>
+              <h3 class="pricing-tier-name">Level 3</h3>
+              <div class="pricing-tier-sub">Advanced AI & Monitoring (Nhiệt & AI Giám sát)</div>
+              
+              <div class="pricing-price-box">
+                <div class="pricing-display-val">Liên hệ tư vấn</div>
+                <div class="pricing-display-note">Phục vụ dự án sinh thái & nghiên cứu chuyên sâu</div>
+              </div>
+
+              <ul class="pricing-features-list">
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Bao gồm toàn bộ năng lực của Gói Level 2</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Tích hợp cảm biến nhiệt Radiometric Thermal LWIR (8–14 μm)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Bản đồ nhiệt độ bức xạ bề mặt tán rừng (°C)</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Mô hình AI Mask R-CNN bóc tách tán cây riêng lẻ</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Phân tích chuỗi thời gian so sánh diễn biến qua các đợt bay</span>
+                </li>
+                <li class="pricing-feature-item">
+                  <span class="feature-check">✓</span>
+                  <span>Tích hợp Web GIS Dashboard theo dõi trực tuyến</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="#lien-he" class="btn btn-outline-dark pricing-cta">Yêu cầu báo giá Level 3</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Deliverables (Sản phẩm Bàn giao Chuẩn hóa GIS) -->
+    <section class="section" id="ban-giao">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Sản phẩm Bàn giao</span>
+          <h2 class="section-title">Định dạng Dữ liệu Chuẩn hóa GIS Lâm nghiệp</h2>
+          <p class="section-sub">
+            Sản phẩm bàn giao tương thích trực tiếp với phần mềm QGIS, ArcGIS và các hệ cơ sở dữ liệu địa lý quản lý rừng quốc gia (VN-2000).
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Deliverable 1 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/deliv_orthomosaic_rgb_nir.jpg" alt="Ảnh trực giao Orthomosaic GeoTIFF kênh RGB/NIR">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-format">GeoTIFF Raster</span>
+              <h3 class="media-card-title">Orthomosaic RGB/NIR</h3>
+              <p class="media-card-desc">
+                Ảnh trực giao toàn khu vực ở kênh RGB và cận hồng ngoại (NIR) đã nắn chỉnh hình học RTK ở độ phân giải mức centimet.
+              </p>
+            </div>
+          </div>
+
+          <!-- Deliverable 2 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/deliv_fmc_moisture_map.jpg" alt="Bản đồ định lượng hàm lượng ẩm lá FMC">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-format">GIS Raster GeoTIFF</span>
+              <h3 class="media-card-title">Bản đồ FMC & Trạng thái Nước</h3>
+              <p class="media-card-desc">
+                Bản đồ raster định lượng hàm lượng ẩm của lá (% FMC) toàn lâm phận và theo từng ô tiêu chuẩn phục vụ đánh giá mức độ bắt cháy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Deliverable 3 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/deliv_canopy_thermal_map.jpg" alt="Bản đồ nhiệt độ bề mặt tán cây">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-format">Radiometric Thermal</span>
+              <h3 class="media-card-title">Bản đồ Nhiệt độ Tán lá</h3>
+              <p class="media-card-desc">
+                Lớp bản đồ nhiệt radiometric thể hiện mức độ phát xạ nhiệt bề mặt tán cây (°C), chỉ báo trực tiếp cho tình trạng thoát hơi nước thực bì.
+              </p>
+            </div>
+          </div>
+
+          <!-- Deliverable 4 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/deliv_hotspot_polygon_shp.jpg" alt="Bản đồ vector polygon điểm nóng khô hạn">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-format">Vector Shapefile / GeoJSON</span>
+              <h3 class="media-card-title">Bản đồ Phân vùng & Điểm nóng</h3>
+              <p class="media-card-desc">
+                Lớp dữ liệu vector khoanh vùng các khu vực khô hạn nguy cơ cao kèm danh mục tọa độ tâm (X, Y) phục vụ lực lượng tuần tra hiện trường.
+              </p>
+            </div>
+          </div>
+
+          <!-- Deliverable 5 -->
+          <div class="media-card">
+            <div class="media-card-visual">
+              <img src="../assets/illustrations/deliv_technical_report_rmse.jpg" alt="Báo cáo kỹ thuật kiểm định sai số RMSE">
+            </div>
+            <div class="media-card-body">
+              <span class="media-card-badge badge-format">Báo cáo Khoa học PDF</span>
+              <h3 class="media-card-title">Báo cáo Kỹ thuật & Metadata</h3>
+              <p class="media-card-desc">
+                Tài liệu thuyết minh chi tiết phương pháp, kết quả đối chứng mẫu sấy phòng thí nghiệm, công bố minh bạch chỉ số sai số mô hình (RMSE, R²).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Why GASCOLAE / Positioning -->
+    <section class="section" id="tai-sao-chon-chung-toi" style="background: #ffffff;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Lợi thế Cạnh tranh</span>
+          <h2 class="section-title">Tại sao Chọn GASCOLAE Cho Viễn thám Lâm nghiệp?</h2>
+          <p class="section-sub">
+            Cam kết quy trình viễn thám thực nghiệm khoa học, kết hợp hài hòa giữa công nghệ bay chụp độ chính xác cao và số liệu đối chuẩn thực tế.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="why-card">
+            <div class="why-icon-box">⚡</div>
+            <h3 class="why-title">Luồng Dịch vụ Khép kín (Integrated Service)</h3>
+            <p class="why-desc">
+              Từ khâu lập phương án bay bám ngọn tán, hiệu chuẩn bức xạ tấm chuẩn, thu mẫu lá thực địa đến huấn luyện Machine Learning và tích hợp GIS, loại bỏ hoàn toàn các khâu trung gian phân mảnh.
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon-box">🔬</div>
+            <h3 class="why-title">Đối chứng Thực nghiệm (Ground-truth Validation)</h3>
+            <p class="why-desc">
+              Không sử dụng các chỉ số NDVI lý thuyết đơn thuần; dữ liệu viễn thám được đối chứng trực tiếp với mẫu sấy khô phòng thí nghiệm tiêu chuẩn 105°C, công bố minh bạch sai số mô hình (RMSE, R²).
+            </p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon-box">🗺️</div>
+            <h3 class="why-title">Sẵn sàng cho Nền tảng (Platform-ready)</h3>
+            <p class="why-desc">
+              Toàn bộ dữ liệu bản đồ được chuẩn hóa theo hệ quy chiếu quốc gia VN-2000 và WGS-84, sẵn sàng nạp trực tiếp vào hệ thống thông tin quản lý rừng (FMIS) và phần mềm điều hành của kiểm lâm.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. FAQ Section -->
+    <section class="section" id="faq" style="background: #f5f8f6;">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Giải đáp Thắc mắc</span>
+          <h2 class="section-title">Câu hỏi Thường gặp Về Dịch vụ S0284</h2>
+          <p class="section-sub">
+            Tổng hợp các giải đáp kỹ thuật về điều kiện thời tiết, quy chuẩn thiết bị và giá trị pháp lý của dữ liệu viễn thám lâm nghiệp.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- Q1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Dịch vụ sử dụng loại cảm biến và dữ liệu nào?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Tùy theo cấp độ Gói dịch vụ (Level) và yêu cầu kỹ thuật cụ thể, GASCOLAE sử dụng ảnh đa phổ 4 băng tần (Green, Red, Red-Edge, NIR) kết hợp cảm biến nhiệt radiometric thermal sóng dài (LWIR 8–14 μm) gắn trên nền tảng UAV RTK chuyên dụng bám ngọn tán.
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Khách hàng nhận được những sản phẩm gì sau ca khảo sát?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Bộ deliverables bàn giao gồm: Ảnh trực giao Orthomosaic GeoTIFF RGB/NIR, bản đồ nhiệt độ tán lá, bản đồ hàm lượng ẩm lá (% FMC), bản đồ vector polygon phân vùng khô hạn, danh mục tọa độ điểm nóng và báo cáo kỹ thuật kiểm định sai số mô hình RMSE & R².
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Trời mưa hoặc tán lá còn ướt sương có thể bay khảo sát không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Không. Việc triển khai tuân thủ nghiêm ngặt checklist GO/NO-GO; giọt nước đọng trên bề mặt lá sẽ làm sai lệch phản xạ quang phổ và phát xạ nhiệt, ca bay bắt buộc phải hoãn chờ tán lá khô ráo hoàn toàn để bảo đảm độ chính xác của mô hình FMC.
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Báo cáo khảo sát có thay thế văn bản kiểm tra an toàn PCCC pháp lý không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Không. Dữ liệu viễn thám là công cụ số hóa hỗ trợ ra quyết định, cung cấp bức tranh khách quan phục vụ cảnh báo sớm và điều phối tuần tra, không thay thế văn bản kiểm tra hành chính hay chứng thư pháp lý của cơ quan quản lý nhà nước về PCCC rừng.
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Có thể xem báo giá cố định trực tiếp trên website không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Chi phí khảo sát phụ thuộc vào quy mô diện tích lâm phận (ha), độ dốc địa hình hiểm trở, khoảng cách di chuyển và Level dịch vụ lựa chọn. GASCOLAE sẽ gửi phương án kinh tế - kỹ thuật tối ưu sau khi tiếp nhận ranh giới sơ bộ của dự án.
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Mô hình AI có tự động dự báo chính xác 100% điểm cháy rừng không?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Không. Độ ẩm tán lá (FMC) là điều kiện cần thể hiện khả năng bắt cháy của thảm thực bì sống; nguy cơ cháy rừng thực tế còn chịu tác động tổ hợp từ nguồn lửa phát sinh, hướng gió, nhiệt độ môi trường và độ khô của lớp thảm mục chết dưới tán.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Call to Action / Lead Form -->
+    <section class="section" id="lien-he" style="background: linear-gradient(180deg, #f5f8f6 0%, #e2ece5 100%);">
+      <div class="container form-section-container">
+        <div class="lead-form-card">
+          <div class="section-head" style="margin-bottom: 36px;">
+            <span class="eyebrow">Tư vấn Dự án</span>
+            <h2 class="section-title">Khảo sát Độ ẩm Tán rừng & Giám sát Mùa khô</h2>
+            <p class="section-sub">
+              Để lại thông tin lâm phận của bạn để nhận đề xuất giải pháp bay quét chuyên biệt và dự toán kinh phí từ chuyên gia GASCOLAE.
+            </p>
+          </div>
+
+          <form id="leadForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Họ và tên <span class="required">*</span></label>
+                <input type="text" name="name" class="form-control" placeholder="Ví dụ: Nguyễn Văn A" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Đơn vị / Ban quản lý <span class="required">*</span></label>
+                <input type="text" name="organization" class="form-control" placeholder="Ví dụ: BQL Rừng phòng hộ X / Chi cục Kiểm lâm..." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Số điện thoại liên hệ <span class="required">*</span></label>
+                <input type="tel" name="phone" class="form-control" placeholder="09xxxxxxxx" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email công việc <span class="required">*</span></label>
+                <input type="email" name="email" class="form-control" placeholder="ten.email@donvi.gov.vn" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Diện tích lâm phận dự kiến (ha) <span class="required">*</span></label>
+                <input type="text" name="area" class="form-control" placeholder="Ví dụ: 250 ha" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Loại rừng chủ đạo</label>
+                <select name="forest_type" class="form-control">
+                  <option value="dac-dung">Rừng đặc dụng / Vườn quốc gia</option>
+                  <option value="phong-ho">Rừng phòng hộ đầu nguồn</option>
+                  <option value="san-xuat-thong">Rừng trồng thông / cây lá kim</option>
+                  <option value="san-xuat-keo-tram">Rừng trồng keo / bạch đàn / tràm</option>
+                  <option value="tu-nhien">Rừng tự nhiên lá rộng thường xanh</option>
+                  <option value="khac">Loại hình rừng khác</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Địa bàn khảo sát (Tỉnh / Huyện)</label>
+                <input type="text" name="location" class="form-control" placeholder="Ví dụ: Tỉnh Lâm Đồng, Huyện Lạc Dương...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Thời gian triển khai mong muốn</label>
+                <select name="timeline" class="form-control">
+                  <option value="ngay">Trong vòng 1 tháng tới (Trước mùa khô)</option>
+                  <option value="quy">Trong quý tới</option>
+                  <option value="khao-sat">Cần tư vấn lập đề cương dự án</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label class="form-label">Mục tiêu & Yêu cầu kỹ thuật bổ sung</label>
+                <textarea name="notes" class="form-control" placeholder="Mô tả tóm tắt mục đích khảo sát (PCCCR, nghiên cứu stress hạn, cấp gói Level 1/2/3 mong muốn)..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-security-note">
+              🔒 <strong>Cam kết bảo mật:</strong> Không yêu cầu tải lên file ranh giới tọa độ bảo mật hoặc thông tin nội bộ nhạy cảm trên biểu mẫu công khai.
+            </div>
+
+            <button type="submit" class="btn btn-emerald form-submit-btn" id="submitLeadBtn">
+              Đăng ký Khảo sát & Nhận Tư vấn Kỹ thuật
+            </button>
+
+            <!-- Toast Message -->
+            <div class="form-toast" id="formToast"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 14. Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <img src="../assets/LOGO.svg" alt="GASCOLAE Logo">
+          </a>
+          <p class="footer-desc">
+            GASCOLAE - Nền tảng khảo sát và quản trị tài nguyên lâm nghiệp, carbon & môi trường bằng UAV và GIS hàng đầu. Dịch vụ S0284 cung cấp giải pháp đo hàm lượng ẩm tán lá (FMC) phục vụ giám sát sinh thái và phòng ngừa rủi ro cháy rừng.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Điều hướng Dịch vụ</h4>
+          <ul class="footer-links">
+            <li><a href="#thuc-trang">Thực trạng & Thách thức</a></li>
+            <li><a href="#giai-phap">Giải pháp tổng quan</a></li>
+            <li><a href="#loi-ich">Lợi ích vượt trội</a></li>
+            <li><a href="#cong-nghe">Công nghệ nền tảng</a></li>
+            <li><a href="#quy-trinh">Quy trình 6 bước</a></li>
+            <li><a href="#bang-gia">Bảng gói dịch vụ</a></li>
+            <li><a href="#ban-giao">Sản phẩm bàn giao</a></li>
+            <li><a href="#faq">Câu hỏi thường gặp</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên hệ & Pháp lý</h4>
+          <ul class="footer-links">
+            <li><a href="#lien-he">Đăng ký tư vấn dự án</a></li>
+            <li><a href="#">Quy định bay NĐ 288/2025/NĐ-CP</a></li>
+            <li><a href="#">Tiêu chuẩn sấy mẫu lá TCVN</a></li>
+            <li><a href="tel:1900xxxx">Hotline: 1900 xxxx</a></li>
+            <li><a href="mailto:contact@gascolae.vn">Email: contact@gascolae.vn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 GASCOLAE Platform. All rights reserved.</p>
+        <div class="footer-bottom-badge">Service ID: S0284 - Forest Canopy Humidity Survey</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Về đầu trang" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

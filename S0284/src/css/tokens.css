@@ -1,0 +1,64 @@
+/* tokens.css - GASCOLAE S0284 Design Tokens (Forest Canopy & Thermal Hydrology) */
+:root {
+  /* Colors - Forest Canopy & Hydrology Ecological Theme */
+  --bg-main: #f5f8f6;               /* Sage Mist off-white */
+  --bg-surface: #ffffff;            /* Pure white */
+  --bg-dark: #062319;               /* Deep Forest Emerald */
+  --bg-darker: #03140e;             /* Ultra deep pine canopy */
+
+  --text-primary: #0f1f18;          /* Slate forest 900 */
+  --text-secondary: #3d5248;        /* Forest mist 600 */
+  --text-muted: #889c92;            /* Sage 400 */
+  --text-inverse: #ffffff;          /* White text */
+
+  /* Primary & Secondary Accents */
+  --accent-emerald: #10b981;         /* Vibrant canopy leaf green */
+  --accent-emerald-hover: #059669;   /* Hover state */
+  --accent-emerald-light: #d1fae5;   /* Light badge tint */
+  
+  --accent-cyan: #0284c7;            /* Hydrology water content (CWC/FMC) */
+  --accent-cyan-light: #e0f2fe;      /* Water tint badge */
+  
+  --accent-amber: #f59e0b;           /* Thermal LWIR infrared alert */
+  --accent-amber-light: #fef3c7;     /* Thermal warning tint */
+
+  --brand-forest: #062319;
+  --emerald-600: #059669;
+  --emerald-500: #10b981;
+  --emerald-400: #34d399;
+
+  /* Pastels for Ecological Categorization & Bento Cards */
+  --pastel-mint: #eaf7ee;
+  --pastel-mint-text: #065f46;
+  --pastel-cyan: #e0f2fe;
+  --pastel-cyan-text: #0369a1;
+  --pastel-amber: #fef3c7;
+  --pastel-amber-text: #92400e;
+  --pastel-rose: #fee2e2;
+  --pastel-rose-text: #991b1b;
+  --pastel-purple: #f3e8ff;
+  --pastel-purple-text: #6b21a8;
+
+  /* Border Radii */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 20px rgba(6, 35, 25, 0.04);
+  --shadow-md: 0 10px 30px rgba(6, 35, 25, 0.07);
+  --shadow-lg: 0 20px 45px rgba(6, 35, 25, 0.12);
+  --shadow-glow-emerald: 0 10px 25px rgba(16, 185, 129, 0.32);
+  --shadow-glow-cyan: 0 10px 25px rgba(2, 132, 199, 0.28);
+  --shadow-glow-amber: 0 10px 25px rgba(245, 158, 11, 0.32);
+
+  /* Layout */
+  --container-width: 1240px;
+  --section-spacing: 104px;
+  --section-spacing-mobile: 68px;
+
+  /* Typography */
+  --font-family-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

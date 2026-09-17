@@ -1,0 +1,15 @@
+/* main.css - Master Stylesheet for GASCOLAE S0284 (Forest Canopy Humidity) */
+@import url('./tokens.css');
+@import url('./base.css');
+
+/* Component Stylesheets */
+@import url('./components/navbar.css');
+@import url('./components/hero.css');
+@import url('./components/bento.css');
+@import url('./components/solution.css');
+@import url('./components/cards.css');
+@import url('./components/timeline.css');
+@import url('./components/pricing.css');
+@import url('./components/faq.css');
+@import url('./components/form.css');
+@import url('./components/footer.css');

@@ -1,0 +1,256 @@
+/* bento.css - Ecological Bento & Anchor Card Layout for S0284 */
+
+/* Problem Cards (Customer Pain Points) */
+.problem-card {
+  border-radius: var(--radius-lg);
+  padding: 32px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.problem-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.problem-header {
+  margin-bottom: 20px;
+}
+
+.problem-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.status-blindspot {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+}
+
+.status-invisible {
+  background: rgba(245, 158, 11, 0.14);
+  color: #b45309;
+}
+
+.status-delay {
+  background: rgba(168, 85, 247, 0.12);
+  color: #7e22ce;
+}
+
+.status-nondigital {
+  background: rgba(2, 132, 199, 0.12);
+  color: #0369a1;
+}
+
+.problem-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.problem-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.problem-visual {
+  border-radius: 18px;
+  overflow: hidden;
+  height: 220px;
+  margin-top: auto;
+  box-shadow: 0 4px 16px rgba(6, 35, 25, 0.06);
+  background: #ffffff;
+}
+
+.problem-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.problem-card:hover .problem-visual img {
+  transform: scale(1.04);
+}
+
+/* Color variations for problem cards */
+.bg-mint {
+  background: #f0fdf4;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+.bg-mint .problem-title, .bg-mint .bento-title {
+  color: #065f46;
+}
+
+.bg-cyan {
+  background: #f0f9ff;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.bg-cyan .problem-title, .bg-cyan .bento-title {
+  color: #0369a1;
+}
+
+.bg-amber {
+  background: #fffbeb;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+}
+.bg-amber .problem-title, .bg-amber .bento-title {
+  color: #92400e;
+}
+
+.bg-rose {
+  background: #fff1f2;
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+.bg-rose .problem-title, .bg-rose .bento-title {
+  color: #9f1239;
+}
+
+/* ========================================================= */
+/* Anchor Bento Grid Layout for Key Benefits                */
+/* ========================================================= */
+.anchor-bento-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.anchor-card {
+  border-radius: var(--radius-xl);
+  padding: 36px 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1.5px solid rgba(16, 185, 129, 0.25);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.anchor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--emerald-500);
+}
+
+.anchor-visual {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 320px;
+  margin-top: 24px;
+  box-shadow: 0 8px 24px rgba(6, 35, 25, 0.08);
+}
+
+.anchor-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.anchor-card:hover .anchor-visual img {
+  transform: scale(1.03);
+}
+
+/* Satellite Column containing 3 smaller cards */
+.satellite-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.satellite-card {
+  border-radius: var(--radius-lg);
+  padding: 24px 26px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.satellite-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.satellite-body {
+  flex: 1;
+}
+
+.satellite-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.satellite-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.satellite-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.satellite-visual {
+  width: 140px;
+  height: 120px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(6, 35, 25, 0.06);
+}
+
+.satellite-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.satellite-card:hover .satellite-visual img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 1024px) {
+  .anchor-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .satellite-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .satellite-visual {
+    width: 100%;
+    height: 180px;
+  }
+}
