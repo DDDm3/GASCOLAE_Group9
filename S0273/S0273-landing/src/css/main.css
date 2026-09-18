@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@import './tokens.css';
+@import './base.css';
+
+/* Components */
+@import './components/navbar.css';
+@import './components/hero.css';
+@import './components/bento.css';
+@import './components/cards.css';
+@import './components/process.css';
+@import './components/pricing.css';
+@import './components/faq-form.css';
+@import './components/footer.css';
