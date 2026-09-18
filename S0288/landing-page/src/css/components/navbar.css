@@ -1,0 +1,104 @@
+/* Floating Navbar */
+.navbar-wrapper {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.navbar {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(11, 15, 25, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 1200px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-glass);
+  background: rgba(11, 15, 25, 0.95);
+  max-width: 1000px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  width: 200px;
+  /* Đủ rộng để hiển thị toàn bộ chữ */
+}
+
+.nav-brand img {
+  height: 60px;
+  /* Giảm chiều cao gốc để không bị tràn quá nhiều */
+  margin-left: 2px;
+  /* Cắt một chút khoảng trắng bên trái, nhưng không cắt vào chữ G */
+  object-fit: contain;
+  object-position: left center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+.nav-cta {
+  display: flex;
+  gap: 12px;
+}
+
+/* Mobile adjustments */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    /* Hide links on mobile initially */
+  }
+
+  .navbar-wrapper {
+    top: 16px;
+    padding: 0 16px;
+  }
+
+  .navbar {
+    padding: 10px 16px;
+  }
+
+  .nav-cta .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}
