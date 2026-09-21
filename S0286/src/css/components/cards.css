@@ -1,0 +1,156 @@
+/* ==========================================================================
+   FINTECH CARDS & USE CASES
+   GASCOLAE S0286
+   ========================================================================== */
+
+/* Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-3xl);
+}
+
+.capability-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.capability-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-line-glow);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.capability-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.capability-desc {
+  font-size: 0.92rem;
+  color: var(--color-paper-muted);
+  line-height: 1.6;
+}
+
+/* Use Cases Horizontal Cards with Real Imagery */
+.use-cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.use-case-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+}
+
+.use-case-card:hover {
+  transform: translateY(-3px);
+  border-color: #2ECC71;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 25px var(--color-primary-glow);
+}
+
+.use-case-visual {
+  background-size: cover;
+  background-position: center;
+  border-right: 1px solid var(--color-line);
+  position: relative;
+  min-height: 200px;
+}
+
+.use-case-content {
+  padding: var(--space-xl) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.use-case-header {
+  margin-bottom: var(--space-sm);
+}
+
+.use-case-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.use-case-situation {
+  font-size: 0.98rem;
+  color: var(--color-paper-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.use-case-output {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.output-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2ECC71;
+  background: rgba(46, 204, 113, 0.12);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  white-space: nowrap;
+}
+
+.output-value {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .use-case-card {
+    grid-template-columns: 1fr;
+  }
+  .use-case-visual {
+    border-right: none;
+    border-bottom: 1px solid var(--color-line);
+    min-height: 160px;
+  }
+  .use-case-content {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}

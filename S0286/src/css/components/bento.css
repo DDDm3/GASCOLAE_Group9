@@ -1,0 +1,239 @@
+/* ==========================================================================
+   FINTECH BENTO GRID: THỰC TRẠNG & LỢI ÍCH CỐT LÕI
+   GASCOLAE S0286
+   ========================================================================== */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.bento-grid.grid-2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bento-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(16px);
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-line-glow);
+  box-shadow: var(--shadow-card-hover);
+  background: var(--color-surface-card-hover);
+}
+
+/* Card variants */
+.bento-card.span-2 {
+  grid-column: span 2;
+}
+
+.bento-card.span-3 {
+  grid-column: span 3;
+}
+
+.bento-card.card-featured {
+  background: linear-gradient(135deg, rgba(31, 77, 58, 0.35) 0%, rgba(22, 35, 29, 0.8) 100%);
+  border: 1px solid rgba(42, 104, 78, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(42, 104, 78, 0.2);
+}
+
+.bento-card.card-featured:hover {
+  border-color: #2ECC71;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--color-primary-glow);
+}
+
+.bento-card.card-gold {
+  background: linear-gradient(135deg, rgba(143, 101, 22, 0.25) 0%, rgba(22, 35, 29, 0.85) 100%);
+  border: 1px solid rgba(196, 145, 41, 0.4);
+}
+
+.bento-card.card-gold:hover {
+  border-color: #F39C12;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 25px var(--color-accent-glow);
+}
+
+.bento-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.bento-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #5ED6A1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-gold .bento-icon-wrapper {
+  color: var(--color-accent-light);
+  background: rgba(196, 145, 41, 0.15);
+  border-color: rgba(196, 145, 41, 0.3);
+}
+
+.bento-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-paper-muted);
+  border: 1px solid var(--color-line);
+}
+
+.bento-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.02em;
+}
+
+.bento-desc {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--color-paper-muted);
+  margin-bottom: var(--space-md);
+}
+
+.bento-source {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-sm);
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Solution Fintech Architecture Callout */
+.solution-callout-box {
+  background: linear-gradient(135deg, rgba(25, 39, 32, 0.95) 0%, rgba(18, 28, 23, 0.95) 100%);
+  border: 1px solid var(--color-line-glow);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2xl);
+  align-items: center;
+  box-shadow: var(--shadow-card);
+}
+
+.solution-badge {
+  color: #5ED6A1;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.solution-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-paper);
+  margin-bottom: var(--space-md);
+}
+
+.solution-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  background: rgba(196, 145, 41, 0.1);
+  border: 1px solid rgba(196, 145, 41, 0.3);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+  color: #E6B148;
+  line-height: 1.5;
+}
+
+.fintech-kpi-badge {
+  background: rgba(31, 77, 58, 0.5);
+  border: 1px solid #2ECC71;
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  text-align: center;
+  box-shadow: 0 0 25px rgba(46, 204, 113, 0.2);
+  min-width: 170px;
+}
+
+.fintech-kpi-badge .kpi-num {
+  font-family: var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.fintech-kpi-badge .kpi-label {
+  font-size: 0.75rem;
+  color: #5ED6A1;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 6px;
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 992px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-card.span-2 {
+    grid-column: span 2;
+  }
+  .solution-callout-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-card.span-2,
+  .bento-card.span-3 {
+    grid-column: span 1;
+  }
+}

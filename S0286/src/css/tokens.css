@@ -1,0 +1,76 @@
+/* ==========================================================================
+   DESIGN TOKENS - HIGH-TECH CARBON FINTECH THEME
+   Dành cho dịch vụ S0286: Báo cáo MRV cho dự án tín chỉ carbon
+   Bộ màu chuẩn: #1F4D3A, #16231D, #F6F4EE, #8F6516, #5B6B63, #DAD6CA
+   ========================================================================== */
+
+:root {
+  /* Brand Core Palette */
+  --color-primary: #1F4D3A;              /* Deep Moss Emerald */
+  --color-primary-light: #2A684E;        /* Vivid Emerald Accent */
+  --color-primary-glow: rgba(42, 104, 78, 0.4);
+  --color-primary-subtle: rgba(31, 77, 58, 0.18);
+
+  --color-bg-dark: #121C17;              /* Ultra Dark Forest Slate (Canvas) */
+  --color-ink: #16231D;                  /* Card Base Dark */
+  --color-surface-card: #192720;         /* Card Surface */
+  --color-surface-card-hover: #1F3028;   /* Card Surface Hover */
+  --color-surface-elevated: #23372E;     /* Elevated UI Element */
+
+  --color-paper: #F6F4EE;                /* Crisp Off-White / Paper Cream */
+  --color-paper-muted: #D1CEC4;          /* Soft Paper Text */
+
+  --color-accent: #8F6516;               /* Metallic Brass / Gold Seal */
+  --color-accent-light: #C49129;         /* Vibrant Amber Gold */
+  --color-accent-glow: rgba(196, 145, 41, 0.25);
+  --color-accent-subtle: rgba(143, 101, 22, 0.15);
+
+  --color-muted: #8E9E95;                /* Cool Forest Slate Gray */
+  --color-muted-dark: #5B6B63;           /* Dark Slate Muted */
+
+  --color-line: rgba(218, 214, 202, 0.12); /* Subtle Glass Border */
+  --color-line-glow: rgba(42, 104, 78, 0.35); /* Neon Border Glow */
+  --color-line-solid: #DAD6CA;
+
+  /* Status Colors */
+  --color-success: #2ECC71;
+  --color-success-glow: rgba(46, 204, 113, 0.3);
+  --color-warning: #F39C12;
+
+  /* Typography: 100% Modern Fintech Sans + Mono Data */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', Consolas, monospace;
+
+  /* Spacing */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2rem;     /* 32px */
+  --space-2xl: 3rem;    /* 48px */
+  --space-3xl: 4.5rem;  /* 72px */
+  --space-4xl: 6rem;    /* 96px */
+  --space-5xl: 7.5rem;  /* 120px */
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Fintech Shadows & Glows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 1px rgba(218, 214, 202, 0.15);
+  --shadow-card-hover: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px var(--color-primary-glow);
+  --shadow-btn: 0 4px 16px rgba(42, 104, 78, 0.4);
+  --shadow-gold: 0 4px 16px rgba(196, 145, 41, 0.35);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-max-width: 1240px;
+  --navbar-height: 72px;
+}

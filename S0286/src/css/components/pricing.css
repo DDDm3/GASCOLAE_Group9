@@ -1,0 +1,209 @@
+/* ==========================================================================
+   FINTECH SERVICE LEVELS & DELIVERABLES
+   GASCOLAE S0286
+   ========================================================================== */
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  align-items: stretch;
+  margin-bottom: var(--space-4xl);
+}
+
+.pricing-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-card);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-line-glow);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.pricing-card.pricing-featured {
+  background: linear-gradient(135deg, rgba(31, 77, 58, 0.4) 0%, rgba(22, 35, 29, 0.95) 100%);
+  border: 1.5px solid #2ECC71;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 30px rgba(46, 204, 113, 0.25);
+  transform: scale(1.02);
+}
+
+.pricing-card.pricing-featured:hover {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(46, 204, 113, 0.4);
+}
+
+.pricing-featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #C49129 0%, #8F6516 100%);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(196, 145, 41, 0.4);
+  white-space: nowrap;
+}
+
+.pricing-level {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.pricing-positioning {
+  font-size: 0.92rem;
+  color: #5ED6A1;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+  min-height: 44px;
+}
+
+.pricing-cost {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.pricing-cost-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+}
+
+.pricing-cost-sub {
+  font-size: 0.8rem;
+  color: var(--color-paper-muted);
+  display: block;
+  margin-top: 4px;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  flex-grow: 1;
+}
+
+.pricing-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--color-paper);
+  line-height: 1.5;
+}
+
+.pricing-feature-icon {
+  width: 18px;
+  height: 18px;
+  color: #2ECC71;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-footer {
+  margin-top: auto;
+}
+
+.pricing-footer .btn {
+  width: 100%;
+}
+
+/* Deliverables Grid */
+.deliverables-container {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-card);
+}
+
+.deliverables-header {
+  margin-bottom: var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.deliverables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+}
+
+.deliverable-item {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  transition: all var(--transition-normal);
+}
+
+.deliverable-item:hover {
+  border-color: var(--color-line-glow);
+  background: rgba(42, 104, 78, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.deliverable-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.deliverable-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.deliverable-desc {
+  font-size: 0.88rem;
+  color: var(--color-paper-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-card.pricing-featured {
+    transform: none;
+  }
+}
