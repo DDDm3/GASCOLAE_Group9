@@ -1,0 +1,14 @@
+{
+  "name": "gascolae-s0070",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node scripts/build.mjs && node --test tests/*.test.mjs",
+    "check": "node --check src/app.js && node --check src/components.mjs && node --check src/agent-config.mjs && node --check scripts/build.mjs && node --check scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
