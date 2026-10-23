@@ -2,7 +2,7 @@
 
 Tài liệu mô tả cây cấu trúc của repository `GASCOLAE_Group9` (nhánh `main`). Mỗi dự án `DU_AN_XX` có cùng một cấu trúc gồm ba thư mục chính: `assets`, `docs` và `code`.
 
-## 1. Cây cấu trúc tổng quát
+## 3. Cây cấu trúc tổng quát
 
 ```
 GASCOLAE_Group9/
